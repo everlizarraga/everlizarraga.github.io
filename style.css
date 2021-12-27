@@ -6,6 +6,7 @@
 
 html {
     font-size: 62.5%;
+    font-family: sans-serif;
 }
 
 main,header {
@@ -15,4 +16,8 @@ main,header {
 section {
     border: 1px solid black;
     padding: 10px 30px;
+}
+
+header p img {
+    width: 50px;
 }
