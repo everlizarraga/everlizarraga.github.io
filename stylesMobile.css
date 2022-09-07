@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    /* margin: 0; */
+    /* padding: 0; */
 }
 
 html {
@@ -9,8 +9,10 @@ html {
     font-family: sans-serif;
 }
 
-main,header {
+body {
     font-size: 1.6rem;
+    background-color: #323130;
+    color: white;
 }
 
 section {
@@ -18,6 +20,3 @@ section {
     padding: 10px 30px;
 }
 
-header p img {
-    width: 50px;
-}
