@@ -97,7 +97,7 @@ main > section {
 .landing__background {
     /* overflow: hidden; */
     position: absolute;
-    top: -150px;
+    top: 0px;
     left: 0px;
     z-index: -1;
     width: 100%;
@@ -114,16 +114,25 @@ main > section {
     body {
         /* background-color: red; */
     }
+    .landing__background {
+        top: -120px;
+    }
 }
 
 @media (min-width: 800px) {
     body {
         /* background-color: blue; */
     }
+    .landing__background {
+        top: -150px;
+    }
 }
 
 @media (min-width: 1200px) {
     body {
         /* background-color: palegoldenrod; */
+    }
+    .landing__background {
+        top: -250px;
     }
 }
