@@ -80,12 +80,14 @@ main > section {
     height: calc(100vh - 50px);
     position: relative;
     background-color: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(180deg, black 30%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.4) 100%);
 }
 
 .blog-landing > div {
     border: 2px solid red;
     width: 100%;
     max-width: 600px;
+    min-height: 100%;
     margin: 0px auto;
     padding: 30px;
 }
@@ -99,8 +101,8 @@ main > section {
 .landing__background {
     overflow: hidden;
     position: absolute;
-    /* bottom: 0px; */
-    top: 0px;
+    bottom: 0px;
+    /* top: 0px; */
     left: 0px;
     z-index: -1;
     width: 100%;
