@@ -105,7 +105,7 @@ main > section {
     /* top: 0px; */
     left: 0px;
     z-index: -1;
-    width: 100%;
+    /* width: 100%; */
 }
 .landing__background img {
     /* width: 200%; */
