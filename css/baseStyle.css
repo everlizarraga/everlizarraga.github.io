@@ -50,7 +50,7 @@ header {
 }
 
 .header__title {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .header__perfil {
@@ -80,7 +80,7 @@ main > section {
     height: calc(100vh - 50px);
     position: relative;
     background-color: rgba(0, 0, 0, 0.6);
-    background: linear-gradient(180deg, black 30%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.3) 100%);
+    background: linear-gradient(180deg, black 50%, rgba(0,0,0,0.6) 85%, rgba(0,0,0,0.3) 100%);
 }
 
 .blog-landing > div {
@@ -93,7 +93,7 @@ main > section {
 }
 
 .landing__title {
-    font-size: 4rem;
+    font-size: 3.6rem;
     text-align: center;
     margin-bottom: 100px;
 }
@@ -105,7 +105,7 @@ main > section {
     /* top: 0px; */
     left: 0px;
     z-index: -1;
-    /* width: 100%; */
+    width: 100%;
 }
 .landing__background img {
     /* width: 200%; */
