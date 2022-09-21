@@ -95,7 +95,7 @@ main > section {
 .landing__title {
     font-size: 3.6rem;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .landing__background {
@@ -115,6 +115,32 @@ main > section {
 picture:not(.landing__background) {
     display: none;
 }
+
+.landing__parrafo {
+    text-align: center;
+    font-size: 1.8rem;
+    padding-bottom: 50px;
+}
+
+.landing__indice {
+}
+.landing__indice li {
+    padding-bottom: 10px;
+}
+.landing__indice li a{
+    color: white;
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    /* border: 1px solid red; */
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.landing__indice li a:hover {
+    background-color: black;
+}
+
 
 /* ============================================= */
 /* ============================================= */
