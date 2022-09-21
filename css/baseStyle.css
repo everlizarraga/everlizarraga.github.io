@@ -9,6 +9,7 @@ html {
     font-family: sans-serif;
     /* background-color: red; */
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -113,9 +114,6 @@ main > section {
     height: 100%;
 }
 
-picture:not(.landing__background) {
-    display: none;
-}
 
 .landing__parrafo {
     text-align: center;
@@ -146,6 +144,53 @@ picture:not(.landing__background) {
 }
 .landing__indice li a:active {
     background-color: red;
+}
+
+/* =============================================== */
+
+picture:not(.landing__background) {
+    /* display: none; */
+}
+
+.main-section {
+    width: 100%;
+    min-width: 320px;
+    min-height: 50vh;
+    position: relative;
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 20%, rgba(0,0,0,0.1) 100%);
+}
+.main-section > div {
+    border: 2px solid blue;
+    width: 100%;
+    max-width: 600px;
+    min-height: 100%;
+    margin: 0px auto;
+    padding: 30px;
+}
+
+.section-background {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+.section-background img {
+    height: 100%;
+    /* width: 100%; */
+}
+
+/* ========================================= */
+
+.section__working-now {
+
+}
+.section__working-now h2 {
+    text-align: center;
+    font-size: 3.2rem;
+    margin-bottom: 50px;
 }
 
 
