@@ -79,8 +79,8 @@ main > section {
     min-width: 320px;
     height: calc(100vh - 50px);
     position: relative;
-    background-color: rgba(0, 0, 0, 0.6);
-    background: linear-gradient(180deg, black 50%, rgba(0,0,0,0.6) 85%, rgba(0,0,0,0.3) 100%);
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    background: linear-gradient(180deg, black 10%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 100%);
 }
 
 .blog-landing > div {
@@ -101,17 +101,18 @@ main > section {
 .landing__background {
     overflow: hidden;
     position: absolute;
+    top: 0px;
     bottom: 0px;
-    /* top: 0px; */
     left: 0px;
     z-index: -1;
     width: 100%;
 }
 .landing__background img {
-    /* width: 200%; */
+    /* width: 100%; */
+    height: 100%;
 }
 
-picture {
+picture:not(.landing__background) {
     display: none;
 }
 
@@ -129,32 +130,31 @@ picture {
 
 @media (min-width: 600px) {
     body {
-        /* background-color: red; */
+
     }
     .landing__background {
-        /* width: 100%;
-        top: -120px; */
+
     }
 }
 
 @media (min-width: 800px) {
     body {
-        /* background-color: blue; */
+
     }
-    .landing__background {
-        /* width: 100%;
-        top: -300px; */
+    .landing__background img{
+        width: 100%;
+        height: auto;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
     }
 }
 
 @media (min-width: 1200px) {
     body {
-        /* background-color: palegoldenrod; */
+
     }
     .landing__background {
-        /* width: 100%;
-        top: -550px; */
-        /* bottom: 0; */
-        /* left: 0; */
+
     }
 }
