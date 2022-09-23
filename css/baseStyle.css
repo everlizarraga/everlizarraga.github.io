@@ -80,7 +80,6 @@ main > section {
 .blog-landing {
     width: 100%;
     min-width: 320px;
-    /* height: calc(100vh - 50px); */
     position: relative;
     /* background-color: rgba(0, 0, 0, 0.6); */
     background: linear-gradient(180deg, black 10%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 100%);
@@ -90,7 +89,8 @@ main > section {
     border: 2px solid red;
     width: 100%;
     max-width: 600px;
-    min-height: 100%;
+    /* min-height: 100%; */
+    min-height: calc(100vh - 50px);
     margin: 0px auto;
     padding: 30px;
 }
