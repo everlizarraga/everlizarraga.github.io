@@ -225,9 +225,12 @@ picture:not(.landing__background) {
 }
 
 .carousel-item > a {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     max-width: 400px;
+    min-height: 100%;
     /* overflow: hidden; */
 }
 
@@ -246,9 +249,11 @@ picture:not(.landing__background) {
 /* ========================================= */
 
 .card-detail {
+    flex-grow: 1;
     padding: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .card-detail__header {
@@ -258,7 +263,7 @@ picture:not(.landing__background) {
 }
 
 .card-detail__info {
-    color: white;
+    color: rgb(160, 155, 155);
     font-size: 1.4rem;
     margin-bottom: 20px;
 }
