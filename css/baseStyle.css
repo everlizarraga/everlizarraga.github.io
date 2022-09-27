@@ -138,13 +138,9 @@ main > section {
     display: block;
     text-align: center;
     font-size: 2rem;
-    /* border: 1px solid red; */
     border-radius: 10px;
     padding: 1.5rem 1rem;
-    /* background-color: rgba(0, 0, 0, 0.7); */
     background-color: rgba(50, 49, 48, 0.7);
-    /* background-color: #323130; */
-    /* outline: none; */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .list-botones-options li a:hover {
@@ -156,19 +152,13 @@ main > section {
 
 /* =============================================== */
 
-picture:not(.landing__background) {
-    /* display: none; */
-}
-
 .main-section {
     width: 100%;
     min-width: 320px;
     position: relative;
-    /* background-color: black; */
     background: linear-gradient(180deg, rgba(0,0,0,0.3) 20%, rgba(0,0,0,0.1) 100%);
 }
 .main-section > div {
-    /* border: 2px solid blue; */
     width: 100%;
     max-width: 800px;
     min-height: 100vh;
@@ -204,11 +194,6 @@ picture:not(.landing__background) {
 /* ========================================= */
 
 .carousel-content {
-    /* background-color: aqua; */
-    /* border: 2px solid aqua; */
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: stretch; */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, auto));
     gap: 20px;
@@ -217,10 +202,7 @@ picture:not(.landing__background) {
 /* ========================================= */
 
 .carousel-item {
-    /* border: 1px solid black; */
     width: 100%;
-    /* max-width: 200px; */
-    /* margin: 15px 0px; */
     overflow: hidden;
     background-color: rgba(50, 50, 50, 0.7);
     border-radius: 10px;
@@ -264,7 +246,7 @@ picture:not(.landing__background) {
 
 .card-detail__header {
     color: white;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     margin-bottom: 10px;
 }
 
@@ -280,8 +262,8 @@ picture:not(.landing__background) {
 .card-detail__footer button {
     width: 100%;
     display: block;
+    font-size: 1.8rem;
     padding: 20px 10px;
-    /* margin-top: 10px; */
     border: 0;
     border-radius: 10px;
     color: rgba(200, 200, 200, 0.8);
@@ -302,10 +284,10 @@ picture:not(.landing__background) {
     }
 }
 
-@media (min-width: 430px) {
-}
+/* @media (min-width: 430px) {
+} */
 
-@media (min-width: 500px) {
+@media (min-width: 480px) {
     .card__img-content img {
         width: 150%;
         height: auto;
@@ -333,10 +315,5 @@ picture:not(.landing__background) {
 }
 
 @media (min-width: 1200px) {
-    body {
 
-    }
-    .landing__background {
-
-    }
 }
