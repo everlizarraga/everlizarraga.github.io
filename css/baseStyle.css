@@ -164,6 +164,7 @@ main > section {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1;
+    /* cursor: pointer; */
 
     transition: all 500ms ease;
     opacity: 0;
@@ -171,7 +172,7 @@ main > section {
 }
 .modal .contenedor {
     width: 400px;
-    height: 300px;
+    min-height: 300px;
     position: relative;
     border: 1px solid white;
     border-radius: 20px;
@@ -179,6 +180,8 @@ main > section {
     box-shadow: 0px 0px 25px rgba(255, 255, 0, 0.5);
     color: rgba(255, 255, 0, 0.8);
     overflow: hidden;
+    /* z-index: 2;
+    cursor: help; */
 
     transition: all 500ms ease;
     transform: translateY(-30%);
@@ -196,6 +199,9 @@ main > section {
     top: 10px;
     right: 20px;
     cursor: pointer;
+}
+.contenedor .contenido {
+    padding: 20px;
 }
 
 .lbl-modal {
