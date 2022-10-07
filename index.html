@@ -10,211 +10,40 @@
 	<link rel="stylesheet" href="./css/baseStyle.css">
 </head>
 <body>
-	<header class="header">
-		<h1 class="header__title">EVER BLOG's</h1>
-		<figure class="header__logo">
-			<img src="https://s4.gifyu.com/images/dragon22c4a47f35a2e9cc.png" alt="Platzi Dragon">
-		</figure>
-		<div class="header__perfil">
-			<a href="#"></a>
+	<header class="nav-header">
+		<div class="nav-header-content">
+			<div class="nav-header__logo">
+				<h1 class="nav-header__title">EVER L</h1>
+				<!-- <h1 class="nav-header__title">UMM</h1> -->
+			</div>
+			<input type="checkbox" id="nav-header-user-switch" />
+			<label class="nav-header__options"></label>
 		</div>
 	</header>
 	<main>
-		<section class="blog-landing">
-			<div>
-				<h2 class="landing__title">CREANDO <br>EL FUTURO</h2>
-				<picture class="landing__background">
-					<source media="(min-width: 800px)" srcset="https://s4.gifyu.com/images/pexels-pixabay-256297-1.jpg">
-					<img src="https://s4.gifyu.com/images/pexels-pixabay-256297-2.jpg" alt="Landing de fábrica de cohetes espaciales SAPCEX" title="Mi Landing">
-				</picture>
-				<p class="landing__parrafo">Todo es posible en DIOS <br><br>Este es mi BLOG personal, donde iré publicando todos mis proyectos, metas y logros.</p>
-				<ul class="landing__indice list-botones-options">
-					<li><a href="#working-now">Working Now</a></li>
-					<li><a href="#netflix-pirata">Netflix Pirata</a></li>
-					<li><a href="#univesidad-libre">Universidad Libre</a></li>
-					<li><a href="#personal-projects">Proyectos Personales</a></li>
-				</ul>
-				<!-- <a href="./prueba.html" class="aButton">Personal Proyect</a> -->
-				<div>
-					<label for="btn-modal" class="lbl-modal">Abrir modal</label>
-					<input type="checkbox" class="btn-modal-check" id="btn-modal">
-					<div class="modal" for="btn-modal">
-						<div class="contenedor">
-							<header>¡Bienvenidos!</header>
-							<label for="btn-modal">[x]</label>
-							<div class="contenido">
-								<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis repellat deleniti amet quia voluptatibus, temporibus maiores voluptatem molestias totam, laborum quidem officia quas dolorum? Expedita doloribus iusto similique tenetur corrupti.</p> -->
-								<p>John Wick 1</p>
-								<iframe src="https://onedrive.live.com/embed?cid=D7187BBBDF3A38F4&resid=D7187BBBDF3A38F4%217117&authkey=AFsbd5z84Q5YstE" width="320" height="180" frameborder="0" scrolling="no" allowfullscreen></iframe>
-							</div>
-						</div>
-					</div>
+		<div class="main-container">
+			<header class="landing">
+				<div class="landing__background"></div>
+				<div class="landing__content main-sections-content">
+					<!-- <h2>UNCIÓN METAS MINUTO</h2> -->
+					<h2>Continuo aprendizaje</h2>
+					<ul class="list">
+						<li><p>Todo está siponible en internet.</p></li>
+						<li><p>El conocimiento es poder.</p></li>
+						<li><p>Úsalo para el bien.</p></li>
+					</ul>
 				</div>
-			</div>
-		</section>
-		<section id="working-now" class="main-section section__working-now">
-			<div>
-				<h2>Working Now</h2>
-				<picture class="section-background">
-					<img src="" alt="">
-				</picture>
-				<!-- <picture class="section-background">
-					<source media="(min-width: 800px)" srcset="https://s5.gifyu.com/images/pexels-pixabay-63332-1.jpg">
-					<img src="https://s5.gifyu.com/images/pexels-pixabay-63332-2.jpg" alt="Laboratorio de trabajo" title="Working Now">
-				</picture> -->
-				<ul class="carousel-content">
-					<li class="carousel-item">
-						<a href="#" class="card">
-							<figure class="card__img-content">
-								<img src="https://cdn.euroinnova.edu.es/img/subidasEditor/code-1839406_640-1611692303.webp" alt="Codigo de programacion picture">
-							</figure>
-							<div class="card-detail">
-								<header class="card-detail__header">
-									<p>Programer</p>
-								</header>
-								<div class="card-detail__info">
-									<p>Aprendiendo Programación Full Stack.</p>
-								</div>
-								<footer class="card-detail__footer">
-									<button>
-										<span>Ver más</span>
-									</button>
-								</footer>
-							</div>
-						</a>
-					</li>
-					<li class="carousel-item">
-						<a href="#" class="card">
-							<figure class="card__img-content">
-								<img src="https://www.prospectfactory.com.mx/wp-content/uploads/2019/03/Que-es-Marketing-Digital.jpg" alt="Codigo de programacion picture">
-							</figure>
-							<div class="card-detail">
-								<header class="card-detail__header">
-									<p>Marketing Digital</p>
-								</header>
-								<div class="card-detail__info">
-									<p>La clave para aumentar las ventas y saber llegar a las personas masivamente.</p>
-								</div>
-								<footer class="card-detail__footer">
-									<button>
-										<span>Ver más</span>
-									</button>
-								</footer>
-							</div>
-						</a>
-					</li>
-					<li class="carousel-item">
-						<a href="#" class="card">
-							<figure class="card__img-content">
-								<img src="https://directivosygerentes.es/wp-content/uploads/2018/02/criptomoneda-681x454.jpg" alt="Codigo de programacion picture">
-							</figure>
-							<div class="card-detail">
-								<header class="card-detail__header">
-									<p>Cryptos</p>
-								</header>
-								<div class="card-detail__info">
-									<p>Inversiones en cryptomonedas.</p>
-								</div>
-								<footer class="card-detail__footer">
-									<button>
-										<span>Ver más</span>
-									</button>
-								</footer>
-							</div>
-						</a>
-					</li>
-					<li class="carousel-item">
-						<a href="#" class="card">
-							<figure class="card__img-content">
-								<img src="https://mercado.com.ar/wp/wp-content/uploads/2022/08/container.jpg" alt="Codigo de programacion picture">
-							</figure>
-							<div class="card-detail">
-								<header class="card-detail__header">
-									<p>Importaciones</p>
-								</header>
-								<div class="card-detail__info">
-									<p>¿Cómo gestionar tus porpias aportaciones?</p>
-								</div>
-								<footer class="card-detail__footer">
-									<button>
-										<span>Ver más</span>
-									</button>
-								</footer>
-							</div>
-						</a>
-					</li>
-					<li class="carousel-item">
-						<a href="#" class="card">
-							<figure class="card__img-content">
-								<img src="https://ambitoeducativo.com/wp-content/uploads/2018/09/ELECTRICIDAD.png" alt="Codigo de programacion picture">
-							</figure>
-							<div class="card-detail">
-								<header class="card-detail__header">
-									<p>Electricidad Domiciliaria</p>
-								</header>
-								<div class="card-detail__info">
-									<p>Electricidad básica para el hogar.</p>
-								</div>
-								<footer class="card-detail__footer">
-									<button>
-										<span>Ver más</span>
-									</button>
-								</footer>
-							</div>
-						</a>
-					</li>
-					<li class="carousel-item">
-						<a href="#" class="card">
-							<figure class="card__img-content">
-								<img src="https://sabermas.umich.mx/images/stories/17/panel_1.JPG" alt="Codigo de programacion picture">
-							</figure>
-							<div class="card-detail">
-								<header class="card-detail__header">
-									<p>Paneles Solares</p>
-								</header>
-								<div class="card-detail__info">
-									<p>Aprendiendo sobre instalación de paneles solares.</p>
-								</div>
-								<footer class="card-detail__footer">
-									<button>
-										<span>Ver más</span>
-									</button>
-								</footer>
-							</div>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</section>
-		<section id="netflix-pirata" class="main-section section__netflix-pirata">
-			<div>
-				<h2>Netflix Pirate</h2>
-				<picture class="section-background">
-					<source media="(min-width: 800px)" srcset="https://s5.gifyu.com/images/pexels-luca-sammarco-6142159-1.jpg">
-					<img src="https://s5.gifyu.com/images/pexels-luca-sammarco-6142159-2.jpg" alt="Laptop con la portada de Netflix" title="Netflix Pirata">
-				</picture>
-			</div>
-		</section>
-		<section id="univesidad-libre" class="main-section section__univesidad-libre">
-			<div>
-				<h2>Universidad Libre</h2>
-				<picture class="section-background">
-					<source media="(min-width: 800px)" srcset="https://s4.gifyu.com/images/pexels-ekrulila-2292837-1.jpg">
-					<img src="https://s4.gifyu.com/images/pexels-ekrulila-2292837-2.jpg" alt="Graduado recibiendo su papel de graduación" title="Universidad Libre">
-				</picture>
-			</div>
-		</section>
-		<section id="personal-projects" class="main-section secton__personal-projects">
-			<div>
-				<h2>Proyectos Personales</h2>
-				<picture class="section-background">
-					<source media="(min-width: 800px)" srcset="https://s5.gifyu.com/images/pexels-pixabay-269077-1.jpg">
-					<img src="https://s5.gifyu.com/images/pexels-pixabay-269077-2.jpg" alt="Edificio de Trabajo" title="Personal Projects">
-				</picture>
-				<a href="./personalProyect.html">Mas Info ...</a>
-				<button><a href="./personalProyect.html">Mas info</a></button>
-			</div>
-		</section>
+			</header>
+			<section>
+				<div class="main-sections-content"></div>
+			</section>
+			<section>
+				<div class="main-sections-content"></div>
+			</section>
+			<section>
+				<div class="main-sections-content"></div>
+			</section>
+		</div>
 	</main>
 	<footer>
 	</footer>
