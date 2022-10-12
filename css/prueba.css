@@ -1,3 +1,7 @@
+:root {
+    --nav-header-height: 60px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,11 +11,16 @@
 html {
     font-size: 62.5%;
     font-family: sans-serif;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
-    background-color: papayawhip;
+    width: 100%;
+    min-width: 320px;
     font-size: 1.6rem;
+    background-color: #323130;
+    color: white;
 }
 
 a {
@@ -24,26 +33,233 @@ li {
 
 /* //////////////////////////////////////////// */
 /* //////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
 
-header {
-    background-color: black;
-    color: white;
-    /* text-align: center; */
+.nav-header {
     width: 100%;
-    height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-header-content {
+    width: 100%;
+    max-width: 1280px;
+    position: relative;
+    padding: 0px 20px;
+    margin: 0 auto;
+}
+
+.nav-header__logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
-header h1 {
+
+.nav-header__logo h1 {
     text-transform: uppercase;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: white;
 }
 
-/* ------------------------------------------ */
-
-.landing {
-    background-color: rgb(68, 68, 68);
-    color: white;
+.nav-header-menu {
     width: 100%;
-    height: 100vh;
+}
+
+#nav-header-menu__switch {
+    display: none;
+}
+#nav-header-menu__switch:checked ~ .nav-header-menu__wrapper .nav-header-menu-trigger-burger {
+    border-radius: 20px;
+}
+
+.nav-header-menu__wrapper {
+    width: 100%;
+    min-height: var(--nav-header-height);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-header-menu__links {
+}
+.nav-header-menu__links a {
+    color: white;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-header-menu-trigger-burger {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+
+/* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
+
+main {
+    width: 100%;
+    position: relative;
+}
+
+.main-container {
+    width: 100%;
+}
+
+.main-sections-content {
+    width: 100%;
+    min-height: 100px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    border: 1px solid red;
+}
+
+.main-sections-content h2 {
+    margin: 20px 0px;
+    margin-bottom: 20px;
+}
+
+/* ======================================================== */
+/* ======================================================== */
+
+.moneda {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+.moneda-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: rgb(98, 63, 131);
+}
+.cara {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+.cara1 {
+    background-color: black;
+    color: white;
+}
+.cara2 {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: white; */
+    color: black;
+
+    transform: rotateY(180deg);
+}
+
+/* ======================================================== */
+/* ======================================================== */
+
+.eje-content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid yellow;
+}
+
+.input-text {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+    padding-left: 15px;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    outline: none;
+    border: 0px;
+}
+.input-text:focus {
+    background-color: white;
+}
+.input-text::placeholder {
+    /* color: #323130; */
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.4);
+}
+.input-text:focus::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.eje-btn-content {
+    width: 100%;
+    display: flex;
+}
+
+.eje-btn {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    background-color: red;
+    color: white;
+    border: none;
+    /* outline: none; */
+    cursor: pointer;
+}
+.eje-btn:active {
+    box-shadow: 0px 0px 5px white;
+}
+.eje-btn-clic {
+    flex-grow: 1;
+}
+.eje-btn-cl {
+    min-width: 20%;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+/* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
+
+@media only screen and (max-width:768px) {
+    .main-sections-content {
+        max-width: 320px;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-sections-content {
+        max-width: 944px;
+    }
+}
+@media (min-width: 1024px) {
+    /* Mínimo de ancho 944px */
+
+}
+@media (min-width: 1366px) {
+    /* SuperTitle FontSize: 32px */
+    /* Title FontSize: 28px */
+    /* Info Title FontSize: 24px */
+    /* Resaltar FontSize: 20px [CTA]*/
+    /* Standar FontSize: 18px / 16px*/
+    /* Minim FontSize: 16px [BTN] / 12px*/
+
+    /* Fijar tamaños. Tamaños no expansivos. */
+
+    :root {
+        --nav-hight: 64px;
+        --landing-hight: 480px;
+    }
+
+    .main-sections-content {
+        max-width: 1040px;
+    }
+
 }

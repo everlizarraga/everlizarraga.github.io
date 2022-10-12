@@ -8,24 +8,66 @@
     <title>Prueba</title>
 </head>
 <body>
-    <header>
-        <h1>Prueba responsive</h1>
-    </header>
+    <header class="nav-header">
+		<div class="nav-header-content">
+			<a href="./index.html" class="nav-header__logo">
+				<h1>EVER L</h1>
+			</a>
+			<nav class="nav-header-menu">
+				<input type="checkbox" id="nav-header-menu__switch" />
+				<div class="nav-header-menu__wrapper">
+					<div class="nav-header-menu__links">
+						<a href="#" class="btn btn-model1">Algo 1</a>
+						<a href="#" class="btn btn-model2">Algo 2</a>
+					</div>
+					<label for="nav-header-menu__switch" class="nav-header-menu-trigger-burger"><span></span></label>
+				</div>
+			</nav>
+		</div>
+	</header>
     <main>
-        <section class="landing">
+        <section class="landing main-sections-content">
             <div>
                 <h2>Landing</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsum provident accusantium quam dolorum molestias dolor dolores iste, nulla dignissimos, temporibus excepturi totam aliquid veritatis sed dolore ad beatae consectetur.</p>
             </div>
         </section>
-        <section>
+        <section class="main-sections-content">
+            <h2>Transfomraciones</h2>
+            <div class="moneda">
+                <div class="moneda-content">
+                    <div class="cara cara1">Cara 1</div>
+                    <div class="cara cara2">Cara 2</div>
+                </div>
+            </div>
+        </section>
+        <section class="main-sections-content">
             <div>
-                <h2>Subtitulos</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum autem, blanditiis tenetur ducimus optio veritatis placeat temporibus. Neque unde facilis nostrum praesentium libero distinctio quo? Optio voluptatum omnis iusto quisquam.</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum autem, blanditiis tenetur ducimus optio veritatis placeat temporibus. Neque unde facilis nostrum praesentium libero distinctio quo? Optio voluptatum omnis iusto quisquam.</p>
+                <h2>Ejecricios Básicos 1</h2>
+                <div class="eje-content">
+                    <input id="eje1-data1" type="text" class="input-text" placeholder="Valor 1" />
+                    <input id="eje1-data2" type="text" class="input-text" placeholder="Valor 2" />
+                    <p>Resultado: <span id="eje1-resultado"></span></p>
+                    <button id="eje1-procesar" class="eje-btn">Procesar</button>
+                </div>
+            </div>
+        </section>
+        <section class="main-sections-content">
+            <div>
+                <h2>Ejercicio Básico 2</h2>
+                <p>Realizar un programa en el que el usuario introduce el número del mes (1 al 12) y el código responde si ese mes tiene 30 o 31 días.</p>
+                <div class="eje-content">
+                    <input id="eje2-data1" type="text" class="input-text" placeholder="Data 1" />
+                    <p>Resultado: <span id="eje2-resultado">XD</span></p>
+                    <div class="eje-btn-content">
+                        <button id="eje2-btn-procesar" class="eje-btn eje-btn-clic">Procesar</button>
+                        <button id="eje2-btn-clear" class="eje-btn eje-btn-cl">CLEAR</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
     <footer></footer>
+    <script src="./js/ejeBasico1.js"></script>
 </body>
 </html>
