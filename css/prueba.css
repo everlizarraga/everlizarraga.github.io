@@ -129,9 +129,32 @@ main {
 
 /* ======================================================== */
 /* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
+
+.referencias-web {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.6);
+}
+.referencias-web-content {
+    display: flex;
+    /* padding: 0px 10px; */
+    flex-wrap: wrap;
+}
+.referencias-web a {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.btn-link {
+    /* display: inline-block; */
+}
 
 .moneda {
-    width: 100px;
+    width: 200px;
     height: 100px;
     margin: 0 auto;
     border: 1px solid red;
@@ -163,12 +186,15 @@ main {
 
 /* ======================================================== */
 /* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
 
 .eje-content {
     width: 80%;
     margin: 0 auto;
     padding: 10px;
     /* border: 1px solid yellow; */
+    border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.3);
 }
 
