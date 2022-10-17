@@ -181,15 +181,14 @@ main {
     height: 100%;
     position: absolute;
 
-    transform: scale(.9,.9);
+    transform: scale(.5,.5);
     opacity: 0;
-    transition: all .5s;
+    transition: all .3s;
 }
 
 .slider1-card-content {
     width: 100%;
     height: 100%;
-    /* border: 2px solid blue; */
 }
 
 #slider1-card__contenido-1 {
@@ -216,7 +215,6 @@ main {
 }
 .slider1-arrows.slider1-arrow-R {
     right: 0px;
-    /* margin-right: -6px; */
 }
 .slider1-arrows svg:hover {
     background-color: rgba(0, 0, 0, 0.2);
@@ -226,7 +224,6 @@ main {
 /* ======================================================== */
 .slider1-blink {
     width: 100%;
-    /* height: 50px; */
     padding: 10px;
     position: absolute;
     bottom: 0px;
@@ -237,7 +234,6 @@ main {
 .slider1-blink ul {
     width: 50%;
     max-width: 400px;
-    /* height: 100%; */
     margin: 0 auto;
     padding: 5px 5px;
     display: flex;
@@ -361,6 +357,71 @@ main {
     background-color: rgb(136, 126, 247);
 }
 
+
+/* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
+/* ===================== CAROUSEL v1 ========================= */
+
+.carousel-galeria-navidad {
+    /* width: 100%;
+    height: 200px; */
+    border: 5px solid rgba(255, 255, 255, 0.8);
+    padding: 16px;
+    display: flex;
+    overflow-y: auto;
+}
+
+.carousel-galeria-navidad .card {
+    margin-right: 15px;
+    position: relative;
+    cursor: pointer;
+}
+.carousel-galeria-navidad .card:hover {
+    transform: translate(0px, -5px);
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+}
+
+.carousel-galeria-navidad .card .card-img-container {
+    width: 160px;
+    height: 200px;
+    background-color: red;
+}
+.carousel-galeria-navidad .card .card-img-container img {
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+}
+
+.carousel-galeria-navidad .card .card-content {
+    position: absolute;
+    bottom: 0px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+.carousel-galeria-navidad .card .card-content h5,
+.carousel-galeria-navidad .card .card-content p {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.carousel-galeria-navidad .card:nth-child(2) .card-img-container {
+    background-color: blue;
+}
+.carousel-galeria-navidad .card:nth-child(3) .card-img-container {
+    background-color: yellow;
+}
+.carousel-galeria-navidad .card:nth-child(4) .card-img-container {
+    background-color: red;
+}
+.carousel-galeria-navidad .card:nth-child(5) .card-img-container {
+    background-color: green;
+}
+.carousel-galeria-navidad .card:nth-child(6) .card-img-container {
+    background-color: red;
+}
 
 /* ======================================================== */
 /* ======================================================== */
