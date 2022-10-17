@@ -366,10 +366,10 @@ main {
 .carousel-galeria-navidad {
     /* width: 100%;
     height: 200px; */
-    border: 5px solid rgba(255, 255, 255, 0.8);
+    /* border: 5px solid rgba(255, 255, 255, 0.8); */
     padding: 16px;
     display: flex;
-    overflow-y: auto;
+    overflow-x: auto;
 }
 
 .carousel-galeria-navidad .card {
@@ -421,6 +421,22 @@ main {
 }
 .carousel-galeria-navidad .card:nth-child(6) .card-img-container {
     background-color: red;
+}
+
+/* ======================================================== */
+/* ======================================================== */
+
+#carousel-v1 {
+    position: relative;
+}
+
+#ocultar-barra {
+    width: 100%;
+    height: 25px;
+    position: absolute;
+    bottom: 0px;
+    background-color: rgba(50, 49, 48, 1);
+    /* border: 1px solid blue; */
 }
 
 /* ======================================================== */
