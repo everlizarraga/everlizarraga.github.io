@@ -609,6 +609,9 @@ main {
     .main-sections-content {
         max-width: 944px;
     }
+    #ocultar-barra {
+        bottom: 0px;
+    }
 }
 @media (min-width: 1024px) {
     /* Mínimo de ancho 944px */
