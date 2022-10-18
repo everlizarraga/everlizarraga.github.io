@@ -432,7 +432,7 @@ main {
 
 #ocultar-barra {
     width: 100%;
-    height: 25px;
+    height: 0px;
     position: absolute;
     bottom: 0px;
     background-color: rgba(50, 49, 48, 1);
@@ -611,6 +611,7 @@ main {
     }
     #ocultar-barra {
         bottom: 0px;
+        height: 25px;
     }
 }
 @media (min-width: 1024px) {
