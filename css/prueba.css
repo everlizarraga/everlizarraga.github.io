@@ -140,17 +140,40 @@ main {
 /* ======================================================== */
 /* ======================================================== */
 /* ======================================================== */
-/* ====================== RADIO =========================== */
+/* ====================== Práctica JS - DOM =========================== */
 
-.radios-xd {
-    width: 90%;
-    max-width: 400px;
-    border: 5px solid black;
-    margin: 0 auto;
+
+
+
+
+
+
+
+/* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
+/* ====================== MENU DESPLEGABLE =========================== */
+
+.expandable {
+    visibility: collapse;
+    background-color: papayawhip;
+    color: black;
 }
-
-.radios-xd .radio-xd {
-    /* display: block; */
+input[id="desplegable-1"]:checked ~ * .expandable {
+    visibility: visible;
+}
+.btn-action-menu {
+    display: inline-block;
+    padding: 6px 20px;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.btn-action-menu:hover {
+    box-shadow: 3px 3px 5px black;
 }
 
 /* ======================================================== */

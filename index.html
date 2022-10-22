@@ -11,16 +11,16 @@
 </head>
 <body>
 	<header class="nav-header">
-		<div class="nav-header-content">
+		<div>
 			<a href="#" class="nav-header__logo">
 				<h1>EVER L</h1>
 			</a>
 			<nav class="nav-header-menu">
-				<input type="checkbox" id="nav-header-menu__switch" />
+				<input type="checkbox" id="nav-header-menu__switch" hidden />
 				<div class="nav-header-menu__wrapper">
 					<div class="nav-header-menu__links">
-						<a href="./prueba.html" class="btn btn-model1">Redes</a>
-						<a href="#" class="btn btn-model2">Log</a>
+						<a href="./prueba.html" class="btn-link-1">Redes</a>
+						<a href="#" class="btn-link-2">Log</a>
 					</div>
 					<label for="nav-header-menu__switch" class="nav-header-menu-trigger-burger">
 						<span></span>
@@ -41,25 +41,40 @@
 	</header>
 	<main>
 		<div class="main-container">
-			<header class="landing">
-				<div class="landing__background"></div>
-				<div class="landing__content main-sections-content">
-					<h2>Continuo aprendizaje</h2>
-					<ul class="list">
-						<li><p>Todo está diponible en internet.</p></li>
-						<li><p>El conocimiento es poder.</p></li>
-						<li><p>Úsalo para el bien.</p></li>
-					</ul>
+			<header class="main-sections-container landing">
+				<div>
+					<div class="landing__background">
+						<picture>
+							<!-- <source media="(min-width:768px)" srcset="https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg"> -->
+							<source media="(min-width:768px)" srcset="https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg">
+							<!-- <source media="(min-width:768px)" srcset="https://images.pexels.com/photos/3586966/pexels-photo-3586966.jpeg"> -->
+							<!-- <source media="(min-width:768px)" srcset="https://images.pexels.com/photos/2341830/pexels-photo-2341830.jpeg"> -->
+							<!-- <source media="(min-width:768px)" srcset="https://images.pexels.com/photos/2918040/pexels-photo-2918040.jpeg?auto=compress&cs=tinysrgb&w=1600"> -->
+							<!-- <img src="" alt=""> -->
+							<!-- <img src="" alt=""> -->
+							<!-- <img src="" alt=""> -->
+							<!-- <img src="" alt=""> -->
+							<img src="https://images.pexels.com/photos/3125171/pexels-photo-3125171.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
+						</picture>
+					</div>
+					<div class="landing__content">
+						<h2>Continuo aprendizaje</h2>
+						<ul class="list">
+							<li><p>Todo está diponible en internet.</p></li>
+							<li><p>El conocimiento es poder.</p></li>
+							<li><p>Úsalo para el bien.</p></li>
+						</ul>
+					</div>
 				</div>
 			</header>
-			<section>
-				<div class="main-sections-content"></div>
+			<section class="main-sections-container">
+				<div></div>
 			</section>
-			<section>
-				<div class="main-sections-content"></div>
+			<section class="main-sections-container">
+				<div></div>
 			</section>
-			<section>
-				<div class="main-sections-content"></div>
+			<section class="main-sections-container">
+				<div></div>
 			</section>
 		</div>
 	</main>
