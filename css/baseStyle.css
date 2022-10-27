@@ -347,33 +347,156 @@ main {
 /* ===================================================== */
 /* ===================================================== */
 /* ===================================================== */
-/* =======================CONTENIDO 1======================= */
+/* ===================================================== */
+/* ===================================================== */
 
-.contenido-1 {
-    width: 100%;
-    border: 1px solid rgba(0, 0, 0, 0);
+#contenido-universidad {
+    /* background-image: url('https://images.pexels.com/photos/12064/pexels-photo-12064.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
     background-color: var(--color-background-2);
-    color: white;
 }
-.contenido-1>div {
+
+#contenido-universidad>div {
+    max-width: 100%;
     border: 0px;
+    padding: 50px 0px;
 }
-.contenido-1-title {
+
+.contenido-universidad-title {
     text-align: center;
     text-transform: uppercase;
-    margin-top: 30px;
+    margin: 0;
+    padding: 20px 0px;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 2.8rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
-.contenido-1-portada-container {
-    width: 100%;
-    height: 200px;
+.uni-profesiones-cards-container {
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    margin-top: 50px;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 460px));
+    gap: 20px
+    ;
+}
+
+/* --------------------------------------------- */
+
+.uni-cards {
+    position: relative;
+    display: flex;
+    color: white;
+    overflow: hidden;
+    /* padding: 20px; */
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    background-color: var(--color-background-1);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    /* box-shadow: 3px 0px 8px rgba(255, 255, 255, 0.4); */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+}
+.uni-cards:hover {
+    box-shadow: 3px 3px 8px rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+/* --------------------------------------------- */
+.card-img {
+    width: 50%;
+    height: 150px;
     margin: 0px;
+    border-radius: 10px 0px 0px 10px;
+    -webkit-border-radius: 10px 0px 0px 10px;
+    -moz-border-radius: 10px 0px 0px 10px;
+    -ms-border-radius: 10px 0px 0px 10px;
+    -o-border-radius: 10px 0px 0px 10px;
+    /* border: 1px solid yellow; */
 }
-
-.contenido-1-portada-container img {
+.card-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+
+.card-info {
+    width: 50%;
+    position: relative;
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-info > h4 {
+    margin: 0px;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+.card-info > ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card-info > ul li {
+    padding: 5px;
+    /* background-color: red; */
+    /* border: 1px solid white; */
+    width: 50px;
+    height: 30px;
+}
+
+.li-codoAcodo4 {
+    font-size: 0px;
+    padding: 0px;
+    background-image: url('https://user-images.githubusercontent.com/83146564/137408912-013f0d0c-37d1-4dc2-a1b5-77356c1003f3.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:  120% 120%;
+}
+.li-platzi {
+    font-size: 0px;
+    padding: 0px;
+    background-image: url('https://scontent.faep14-3.fna.fbcdn.net/v/t1.6435-9/83017815_2775732919161888_1432113195098570752_n.png?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGK_vVxnz0LfvPbmIMTLrSuo4wuwWgnnzyjjC7BaCefPLlAWzHrMmEjC7y_FKXLB7y2HPc8MgPA_we6cXAhvhW8&_nc_ohc=YJkJdstRoQQAX9VTCYA&_nc_ht=scontent.faep14-3.fna&oh=00_AfB-0BlEQwc95B90tMub6jCL9ALZtWNjanRwI-9NHdjbEQ&oe=637F1EBD');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:  contain;
+}
+.li-utn {
+    font-size: 0px;
+    padding: 0px;
+    background-image: url('https://www.frba.utn.edu.ar/wp-content/uploads/2017/10/Logos-UTN.BA-cs6-fondo-blanco.png');
+    /* background-image: url('https://www.frba.utn.edu.ar/wp-content/uploads/2016/08/logo-utn.ba-horizontal-e1471367724904.jpg'); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:  contain;
+}
+.li-DCX {
+    font-size: 0px;
+    padding: 0px;
+    background-image: url('https://im.academy/images/corp2022/area04_DCX2022.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size:  80px 30px;
 }
 
 /* ===================================================== */
