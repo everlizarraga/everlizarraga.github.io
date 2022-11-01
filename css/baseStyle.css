@@ -559,6 +559,8 @@ main {
 .card-horizontal__img {
     width: 200px;
     height: 260px;
+    /* width: 160px;
+    height: 200px; */
     margin: 0;
 }
 .card-horizontal__img img {

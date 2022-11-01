@@ -1,0 +1,45 @@
+@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+@import url(./components/initialStyle.css);
+@import url(./components/header.css);
+
+main {
+    width: 100%;
+    position: relative;
+}
+
+.main-container {
+    width: 100%;
+}
+
+/* ======================================================== */
+/* ======================================================== */
+
+.landing-container {
+    width: 100%;
+    position: relative;
+}
+
+.landing__background {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-background-1);
+}
+.landing__background picture {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.landing__background picture img {
+    width: 100%;
+    height: var(--landing-background-height);
+    object-fit: contain;
+    /* border: 1px solid red; */
+}
+
+.landing__content {
+    width: 100%;
+    position: absolute;
+}
+
+/* ======================================================== */
+/* ======================================================== */
