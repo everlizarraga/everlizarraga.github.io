@@ -22,6 +22,7 @@
     padding-left: 20px;
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 .nav-header__logo h1 {
     font-size: 2.4rem;

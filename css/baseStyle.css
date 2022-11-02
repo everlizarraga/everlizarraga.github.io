@@ -104,6 +104,7 @@ p {
     left: 0px;
     display: flex;
     align-items: center;
+    z-index: 2;
 }
 
 .nav-header__logo h1 {

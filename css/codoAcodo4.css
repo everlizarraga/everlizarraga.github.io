@@ -141,6 +141,9 @@ main {
     margin-top: 10px;
     padding-bottom: 10px;
 }
+.section-unidad__info > ul {
+    padding-left: 10px;
+}
 
 /* ======================================================== */
 input[id="check_FE_1HTML"]:checked ~ * label[for="check_FE_1HTML"]{
