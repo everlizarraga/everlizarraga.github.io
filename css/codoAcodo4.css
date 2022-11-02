@@ -143,7 +143,7 @@ main {
 }
 
 /* ======================================================== */
-input[id="check_FE_1HTML"]:checked ~ * label[for="check_FE_1HTML"] ~ .temario-content__header {
+input[id="check_FE_1HTML"]:checked ~ * label[for="check_FE_1HTML"]{
     background-color: var(--color-primary);
 }
 input[id="check_FE_1HTML"]:checked ~ * label[for="check_FE_1HTML"] ~ .temario-content__main {
@@ -153,7 +153,7 @@ input[id="check_FE_1HTML"]:checked ~ * label[for="check_FE_1HTML"] ~ .temario-co
     display: block;
 }
 /* ---------------------------------------------------------- */
-input[id="check_FE_2CSS"]:checked ~ * label[for="check_FE_2CSS"] ~ .temario-content__header {
+input[id="check_FE_2CSS"]:checked ~ * label[for="check_FE_2CSS"] {
     background-color: var(--color-primary);
 }
 input[id="check_FE_2CSS"]:checked ~ * label[for="check_FE_2CSS"] ~ .temario-content__main {
@@ -163,7 +163,7 @@ input[id="check_FE_2CSS"]:checked ~ * label[for="check_FE_2CSS"] ~ .temario-cont
     display: block;
 }
 /* ---------------------------------------------------------- */
-input[id="check_FE_3Boostrap"]:checked ~ * label[for="check_FE_3Boostrap"] ~ .temario-content__header {
+input[id="check_FE_3Boostrap"]:checked ~ * label[for="check_FE_3Boostrap"] {
     background-color: var(--color-primary);
 }
 input[id="check_FE_3Boostrap"]:checked ~ * label[for="check_FE_3Boostrap"] ~ .temario-content__main {
@@ -173,7 +173,7 @@ input[id="check_FE_3Boostrap"]:checked ~ * label[for="check_FE_3Boostrap"] ~ .te
     display: block;
 }
 /* ---------------------------------------------------------- */
-input[id="check_FE_4Git"]:checked ~ * label[for="check_FE_4Git"] ~ .temario-content__header {
+input[id="check_FE_4Git"]:checked ~ * label[for="check_FE_4Git"] {
     background-color: var(--color-primary);
 }
 input[id="check_FE_4Git"]:checked ~ * label[for="check_FE_4Git"] ~ .temario-content__main {
@@ -183,7 +183,17 @@ input[id="check_FE_4Git"]:checked ~ * label[for="check_FE_4Git"] ~ .temario-cont
     display: block;
 }
 /* ---------------------------------------------------------- */
-input[id="check_FE_6Scrum"]:checked ~ * label[for="check_FE_6Scrum"] ~ .temario-content__header {
+input[id="check_FE_5Arquitectura"]:checked ~ * label[for="check_FE_5Arquitectura"] {
+    background-color: var(--color-primary);
+}
+input[id="check_FE_5Arquitectura"]:checked ~ * label[for="check_FE_5Arquitectura"] ~ .temario-content__main {
+    display: block;
+}
+input[id="check_FE_5Arquitectura"]:checked ~ * label[for="check_FE_5Arquitectura"] ~ .temario-content__footer {
+    display: block;
+}
+/* ---------------------------------------------------------- */
+input[id="check_FE_6Scrum"]:checked ~ * label[for="check_FE_6Scrum"] {
     background-color: var(--color-primary);
 }
 input[id="check_FE_6Scrum"]:checked ~ * label[for="check_FE_6Scrum"] ~ .temario-content__main {
@@ -193,7 +203,7 @@ input[id="check_FE_6Scrum"]:checked ~ * label[for="check_FE_6Scrum"] ~ .temario-
     display: block;
 }
 /* ---------------------------------------------------------- */
-input[id="check_FE_7JavaScript"]:checked ~ * label[for="check_FE_7JavaScript"] ~ .temario-content__header {
+input[id="check_FE_7JavaScript"]:checked ~ * label[for="check_FE_7JavaScript"] {
     background-color: var(--color-primary);
 }
 input[id="check_FE_7JavaScript"]:checked ~ * label[for="check_FE_7JavaScript"] ~ .temario-content__main {
