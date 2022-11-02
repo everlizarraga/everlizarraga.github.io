@@ -22,7 +22,7 @@ main {
 .landing__background {
     width: 100%;
     position: relative;
-    background-color: var(--color-background-1);
+    background-color: var(--color-background-2);
 }
 .landing__background picture {
     width: 100%;
@@ -43,3 +43,216 @@ main {
 
 /* ======================================================== */
 /* ======================================================== */
+
+.main-sections-container {
+    width: 100%;
+}
+.main-sections-container > div {
+    width: 100%;
+    min-height: 200px;
+    margin: 0px auto;
+    border: 5px solid red;
+}
+
+/* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
+
+#frontEnd2022 {
+    background-color: var(--color-background-1);
+}
+
+#frontEnd2022 > div {
+    padding: 20px 0px;
+    padding-bottom: 40px;
+    border: 0;
+}
+
+.frontEnd2022-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.btn-link-2.link-download {
+    display: block;
+    text-align: center;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+/* ======================================================== */
+/* ======================================================== */
+
+.temario-container {
+    width: 100%;
+    padding-top: 20px;
+}
+
+.temario-content {
+    width: 100%;
+    /* padding: 10px 0px; */
+    /* margin-top: 20px; */
+    border-bottom: 2px solid white;
+}
+/* --------------------------------------------- */
+.temario-content__header {
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.temario-content__header:hover {
+    background-color: var(--color-primary);
+}
+.temario-content__main {
+    display: none;
+    /* padding: 10px 5px; */
+    border: 3px solid var(--color-primary);
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* color: black; */
+}
+.temario-content__footer {
+    display: none;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--color-primary);
+}
+/* --------------------------------------------- */
+.section-unidad {
+    padding: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.section-unidad__title {
+    padding: 10px 0px;
+    padding-bottom: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.section-unidad__info {
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* ======================================================== */
+input[id="check_FE_1HTML"]:checked ~ * label[for="check_FE_1HTML"] ~ .temario-content__header {
+    background-color: var(--color-primary);
+}
+input[id="check_FE_1HTML"]:checked ~ * label[for="check_FE_1HTML"] ~ .temario-content__main {
+    display: block;
+}
+input[id="check_FE_1HTML"]:checked ~ * label[for="check_FE_1HTML"] ~ .temario-content__footer {
+    display: block;
+}
+/* ---------------------------------------------------------- */
+input[id="check_FE_2CSS"]:checked ~ * label[for="check_FE_2CSS"] ~ .temario-content__header {
+    background-color: var(--color-primary);
+}
+input[id="check_FE_2CSS"]:checked ~ * label[for="check_FE_2CSS"] ~ .temario-content__main {
+    display: block;
+}
+input[id="check_FE_2CSS"]:checked ~ * label[for="check_FE_2CSS"] ~ .temario-content__footer {
+    display: block;
+}
+/* ---------------------------------------------------------- */
+input[id="check_FE_3Boostrap"]:checked ~ * label[for="check_FE_3Boostrap"] ~ .temario-content__header {
+    background-color: var(--color-primary);
+}
+input[id="check_FE_3Boostrap"]:checked ~ * label[for="check_FE_3Boostrap"] ~ .temario-content__main {
+    display: block;
+}
+input[id="check_FE_3Boostrap"]:checked ~ * label[for="check_FE_3Boostrap"] ~ .temario-content__footer {
+    display: block;
+}
+/* ---------------------------------------------------------- */
+input[id="check_FE_4Git"]:checked ~ * label[for="check_FE_4Git"] ~ .temario-content__header {
+    background-color: var(--color-primary);
+}
+input[id="check_FE_4Git"]:checked ~ * label[for="check_FE_4Git"] ~ .temario-content__main {
+    display: block;
+}
+input[id="check_FE_4Git"]:checked ~ * label[for="check_FE_4Git"] ~ .temario-content__footer {
+    display: block;
+}
+/* ---------------------------------------------------------- */
+input[id="check_FE_6Scrum"]:checked ~ * label[for="check_FE_6Scrum"] ~ .temario-content__header {
+    background-color: var(--color-primary);
+}
+input[id="check_FE_6Scrum"]:checked ~ * label[for="check_FE_6Scrum"] ~ .temario-content__main {
+    display: block;
+}
+input[id="check_FE_6Scrum"]:checked ~ * label[for="check_FE_6Scrum"] ~ .temario-content__footer {
+    display: block;
+}
+/* ---------------------------------------------------------- */
+input[id="check_FE_7JavaScript"]:checked ~ * label[for="check_FE_7JavaScript"] ~ .temario-content__header {
+    background-color: var(--color-primary);
+}
+input[id="check_FE_7JavaScript"]:checked ~ * label[for="check_FE_7JavaScript"] ~ .temario-content__main {
+    display: block;
+}
+input[id="check_FE_7JavaScript"]:checked ~ * label[for="check_FE_7JavaScript"] ~ .temario-content__footer {
+    display: block;
+}
+
+
+/* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
+
+#backEnd2022 {
+    background-color: var(--color-background-2);
+}
+
+#backEnd2022 > div {
+    border: 0;
+    padding: 20px 0px;
+}
+
+.backEnd2022-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* ======================================================== */
+/* ======================================================== */
+
+
+@media only screen and (max-width:768px) {
+    .main-sections-container>div {
+        max-width: 320px;
+    }
+}
+
+@media (min-width:768px) {
+    :root {
+        --landing-background-height: 480px;
+    }
+
+    .main-sections-container>div {
+        max-width: 768px;
+    }
+}
+
+@media (min-width:1024px) {
+    .main-sections-container>div {
+        max-width: 864px;
+    }
+}
+
+@media (min-width:1366px) {
+    .main-sections-container>div {
+        max-width: 1040px;
+    }
+}

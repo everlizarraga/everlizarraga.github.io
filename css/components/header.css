@@ -26,7 +26,7 @@
 .nav-header__logo h1 {
     font-size: 2.4rem;
     font-weight: 700;
-    color: white;
+    color: var(--font-color-1);
 }
 
 .nav-header-menu {
@@ -182,6 +182,5 @@ input[id="nav-header-menu__switch"]:checked ~ #menu_nav_desplegable {
 @media (min-width:768px) {
     :root {
         --header-nav-height: 64px;
-        --landing-background-height: 480px;
     }
 }
