@@ -1,0 +1,16 @@
+@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+@import url(./components/initialStyle.css);
+@import url(./components/header.css);
+
+main {
+    width: 100%;
+    position: relative;
+}
+
+.main-container {
+    width: 100%;
+}
+
+/* ======================================================== */
+/* ======================================================== */
+
