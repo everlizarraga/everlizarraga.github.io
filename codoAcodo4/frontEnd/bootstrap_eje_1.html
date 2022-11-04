@@ -12,10 +12,6 @@
         crossorigin="anonymous"></script>
     <title>Bootstrap Eje 1</title>
     <style>
-        p {
-            background-color: aqua;
-        }
-
         .div1 {
             background-color: red;
         }
@@ -23,6 +19,22 @@
         .div2 {
             background-color: red;
             /* width: 300px; */
+        }
+
+        .cards-navidad {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cards-navidad .btn-personal {
+            background-color: #009EE3;
+        }
+
+        .carousel-item>img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -32,7 +44,127 @@
     <main>
         <p class="container-fluid">etiqueta P - Aqui va el ejercicio de Bootstrap</p>
         <div class="container div1" style="width:300px;">CONTAINER</div>
-        <div class="container-fluid div2">CONTAINER-FLUID</div>
+        <div class="container-fluid div2 mb-3">CONTAINER-FLUID</div>
+
+        <hr>
+        <hr>
+        <hr>
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.lavanguardia.com/files/og_thumbnail/uploads/2018/12/25/5fa45215acda5.jpeg"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://estaticos.muyhistoria.es/uploads/images/dossier/5d7f9bc05cafe8d2783c986a/navidad-1.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.elmueble.com/medio/2022/10/24/decoracion-de-navidad-de-la-redoute_a89f6a37_600x600.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <hr>
+        <hr>
+        <hr>
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://media.revistagq.com/photos/5f982257721a385494d12afd/16:9/w_1280,c_limit/peliculas-navidad-netflix.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cronicas-de-navidad-1543835550.jpg?crop=0.9879401833092136xw:1xh;center,top&resize=480:*" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.hola.com/imagenes/estar-bien/vida-sana/20171220103662/sobrevivir-navidad-familia/0-520-237/navidad-cena-familiares-2-t.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <hr>
+        <hr>
+        <hr>
+
+        <div class="container-fluid cards-navidad pt-3">
+            <div class="card" style="width: 18rem;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0LCH9S7FlX3fnO9rEVFLyqpOb-IzRzbq3xQ&usqp=CAU"
+                    class="card-img-top" alt="Imagen navideña">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary btn-personal">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0LCH9S7FlX3fnO9rEVFLyqpOb-IzRzbq3xQ&usqp=CAU"
+                    class="card-img-top" alt="Imagen navideña">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary btn-personal">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0LCH9S7FlX3fnO9rEVFLyqpOb-IzRzbq3xQ&usqp=CAU"
+                    class="card-img-top" alt="Imagen navideña">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0LCH9S7FlX3fnO9rEVFLyqpOb-IzRzbq3xQ&usqp=CAU"
+                    class="card-img-top" alt="Imagen navideña">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <hr>
+        <hr>
+
         <div class="container-fluid" style="border: 3px solid black;">
             <h2 style="background-color: blueviolet;">Prueba de columnas</h2>
             <div class="row filas">
@@ -129,167 +261,132 @@
                 </div>
             </div>
         </div>
-        
+
         <br>
         <hr>
         <hr>
 
-        <ul class="nav nav-pills mb-3" 
-            id="menu-tabs-1" >
+        <ul class="nav nav-pills mb-3" id="menu-tabs-1">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" 
-                    id="pills-home-tab" 
-                    data-bs-toggle="pill" 
-                    data-bs-target="#pills-home"
-                    type="button" 
-                    role="tab" 
-                    aria-controls="pills-home"
-                    aria-selected="true">Home</button>
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                    type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" 
-                    id="pills-profile-tab" 
-                    data-bs-toggle="pill" 
-                    data-bs-target="#pills-profile"
-                    type="button" 
-                    role="tab" 
-                    aria-controls="pills-profile" 
-                    aria-selected="false">Profile</button>
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                    type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" 
-                    id="pills-contact-tab" 
-                    data-bs-toggle="pill" 
-                    data-bs-target="#pills-contact"
-                    type="button" 
-                    role="tab" 
-                    aria-controls="pills-contact" 
-                    aria-selected="false">Contact</button>
+                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                    type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
             </li>
             <li class="nav-item">
-                <button class="nav-link" 
-                    data-bs-toggle="pill" 
-                    data-bs-target="#agregado1"
-                    aria-selected="false">Pane Add</button>
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#agregado1" aria-selected="false">Pane
+                    Add</button>
             </li>
         </ul>
         <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" 
-                id="pills-home" 
-                role="tabpanel" 
-                aria-labelledby="pills-home-tab"
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
                 tabindex="0">...AAAA...</div>
-            <div class="tab-pane fade" 
-                id="pills-profile" 
-                role="tabpanel" 
-                aria-labelledby="pills-profile-tab"
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
                 tabindex="0">...BBB...</div>
-            <div class="tab-pane fade" 
-                id="pills-contact" 
-                role="tabpanel" 
-                aria-labelledby="pills-contact-tab"
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
                 tabindex="0">...C...</div>
-            <div class="tab-pane fade" 
-                id="agregado1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nostrum nobis, nam unde cumque dignissimos exercitationem iste eligendi quae accusantium rerum omnis voluptas libero illo dicta ab ullam odio dolorum!</div>
-            </div>
+            <div class="tab-pane fade" id="agregado1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+                nostrum nobis, nam unde cumque dignissimos exercitationem iste eligendi quae accusantium rerum omnis
+                voluptas libero illo dicta ab ullam odio dolorum!</div>
+        </div>
 
         <hr>
         <hr>
         <hr>
         <div class="container-fluid">
             <h3>Menu TAB - PILL</h3>
-            <ul class="nav nav-pills mb-3" id="menu-tabs-2">
+            <ul class="nav nav-pills mb-3 justify-content-center" id="menu-tabs-2">
                 <li class="nav-item">
-                    <button class="nav-link active" 
-                        data-bs-toggle="pill"
-                        data-bs-target="#tabs-2-home">HOME</button>
+                    <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tabs-2-home">HOME</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" 
-                        data-bs-toggle="pill"
-                        data-bs-target="#tabs-2-Link1">Link 1</button>
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tabs-2-Link1">Link 1</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" 
-                        data-bs-toggle="pill"
-                        data-bs-target="#tabs-2-Link2">Link 2</button>
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tabs-2-Link2">Link 2</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" 
-                        data-bs-toggle="pill"
-                        data-bs-target="#tabs-2-Link3"
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tabs-2-Link3"
                         disabled>Disabled</button>
                 </li>
             </ul>
             <div class="tab-content">
-                <div class="tab-pane fade show active" 
-                    id="tabs-2-home">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ut illum, nisi earum voluptatum omnis voluptatem est sapiente maxime facilis, quas sint laboriosam, sunt perspiciatis expedita eveniet. Sunt, architecto dolorem!
+                <div class="tab-pane fade show active" id="tabs-2-home">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ut illum, nisi earum voluptatum omnis
+                    voluptatem est sapiente maxime facilis, quas sint laboriosam, sunt perspiciatis expedita eveniet.
+                    Sunt, architecto dolorem!
                 </div>
-                <div class="tab-pane fade" 
-                    id="tabs-2-Link1">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem quos quam necessitatibus laborum magnam commodi ipsum dolor ducimus modi aperiam, tempora velit. Aliquid odit minus sapiente voluptates dolorum amet fugit.</p>
+                <div class="tab-pane fade" id="tabs-2-Link1">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem quos quam necessitatibus laborum
+                        magnam commodi ipsum dolor ducimus modi aperiam, tempora velit. Aliquid odit minus sapiente
+                        voluptates dolorum amet fugit.</p>
                 </div>
-                <div class="tab-pane fade" 
-                    id="tabs-2-Link2">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem quos quam necessitatibus laborum magnam commodi ipsum dolor ducimus modi aperiam, tempora velit. Aliquid odit minus sapiente voluptates dolorum amet fugit.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a amet incidunt quod eius, magni animi sed facere ad natus odio, omnis neque repudiandae inventore. Molestias laborum libero a aspernatur!</p>
+                <div class="tab-pane fade" id="tabs-2-Link2">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem quos quam necessitatibus laborum
+                        magnam commodi ipsum dolor ducimus modi aperiam, tempora velit. Aliquid odit minus sapiente
+                        voluptates dolorum amet fugit.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a amet incidunt quod eius,
+                        magni animi sed facere ad natus odio, omnis neque repudiandae inventore. Molestias laborum
+                        libero a aspernatur!</p>
                 </div>
-                <div class="tab-pane fade" 
-                    id="tabs-2-Link3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla consequatur, fuga nobis quidem beatae sequi maiores cumque? Voluptatum laborum eligendi eius repellat alias, est voluptate eum pariatur vitae assumenda quae?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla consequatur, fuga nobis quidem beatae sequi maiores cumque? Voluptatum laborum eligendi eius repellat alias, est voluptate eum pariatur vitae assumenda quae?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla consequatur, fuga nobis quidem beatae sequi maiores cumque? Voluptatum laborum eligendi eius repellat alias, est voluptate eum pariatur vitae assumenda quae?
+                <div class="tab-pane fade" id="tabs-2-Link3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla consequatur, fuga nobis quidem beatae
+                    sequi maiores cumque? Voluptatum laborum eligendi eius repellat alias, est voluptate eum pariatur
+                    vitae assumenda quae?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla consequatur, fuga nobis quidem beatae
+                    sequi maiores cumque? Voluptatum laborum eligendi eius repellat alias, est voluptate eum pariatur
+                    vitae assumenda quae?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla consequatur, fuga nobis quidem beatae
+                    sequi maiores cumque? Voluptatum laborum eligendi eius repellat alias, est voluptate eum pariatur
+                    vitae assumenda quae?
                 </div>
             </div>
         </div>
 
-        <hr><hr><hr>
+        <hr>
+        <hr>
+        <hr>
 
         <div class="container-fluid">
             <h3>Menu TAB - TAB</h3>
             <ul class="nav nav-tabs mb-3" id="menu-tabs-3">
                 <li class="nav-item">
-                    <button class="nav-link active" 
-                        data-bs-toggle="tab"
-                        data-bs-target="#tabs-3-home">HOME</button>
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabs-3-home">HOME</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" 
-                        data-bs-toggle="tab"
-                        data-bs-target="#tabs-3-Link1">Link 1</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-3-Link1">Link 1</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" 
-                        data-bs-toggle="tab"
-                        data-bs-target="#tabs-3-Link2">Link 2</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-3-Link2">Link 2</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" 
-                        data-bs-toggle="tab"
-                        data-bs-target="#tabs-3-Link3"
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-3-Link3"
                         disabled>Disabled</button>
                 </li>
             </ul>
             <div class="tab-content">
-                <div class="tab-pane fade show active" 
-                    id="tabs-3-home">
+                <div class="tab-pane fade show active" id="tabs-3-home">
                     AAAAAA
                 </div>
-                <div class="tab-pane fade" 
-                    id="tabs-3-Link1">
+                <div class="tab-pane fade" id="tabs-3-Link1">
                     <p>BBBBBB</p>
                 </div>
-                <div class="tab-pane fade" 
-                    id="tabs-3-Link2">
+                <div class="tab-pane fade" id="tabs-3-Link2">
                     CCCCC
                 </div>
-                <div class="tab-pane fade" 
-                    id="tabs-3-Link3">
+                <div class="tab-pane fade" id="tabs-3-Link3">
                 </div>
             </div>
         </div>
-        <hr><hr><hr>
+        <hr>
+        <hr>
+        <hr>
     </main>
     <footer></footer>
 
