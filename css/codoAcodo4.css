@@ -59,6 +59,58 @@ main {
 /* ======================================================== */
 /* ======================================================== */
 
+#linksCursos-container {
+    background-color: var(--color-background-1);
+}
+#linksCursos-container > div {
+    min-height: 0px;
+    border: none;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.linkCurso:hover {
+    transform: translate(0px, -20px);
+    -webkit-transform: translate(0px, -20px);
+    -moz-transform: translate(0px, -20px);
+    -ms-transform: translate(0px, -20px);
+    -o-transform: translate(0px, -20px);
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+.linkCurso > figure {
+    margin: 0;
+}
+
+
+#link_aula_virtual {
+    width: 300px;
+    height: 150px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#link_aula_virtual > figure > img {
+    width: 260px;
+    height: 120px;
+}
+
+#link_meet > figure > img {
+    width: 300px;
+    height: 150px;
+}
+
+/* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
+
 #frontEnd2022 {
     background-color: var(--color-background-1);
 }
