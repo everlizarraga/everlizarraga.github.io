@@ -145,14 +145,14 @@
                     <div class="col-12 pt-3">
                         <input type="text" id="ticket_total_pay" class="form-control py-3"
                             style="background-color: #CCE5FF; border-color: #B7DAFF;" value="Total a Pagar:  $ "
-                            disabled>
+                            readonly>
                     </div>
                     <div class="col-12 col-sm-6 pt-3">
                         <button type="reset" class="btn btn-primary w-100 btn-my"
                             style="background-color: #97C93E; border-color: #99CA43;">Borrar</button>
                     </div>
                     <div class="col-12 col-sm-6 pt-sm-3 mt-2 mt-sm-3">
-                        <button type="button" class="btn btn-primary w-100 btn-my"
+                        <button type="button" id="ticket_btn_resume" class="btn btn-primary w-100 btn-my"
                             style="background-color: #97C93E; border-color: #99CA43;">Resume</button>
                     </div>
                 </form>
@@ -172,6 +172,41 @@
             </div>
         </div>
     </footer>
+    <script>
+        const cantidad = document.getElementById('ticket_cont');
+        const categoria = document.getElementById('ticket_category');
+        const ticket_total_pay = document.getElementById('ticket_total_pay');
+        const btn_calcular = document.getElementById('ticket_btn_resume');
+
+        // let firstEvent = true;
+        const texto_reporte_default = ticket_total_pay.value;
+        const valorTicket = 200;
+
+        function tablaDescuentos(valor) {
+            switch (valor) {
+                case '1':
+                    return (0.2);
+                    break;
+                case '2':
+                    return (1 - 0.5);
+                    break;
+                case '3':
+                    return (1 - 0.15);
+                    break;
+            
+                default:
+                    alert('Valor incorrecto ingresado en function tablaDescuentos');
+                    break;
+            }
+        }
+
+        btn_calcular.addEventListener("click", () => {
+            let categoria_value = tablaDescuentos(categoria.value);
+            let resultado = valorTicket * cantidad.value * tablaDescuentos(categoria.value);
+            ticket_total_pay.value = texto_reporte_default + resultado;
+            console.log(tablaDescuentos(categoria.value));
+        });
+    </script>
 </body>
 
 </html>
