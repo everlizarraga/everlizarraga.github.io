@@ -20,6 +20,7 @@
         #foote_page a:hover {
             opacity: 0.7;
         }
+
         .btn-my:hover {
             opacity: 0.9;
         }
@@ -64,7 +65,42 @@
         </nav>
     </header>
     <main>
-        <section class="container-fluid"></section>
+        <section>
+            <div class="container mt-4" style="max-width: 800px;">
+                <div class="row g-2 text-center">
+                    <div class="col">
+                        <div class="card border-primary" style="border-radius: 0; border-width: 2px;">
+                            <div class="card-body">
+                                <h5 class="card-title fs-4">Estudiante</h5>
+                                <p class="card-text fs-5">Tienen un descuento</p>
+                                <p><b class="text fs-4">80%</b></p>
+                                <p><span class="text-muted">* presentar documentación</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card border-info" style="border-radius: 0; border-width: 2px;">
+                            <div class="card-body">
+                                <h5 class="card-title fs-4">Trainee</h5>
+                                <p class="card-text fs-5">Tienen un descuento</p>
+                                <p><b class="text fs-4">50%</b></p>
+                                <p><span class="text-muted">* presentar documentación</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card border-warning" style="border-radius: 0; border-width: 2px;">
+                            <div class="card-body">
+                                <h5 class="card-title fs-4">Junior</h5>
+                                <p class="card-text fs-5">Tienen un descuento</p>
+                                <p><b class="text fs-4">15%</b></p>
+                                <p><span class="text-muted">* presentar documentación</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section>
             <div class="container" style="max-width: 800px;">
                 <div class="container text-center">
@@ -107,13 +143,17 @@
                         </select>
                     </div>
                     <div class="col-12 pt-3">
-                        <input type="text" id="ticket_total_pay" class="form-control py-3" style="background-color: #CCE5FF; border-color: #B7DAFF;" value="Total a Pagar:  $ " disabled>
+                        <input type="text" id="ticket_total_pay" class="form-control py-3"
+                            style="background-color: #CCE5FF; border-color: #B7DAFF;" value="Total a Pagar:  $ "
+                            disabled>
                     </div>
                     <div class="col-12 col-sm-6 pt-3">
-                        <button type="reset" class="btn btn-primary w-100 btn-my" style="background-color: #97C93E; border-color: #99CA43;">Borrar</button>
+                        <button type="reset" class="btn btn-primary w-100 btn-my"
+                            style="background-color: #97C93E; border-color: #99CA43;">Borrar</button>
                     </div>
                     <div class="col-12 col-sm-6 pt-sm-3 mt-2 mt-sm-3">
-                        <button type="button" class="btn btn-primary w-100 btn-my" style="background-color: #97C93E; border-color: #99CA43;">Resume</button>
+                        <button type="button" class="btn btn-primary w-100 btn-my"
+                            style="background-color: #97C93E; border-color: #99CA43;">Resume</button>
                     </div>
                 </form>
             </div>
