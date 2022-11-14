@@ -25,6 +25,22 @@
             color: #69d681;
             font-weight: 700;
         }
+
+        #page_footer ul li {
+            list-style: none;
+        }
+        #page_footer ul li > a {
+            text-decoration: none;
+            color: white;
+        }
+        #page_footer ul li > a:hover {
+            color: rgba(255, 255, 255, 0.685);
+        }
+
+        .btn-my:hover {
+            opacity: 0.9;
+        }
+        
     </style>
 </head>
 
@@ -84,7 +100,7 @@
                                 y los oradores de primer nivel que tenemos para ti. Te esperamos!</p>
                             <div role="group">
                                 <button class="btn btn-outline-light">Quiero ser orador</button>
-                                <button class="btn btn-success ms-2" style="background-color: #29A744;">Comprar
+                                <button class="btn btn-success ms-2 btn-my" style="background-color: #29A744;">Comprar
                                     tickets</button>
                             </div>
                         </div>
@@ -93,7 +109,7 @@
                 </div>
             </div>
         </section>
-        <section class="container-fluid">
+        <section class="container-fluid pb-4">
             <div class="container" style="max-width: 1200px;">
                 <div class="text-center">
                     <p class="mb-0 mt-3">CONOCE A LOS</p>
@@ -151,10 +167,73 @@
                 </div>
             </div>
         </section>
-        <section></section>
-        <section></section>
+        <section class="container-fluid ps-0" style="width: 100%; background-color: #353A40;">
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col pe-0">
+                    <img src="https://s4.gifyu.com/images/honoluluaccb0500385a16fd.jpg" alt="Playa de Honolulu"
+                        class="w-100" style="height: 360px; object-fit: cover;">
+                </div>
+                <div class="col text-white my-4 px-4">
+                    <h2>Bs As - Octubre</h2>
+                    <p>Buenos Aires es la provincia y la localidad más grande del estado de Argentina, en los Estados
+                        Unidos. Honolulu es la más sureña de entre las principales ciudades estadounidenses. Aunque el
+                        nombre de Honolulu se refiere al área urbana en la costa sureste de la isla de Oahu, la ciudad y
+                        el condado del Honolulu han formado una ciudad - condado consolidado que cubre toda la ciudad
+                        (aproximadamente 600 km2 de superficie).</p>
+                    <div>
+                        <button class="btn btn-outline-light">Conocé más</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container" style="max-width: 800px;">
+                <div class="text-center">
+                    <p class="mb-0 mt-4">CONVIÉRTETE EN UN</p>
+                    <h2 class="text-uppercase">Orador</h2>
+                    <p>Anótate como orador para dar una <a href="#"
+                            style="text-decoration: underline; text-decoration-style: dotted; color: inherit;">charla
+                            ignite</a>. Cuéntanos qué quieres hablar!</p>
+                </div>
+                <form class="row g-3 mb-4">
+                    <div class="col-12 col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" id="po_orador_nombre" class="form-control" placeholder="Nombre">
+                            <label for="po_orador_nombre" class="form-label">Nombre</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" id="po_orador_apellido" class="form-control" placeholder="Apellido">
+                            <label for="po_orador_apellido" class="form-label">Apellido</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <textarea class="form-control form-control-lg" placeholder="Sobre qué quieres hablar?"
+                                id="po_orador_textArea" style="height: 150px;"></textarea>
+                            <label for="po_orador_textArea" class="form-label">Sobre qué quieres hablar?</label>
+                            <span class="text-muted">Recuerda incluir un título para tu charla</span>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary btn-lg w-100 btn-my" style="background-color: #96C93E; border: 1px solid #96C93E;">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
-    <footer></footer>
+    <footer class="container-fluid" id="page_footer" style="background: linear-gradient(90deg, #1D3744, #1E5270);">
+        <ul class="container d-sm-flex justify-content-sm-center justify-content-lg-between flex-sm-wrap mb-0 py-3" style="max-width: 1000px;">
+            <li><a class="d-block p-3" href="#">Preguntas frecuentes</a></li>
+            <li><a class="d-block p-3" href="#">Contáctanos</a></li>
+            <li><a class="d-block p-3" href="#">Prensa</a></li>
+            <li><a class="d-block p-3" href="#">Conferencias</a></li>
+            <li><a class="d-block p-3" href="#">Términos y condiciones</a></li>
+            <li><a class="d-block p-3" href="#">Privacidad</a></li>
+            <li><a class="d-block p-3" href="#">Estudiantes</a></li>
+        </ul>
+    </footer>
 </body>
 
 </html>
