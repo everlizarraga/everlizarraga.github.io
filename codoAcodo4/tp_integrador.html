@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./styles/tp_integrador_conferencia.css">
+    <!-- <link rel="stylesheet" href="./styles/tp_integrador_conferencia.css"> -->
     <style>
         body>header>nav {
             background-color: #343A40;
@@ -61,7 +61,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../../codoAcodo4.html">La
+                            <a class="nav-link active" aria-current="page" href="#">La
                                 conferencia</a>
                         </li>
                         <li class="nav-item">
@@ -74,7 +74,7 @@
                             <a class="nav-link" href="#">Conviértete en orador</a>
                         </li>
                         <li class="nav-item" id="link_buy_tickets">
-                            <a class="nav-link fw-semibold" href="#">Comprar tickets</a>
+                            <a class="nav-link fw-semibold" href="./tp_integrador/comprar_tickets.html">Comprar tickets</a>
                         </li>
                     </ul>
                 </div>
@@ -99,9 +99,9 @@
                                 Codo
                                 y los oradores de primer nivel que tenemos para ti. Te esperamos!</p>
                             <div role="group">
-                                <button class="btn btn-outline-light">Quiero ser orador</button>
-                                <button class="btn btn-success ms-2 btn-my" style="background-color: #29A744;">Comprar
-                                    tickets</button>
+                                <a class="btn btn-outline-light" href="#form_orador_inscription" role="button">Quiero ser orador</a>
+                                <a class="btn btn-success ms-2 btn-my" style="background-color: #29A744;" href="./tp_integrador/comprar_tickets.html" role="button">Comprar
+                                    tickets</a>
                             </div>
                         </div>
                         <div class="col-12 mb-lg-5"></div>
@@ -187,7 +187,7 @@
             </div>
         </section>
         <section>
-            <div class="container" style="max-width: 800px;">
+            <div class="container" style="max-width: 800px;" id="form_orador_inscription">
                 <div class="text-center">
                     <p class="mb-0 mt-4">CONVIÉRTETE EN UN</p>
                     <h2 class="text-uppercase">Orador</h2>

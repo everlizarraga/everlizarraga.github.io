@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar Tickets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <style>
+        #foote_page a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #foote_page a:hover {
+            opacity: 0.7;
+        }
+        .btn-my:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="background-color: #343A40;">
+        <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+            <div class="container px-sm-5" style="max-width: 1200px;">
+                <a class="navbar-brand" href="#">
+                    <!-- <img src="https://user-images.githubusercontent.com/83146564/137408912-013f0d0c-37d1-4dc2-a1b5-77356c1003f3.png"
+                        alt="Logo" style="height: 50px;"> -->
+                    Conf Bs As
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../tp_integrador.html">La
+                                conferencia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Los oradores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">El lugar y la fecha</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Conviértete en orador</a>
+                        </li>
+                        <li class="nav-item" id="link_buy_tickets">
+                            <a class="nav-link fw-semibold" href="#" style="color: #29A744;">Comprar tickets</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="container-fluid"></section>
+        <section>
+            <div class="container" style="max-width: 800px;">
+                <div class="container text-center">
+                    <p class="mb-0 mt-3">VENTA</p>
+                    <h2 class="mb-3">VALOR DE TICKET $200</h2>
+                </div>
+                <form class="row g-3 mb-4">
+                    <div class="col-12 col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" id="ticket_name" name="ticket_name" class="form-control"
+                                placeholder="Nombre">
+                            <label for="ticket_name" class="form-label">Nombre</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" id="ticket_lastName" name="ticket_lastName" class="form-control"
+                                placeholder="Apellido">
+                            <label for="ticket_lastName" class="form-label">Apellido</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input type="email" id="ticket_email" name="ticket_email" class="form-control"
+                                placeholder="Correo">
+                            <label for="ticket_email" class="form-label">Correo</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <label for="ticket_cont" class="form-label">Cantidad</label>
+                        <input type="number" id="ticket_cont" name="ticket_cont" class="form-control py-3"
+                            placeholder="Cantidad">
+                    </div>
+                    <div class="col-6">
+                        <label for="ticket_category" class="form-label">Categoría</label>
+                        <select name="ticket_category" id="ticket_category" class="form-select py-3">
+                            <option value="1" selected>Estudiante</option>
+                            <option value="2">Trainee</option>
+                            <option value="3">Junior</option>
+                        </select>
+                    </div>
+                    <div class="col-12 pt-3">
+                        <input type="text" id="ticket_total_pay" class="form-control py-3" style="background-color: #CCE5FF; border-color: #B7DAFF;" value="Total a Pagar:  $ " disabled>
+                    </div>
+                    <div class="col-12 col-sm-6 pt-3">
+                        <button type="reset" class="btn btn-primary w-100 btn-my" style="background-color: #97C93E; border-color: #99CA43;">Borrar</button>
+                    </div>
+                    <div class="col-12 col-sm-6 pt-sm-3 mt-2 mt-sm-3">
+                        <button type="button" class="btn btn-primary w-100 btn-my" style="background-color: #97C93E; border-color: #99CA43;">Resume</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer style="background: linear-gradient(90deg, #1D3744, #1E5270);">
+        <div class="container text-white" style="max-width: 1000px;">
+            <div class="row text-center" id="foote_page">
+                <div class="col"><a href="#" class="d-block py-3">Preguntas frecuentes</a></div>
+                <div class="col"><a href="#" class="d-block py-3">Contáctanos</a></div>
+                <div class="col"><a href="#" class="d-block py-3">Prensa</a></div>
+                <div class="col"><a href="#" class="d-block py-3">Conferencias</a></div>
+                <div class="col"><a href="#" class="d-block py-3">Términos y condiciones</a></div>
+                <div class="col"><a href="#" class="d-block py-3">Privacidad</a></div>
+                <div class="col"><a href="#" class="d-block py-3">Estudiantes</a></div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
