@@ -118,6 +118,32 @@ main {
     height: 150px;
 }
 
+#link_tp_integrador {
+    width: 300px;
+    height: 150px;
+    position: relative;
+}
+#link_tp_integrador > figure > img {
+    width: 300px;
+    height: 150px;
+    filter: brightness(0.4);
+    -webkit-filter: brightness(0.4);
+}
+#link_tp_integrador > h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
 /* ======================================================== */
 /* ======================================================== */
 /* ======================================================== */
