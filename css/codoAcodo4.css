@@ -159,11 +159,25 @@ main {
     border: 0;
 }
 
-.frontEnd2022-title {
+.frontEnd2022-title-container {
+    display: flex;
+    justify-content: space-between;
+}
+.frontEnd2022-title__title {
     font-size: 2.8rem;
     font-weight: 700;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+.frontEnd2022-title__logo {
+    align-self: center;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1200px-YouTube_full-color_icon_%282017%29.svg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .btn-link-2.link-download {
