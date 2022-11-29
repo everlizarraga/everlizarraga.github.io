@@ -538,6 +538,7 @@ input[id="check_FE_7JavaScript"]:checked~* label[for="check_FE_7JavaScript"]~.te
     font-size: 2rem;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 .card-img-contain > .enlaces > a:hover {
     background-color: rgba(0, 0, 0, 0.8);
