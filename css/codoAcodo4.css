@@ -578,14 +578,47 @@ input[id="check_BE_2Java"]:checked ~ * label[for="check_BE_2Java"] {
 
 .menu-display {
     display: none;
-    /* opacity: 0.1; */
+    visibility: hidden;
+    opacity: 0;
 }
 
 input[id="check_BE_1DB"]:checked ~ * #display_BE_1DB {
     display: block;
+    animation-name: menu-display-be;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 input[id="check_BE_2Java"]:checked ~ * #display_BE_2Java {
     display: block;
+    animation-name: menu-display-be;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
+/* ======================================================== */
+
+@keyframes menu-display-be {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+        transform: translate(0,-10px);
+        -webkit-transform: translate(0,-10px);
+        -moz-transform: translate(0,-10px);
+        -ms-transform: translate(0,-10px);
+        -o-transform: translate(0,-10px);
+}
+    100% {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(0,0);
+        -webkit-transform: translate(0,0);
+        -moz-transform: translate(0,0);
+        -ms-transform: translate(0,0);
+        -o-transform: translate(0,0);
+}
 }
 
 /* ======================================================== */
