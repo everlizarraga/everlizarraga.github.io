@@ -471,10 +471,6 @@ input[id="check_FE_7JavaScript"]:checked~* label[for="check_FE_7JavaScript"]~.te
 }
 /* ---------------------------------------------------- */
 
-.menu-display {
-    /* display: none; */
-}
-
 .card-container {
     padding-bottom: 20px;
     display: grid;
@@ -522,15 +518,34 @@ input[id="check_FE_7JavaScript"]:checked~* label[for="check_FE_7JavaScript"]~.te
     height: 200px;
     object-fit: cover;
 }
-.card-img-contain .enlaces {
+.card-img-contain > .enlaces {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: rgba(0, 0, 0, 0.4);
     visibility: hidden;
     opacity: 0;
+}
+.card-img-contain > .enlaces > a {
+    display: block;
+    padding: 12px 5px;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.card-img-contain > .enlaces > a:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
 }
 
 .card-info-contain {
