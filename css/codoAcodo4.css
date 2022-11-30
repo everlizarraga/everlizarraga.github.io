@@ -412,6 +412,7 @@ input[id="check_FE_7JavaScript"]:checked~* label[for="check_FE_7JavaScript"]~.te
 .backEnd2022-title-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .backEnd2022-title__title {
@@ -422,7 +423,14 @@ input[id="check_FE_7JavaScript"]:checked~* label[for="check_FE_7JavaScript"]~.te
 }
 
 .backEnd2022-title__logo {
+    /* Logo del titulo */
     display: block;
+    width: 50px;
+    height: 50px;
+    background-image: url(https://obscureproblemsandgotchas.com/wp-content/uploads/2018/06/bootstrap-stack-e1530246058846.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .menu-backEnd {
