@@ -127,20 +127,22 @@ main {
     height: 150px;
 }
 
-#link_tp_integrador {
+.link-work {
     width: 300px;
     height: 150px;
     position: relative;
+    border: 4px solid rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
-#link_tp_integrador>figure>img {
+.link-work>figure>img {
     width: 300px;
     height: 150px;
     filter: brightness(0.4);
     -webkit-filter: brightness(0.4);
 }
 
-#link_tp_integrador>h3 {
+.link-work>h3 {
     position: absolute;
     top: 50%;
     left: 50%;
