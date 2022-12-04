@@ -43,11 +43,17 @@ li {
 }
 .section-historia-container > div {
     width: 100%;
-    padding: 50px;
+    padding: 30px;
 }
 
 .historia-title {
     margin-top: 10px;
+}
+
+.historia-contenido-container > p {
+    text-align: justify;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
 }
 
 @media only screen and (max-width:576px){
