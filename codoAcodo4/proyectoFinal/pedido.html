@@ -25,7 +25,7 @@
             <p>La fecha de entrega será coordinada telefónicamente</p>
         </div>
     </header>
-    <main>
+    <main style="background-color: #F9F9F9;">
         <section>
             <div class="container" style="max-width: 800px;">
                 <form action="#" class="row g-3 mt-5 mb-5">
@@ -75,13 +75,15 @@
                     </div>
                     <hr class="mt-4">
                     <h2 class="col text-center fs-3 mt-1">Forma de Pago</h2>
-                    <div class="col-12">
-                        <div class="container">
-                            <div class="form-check">
+                    <div class="col-12 mt-2">
+                        <div class="row">
+                            <div class="form-check col-auto ms-auto me-auto">
                                 <input type="radio" id="formRadioTC" name="tarjetaOption" class="form-check-input">
                                 <label for="formRadioTC" class="form-check-label">Tarjeta de Crédito</label>
                             </div>
-                            <div class="form-check">
+                        </div>
+                        <div class="row">
+                            <div class="form-check col-auto ms-auto me-auto">
                                 <input type="radio" id="formRadioMP" name="tarjetaOption" class="form-check-input">
                                 <label for="formRadioMP" class="form-check-label">Mercado Pago</label>
                             </div>
@@ -100,11 +102,11 @@
                         <div class="container d-flex justify-content-center ps-0 pe-0">
                             <!--  -->
                             <div class="row g-3">
-                                <div class="col-12 col-sm text-center">
+                                <div class="col-12 col-sm-6 text-center">
                                     <label for="formTarjetaVto" class="form-label">Fecha de Vto.</label>
                                     <input type="month" id="formTarjetaVto" placeholder="" class="form-control text-center">
                                 </div>
-                                <div class="col-12 col-sm text-center">
+                                <div class="col-12 col-sm-6 text-center">
                                     <label for="formTarjetaCodigo" class="form-label">Código</label>
                                     <input type="number" id="formTarjetaCodigo" placeholder="" class="form-control text-center">
                                 </div>
