@@ -574,6 +574,14 @@ input[id="check_FE_7JavaScript"]:checked~* label[for="check_FE_7JavaScript"]~.te
 .card-info > ul > li {
     padding: 1px 0px;
 }
+.card-info > ul > li a {
+    color: white;
+    display: block;
+    padding: 5px 0px;
+}
+.card-info > ul > li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
 
 
 /* ======================================================== */
