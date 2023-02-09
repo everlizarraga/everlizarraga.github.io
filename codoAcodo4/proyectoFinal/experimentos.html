@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue App</title>
+    <!-- <script src="https://unpkg.com/vue"></script> -->
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+</head>
+
+<body>
+    <header>
+        <h1>Prueba de Vue app</h1>
+    </header>
+    <main>
+        <hr>
+        <div id="app-1">{{ message }}</div>
+        <hr>
+        <div id="app-2">
+            <button @click="count++">[ {{ count }} ]</button>
+        </div>
+        <hr>
+        <div id="app-3">
+            <span v-if="seen">Ahora me ves</span>
+        </div>
+        <script>
+            let miData1 = 'Hola Mundo';
+        </script>
+        <script type="module">
+            // import { createApp } from 'Vue'
+            import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+            const app1 = createApp({
+                data() {
+                    return {
+                        message: miData1
+                    }
+                }
+            })
+            app1.mount('#app-1')
+
+            const app2 = createApp({
+                data() {
+                    return {
+                        count: 0
+                    }
+                }
+            })
+            app2.mount('#app-2')
+
+            // const app3 = createApp({
+            //     //
+            // })
+            // app3.mount('#app-3')
+
+            // var app3 = new Vue({
+            //     el: '#app-3',
+            //     data: {
+            //         seen: false
+            //     }
+            // })
+        </script>
+    </main>
+</body>
+
+</html>
