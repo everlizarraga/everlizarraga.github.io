@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Herramientas de Aprendizaje">
+  <title>Aprendizaje</title>
+  <link rel="stylesheet" type="text/css" href="./css/herramientasAprendizaje.css">
+</head>
+
+<body>
+  <header class="nav-header">
+    <div>
+      <a href="./index.html" class="nav-header__logo">
+        <h1>EVER L</h1>
+      </a>
+      <nav class="nav-header-menu">
+        <input type="checkbox" id="nav-header-menu__switch" hidden />
+        <div class="nav-header-menu__wrapper">
+          <div class="nav-header-menu__links">
+            <a href="#" class="btn-link-1">Redes</a>
+            <a href="#" class="btn-link-2">Log</a>
+          </div>
+          <label for="nav-header-menu__switch" id="nav-header-menu-trigger-burger">
+            <i></i>
+          </label>
+        </div>
+        <div class="nav-header-menu__nav" id="menu_nav_desplegable">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./codoAcodo4.html">Codo a Codo 4.0</a></li>
+            <li><a href="./netflixPirata.html">Netflix Pirata</a></li>
+            <li><a href="#">Herramientas de Aprendizaje</a></li>
+            <li><a href="#">Página 5</a></li>
+            <li><a href="./prueba.html">Pruebas Randon</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="main-container">
+
+      <header class="landing-container">
+        <div class="landing__background">
+
+        </div>
+        <div class="landing__content">
+          <p>
+            APRENDIZAJE POR REPETICIÓN
+          </p>
+        </div>
+      </header>
+
+      <section class="main-sections-container">
+        <nav class="section-nav">
+          <ul>
+            <li>
+              <p>TEMA 01</p>
+            </li>
+            <li>
+              <p>TEMA 02</p>
+            </li>
+            <li>
+              <p>TEMA 03</p>
+            </li>
+          </ul>
+        </nav>
+        <section class="section-work">
+          <div id="resultContainer" class="repeticion-container result-container">
+            <h2 id="repeticion-title">Ingresar texto a repetir:</h2>
+            <!-- <input type="text" id="messageInput1" class="" rows="4" placeholder="Escribe aquí..." autocomplete="off" /> -->
+            <textarea id="messageInput1" class="messageInput" placeholder="Escribe texto..." rows="1"></textarea>
+            <textarea id="messageInput2" class="messageInput" placeholder="Escribe texto..." rows="1"></textarea>
+            <button id="evaluateButton1" class="evaluateButton">COMENZAR REPETICIONES</button>
+            <button id="evaluateButton2" class="evaluateButton">EVALUAR [ <span id="contadorIntentos"></span> ]</button>
+          </div>
+          <!-- <div class="repeticion-container"></div>
+          <div class="repeticion-container"></div>
+          <div class="repeticion-container"></div> -->
+        </section>
+      </section>
+
+    </div>
+  </main>
+  <script>
+    // script.js
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('resultContainer');
+      const tituloARepetir = document.getElementById('repeticion-title');
+      const messageInput1 = document.getElementById('messageInput1');
+      const messageInput2 = document.getElementById('messageInput2');
+      const evaluateButton1 = document.getElementById('evaluateButton1');
+      const evaluateButton2 = document.getElementById('evaluateButton2');
+      const contadorIntentos = document.getElementById('contadorIntentos');
+
+      let contadorRepeticion = 0;
+      // let estaVisibleFraseClave = true;
+      let estaVisibleAreaWork = false;
+      let textoReferencia;
+      let temporalText;
+
+      messageInput1.addEventListener('input', () => adjustTextareaHeight(messageInput1));
+      messageInput2.addEventListener('input', () => adjustTextareaHeight(messageInput2));
+      messageInput2.addEventListener('keydown', (event) => {
+        if (event.key === 'tab') {
+          event.preventDefault();
+          evaluateButton2.focus();
+          // evaluateText(messageInput2.value);
+        }
+      });
+
+      tituloARepetir.addEventListener('mousedown', (event) => {
+        if (estaVisibleAreaWork) {
+          temporalText = tituloARepetir.textContent;
+          tituloARepetir.textContent = textoReferencia;
+        }
+      });
+      tituloARepetir.addEventListener('mouseup', (event) => {
+        if (estaVisibleAreaWork) {
+          tituloARepetir.textContent = temporalText;
+        }
+      });
+
+      evaluateButton2.addEventListener('click', () => {
+        evaluateText(messageInput2.value);
+        messageInput2.focus();
+        contadorRepeticion += 1;
+        if (contadorRepeticion >= 8) {
+          tituloARepetir.textContent = '**********';
+        }
+        contadorIntentos.textContent = '' + contadorRepeticion;
+      });
+
+      function adjustTextareaHeight(textarea) {
+        // Ajustar la altura del textarea automáticamente
+        textarea.style.height = 'auto';
+        textarea.style.height = textarea.scrollHeight + 'px';
+      }
+
+      function compareWords(word1, word2) {
+        const length1 = word1.length;
+        const length2 = word2.length;
+        let matches = 0;
+        let errors = 0;
+
+        for (let i = 0; i < Math.max(length1, length2); i++) {
+          if (word1[i] === word2[i]) {
+            matches++;
+          } else {
+            errors++;
+          }
+        }
+
+        const errorRate = errors / Math.max(length1, length2);
+        return errorRate <= 0.4;
+      }
+
+      function evaluateText(text) {
+        // Aquí es donde se evaluará el texto ingresado
+        console.log('Texto a evaluar:', text);
+        // alert('Texto a evaluar: ' + text);
+        // ---------------------
+        // const text1 = textoReferencia.toLowerCase().split(' ');
+        // const text2 = text.toLowerCase().split(' ');
+        const text1 = textoReferencia.toLowerCase().split(/\s+/);
+        const text2 = text.toLowerCase().split(/\s+/);
+
+        let correctWords = 0;
+        let totalWords = text1.length;
+
+        text1.forEach((word, index) => {
+          if (text2[index] && compareWords(word, text2[index])) {
+            correctWords++;
+          }
+        });
+
+        const correctPercentage = (correctWords / totalWords) * 100;
+        const isTextValid = correctPercentage >= 70;
+
+        // Aplicar la clase CSS correspondiente
+        if (isTextValid) {
+          container.classList.add('success');
+        } else {
+          container.classList.add('error');
+        }
+
+        // Eliminar la clase después de 1 segundo
+        setTimeout(() => {
+          container.classList.remove('success', 'error');
+        }, 700);
+
+        // ---------------------
+        // Reinicia el campo de texto después de la evaluación
+        messageInput2.value = '';
+        adjustTextareaHeight(messageInput2); // Ajustar la altura después de limpiar
+      }
+
+      /* ESTA PARTE ES PARA OCULTAR Y MOSTRAR EL AREA DE TRABAJO*/
+      evaluateButton1.addEventListener('click', () => {
+        if (messageInput1.value === '') {
+          alert("Ingrese algo en el input");
+        } else {
+          textoReferencia = messageInput1.value;
+          tituloARepetir.textContent = textoReferencia;
+          messageInput1.style.display = 'none';
+          evaluateButton1.style.display = 'none';
+          messageInput2.style.display = 'block';
+          evaluateButton2.style.display = 'block';
+          messageInput2.focus();
+          estaVisibleAreaWork = true;
+        }
+      });
+
+    });
+
+
+  </script>
+</body>
+
+</html>
