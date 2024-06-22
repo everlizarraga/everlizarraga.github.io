@@ -77,6 +77,7 @@
             <textarea id="messageInput2" class="messageInput" placeholder="Escribe texto..." rows="1"></textarea>
             <button id="evaluateButton1" class="evaluateButton">COMENZAR REPETICIONES</button>
             <button id="evaluateButton2" class="evaluateButton">EVALUAR [ <span id="contadorIntentos"></span> ]</button>
+            <div class="tiempo-rapper"><span id="tiempo">00:00:00</span></div>
           </div>
           <!-- <div class="repeticion-container"></div>
           <div class="repeticion-container"></div>
@@ -212,8 +213,46 @@
           evaluateButton2.style.display = 'block';
           messageInput2.focus();
           estaVisibleAreaWork = true;
+          iniciarDetener();
         }
       });
+
+      /*TEMPORIZADOR*/
+      let tiempoInicio;
+      let temporizador;
+      let corriendo = false;
+      let tiempoAcumulado = 0;
+
+      const tiempoElemento = document.getElementById('tiempo');
+
+      function actualizarTiempo() {
+        const ahora = new Date().getTime();
+        const tiempoTranscurrido = tiempoAcumulado + (ahora - tiempoInicio);
+        const horas = Math.floor(tiempoTranscurrido / 3600000);
+        const minutos = Math.floor((tiempoTranscurrido % 3600000) / 60000);
+        const segundos = Math.floor((tiempoTranscurrido % 60000) / 1000);
+        // const milisegundos = Math.floor((tiempoTranscurrido % 1000) / 10);
+
+        tiempoElemento.textContent =
+          // `${horas.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}.${milisegundos.toString().padStart(2, '0')}`;
+          `${horas.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
+      }
+
+      function iniciarDetener() {
+        if (!corriendo) {
+          tiempoInicio = new Date().getTime();
+          temporizador = setInterval(actualizarTiempo, 1000);
+          corriendo = true;
+        } else {
+          clearInterval(temporizador);
+          tiempoAcumulado += new Date().getTime() - tiempoInicio;
+          corriendo = false;
+        }
+      }
+
+      tiempoElemento.addEventListener('click', iniciarDetener);
+
+
 
     });
 

@@ -365,6 +365,7 @@ main {
 }
 
 .repeticion-container {
+  position: relative;
   width: 100%;
   min-height: 300px;
   margin: 0 auto;
@@ -442,4 +443,19 @@ main {
 }
 .result-container.error {
   box-shadow: 0 0 10px 2px red;
+}
+
+/* TEMPORIZADOR */
+.tiempo-rapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+#tiempo {
+  opacity: 0.4;
+}
+#tiempo:hover {
+  cursor: pointer;
+  color: var(--color-primary);
+  opacity: 0.7;
 }
