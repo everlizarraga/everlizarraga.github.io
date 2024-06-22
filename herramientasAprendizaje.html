@@ -72,6 +72,12 @@
         <section class="section-work">
           <div id="resultContainer" class="repeticion-container result-container">
             <h2 id="repeticion-title">Ingresar texto a repetir:</h2>
+            <div id="reset_all" class="reset-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path
+                  d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z" />
+              </svg>
+            </div>
             <!-- <input type="text" id="messageInput1" class="" rows="4" placeholder="Escribe aquí..." autocomplete="off" /> -->
             <textarea id="messageInput1" class="messageInput" placeholder="Escribe texto..." rows="1"></textarea>
             <textarea id="messageInput2" class="messageInput" placeholder="Escribe texto..." rows="1"></textarea>
@@ -103,6 +109,7 @@
       let estaVisibleAreaWork = false;
       let textoReferencia;
       let temporalText;
+      let tituloPorDefecto = tituloARepetir.textContent;
 
       messageInput1.addEventListener('input', () => adjustTextareaHeight(messageInput1));
       messageInput2.addEventListener('input', () => adjustTextareaHeight(messageInput2));
@@ -252,7 +259,34 @@
 
       tiempoElemento.addEventListener('click', iniciarDetener);
 
+      /* RESET ALL */
+      const resetAll = document.getElementById('reset_all');
+      resetAll.addEventListener('click', resetForm);
 
+      function resetForm() {
+        //Titulo
+        tituloARepetir.textContent = tituloPorDefecto;
+
+        //AreaWork
+        estaVisibleAreaWork = false;
+        contadorRepeticion = 0;
+        textoReferencia = '';
+        messageInput1.style.display = 'block';
+        messageInput1.value = '';
+        evaluateButton1.style.display = 'block';
+        messageInput2.style.display = 'none';
+        messageInput2.value = '';
+        evaluateButton2.style.display = 'none';
+        contadorIntentos.textContent = '';
+        messageInput1.focus();
+
+        //Cronometro
+        clearInterval(temporizador);
+        corriendo = false;
+        tiempoAcumulado = 0;
+        //00:00:00
+        tiempoElemento.textContent = '00:00:00';
+      }
 
     });
 

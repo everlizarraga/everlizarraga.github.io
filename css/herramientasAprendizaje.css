@@ -459,3 +459,20 @@ main {
   color: var(--color-primary);
   opacity: 0.7;
 }
+
+/* RESET */
+.reset-icon {
+  position: absolute; /* Posicionamiento absoluto para colocarlo en la esquina */
+  top: 20px;         /* Ajusta según tu diseño */
+  right: 20px;        /* Ajusta según tu diseño */
+  cursor: pointer;   /* Cambiar el cursor a una mano para indicar que es interactivo */
+}
+
+.reset-icon svg {
+  fill: #fff;     /* Color del ícono (puedes cambiarlo) */
+  opacity: 0.4;
+}
+.reset-icon svg:hover {
+  fill: var(--color-primary);
+  opacity: 0.7;
+}
