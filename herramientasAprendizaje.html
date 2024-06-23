@@ -221,6 +221,7 @@
           messageInput2.focus();
           estaVisibleAreaWork = true;
           iniciarDetener();
+          adjustTextareaHeight(messageInput2);
         }
       });
 
@@ -273,9 +274,11 @@
         textoReferencia = '';
         messageInput1.style.display = 'block';
         messageInput1.value = '';
+        adjustTextareaHeight(messageInput1);
         evaluateButton1.style.display = 'block';
         messageInput2.style.display = 'none';
         messageInput2.value = '';
+        adjustTextareaHeight(messageInput2);
         evaluateButton2.style.display = 'none';
         contadorIntentos.textContent = '';
         messageInput1.focus();
