@@ -111,6 +111,10 @@
       let temporalText;
       let tituloPorDefecto = tituloARepetir.textContent;
 
+      adjustTextareaHeight(messageInput1);
+      adjustTextareaHeight(messageInput2);
+      messageInput1.focus();
+
       messageInput1.addEventListener('input', () => adjustTextareaHeight(messageInput1));
       messageInput2.addEventListener('input', () => adjustTextareaHeight(messageInput2));
       messageInput2.addEventListener('keydown', (event) => {
@@ -139,6 +143,9 @@
         contadorRepeticion += 1;
         if (contadorRepeticion >= 8) {
           tituloARepetir.textContent = '**********';
+        }
+        if(!corriendo){
+          iniciarDetener();
         }
         contadorIntentos.textContent = '' + contadorRepeticion;
       });
@@ -258,7 +265,11 @@
         }
       }
 
-      tiempoElemento.addEventListener('click', iniciarDetener);
+      // tiempoElemento.addEventListener('click', iniciarDetener);
+      tiempoElemento.addEventListener('click', () => {
+        iniciarDetener();
+        messageInput2.focus();
+      });
 
       /* RESET ALL */
       const resetAll = document.getElementById('reset_all');
