@@ -422,7 +422,9 @@ main {
   background-color: var(--color-background-1);
   display: none;
 }
-/* #texto_referencia {} */
+#texto_referencia {
+  white-space: pre-line;
+}
 
 
 .messageInput {
