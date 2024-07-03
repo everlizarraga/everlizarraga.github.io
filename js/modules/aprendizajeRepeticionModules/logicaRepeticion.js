@@ -3,6 +3,8 @@ let nVecesBase;
 let nVeces;
 let fasePractica = true;
 
+const timerControl = document.getElementById('tiempo');
+
 // ===========================================================================================
 
 function compareWords(word1, word2) {
@@ -89,6 +91,8 @@ function ejectuarRepeticion({eleText, eleInput, btnTimer, btnMain, btnReset, ele
       eyeClosed.dispatchEvent(new CustomEvent('app:close_fase_practica'));
     }
   }
+
+  timerControl.dispatchEvent(new CustomEvent('app:siEstasPausadoDespausate'));
 }
 
 function init(veces) {

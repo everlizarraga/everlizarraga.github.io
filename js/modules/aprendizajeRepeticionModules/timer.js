@@ -20,15 +20,23 @@ const actualizarCronometro = (elementoCronometro, unValor) => {
   elementoCronometro.textContent = `${horas}:${minutos}:${segundos}`;
 }
 
+const continuar = () => {
+  corriendo = setInterval(() => {
+    tiempoAcumulado++;
+    actualizarCronometro(cronometro, tiempoAcumulado);
+  }, 1000); // Iniciar el intervalo
+};
+
+const pausar = () => {
+  clearInterval(corriendo); // Detener el intervalo
+  corriendo = null; // Limpiar la referencia al intervalo
+};
+
 const iniciarPausarCronometro = () => {
   if (!corriendo) { // Si el cronómetro no está corriendo
-    corriendo = setInterval(() => {
-      tiempoAcumulado++;
-      actualizarCronometro(cronometro, tiempoAcumulado);
-    }, 1000); // Iniciar el intervalo
+    continuar();
   } else {
-    clearInterval(corriendo); // Detener el intervalo
-    corriendo = null; // Limpiar la referencia al intervalo
+    pausar();
   }
 };
 
@@ -61,12 +69,19 @@ const reiniciarTodo = () => {
   }
 };
 
+const siEstasPausadoDespausate = () => {
+  if (!corriendo) { // Si el cronómetro no está corriendo
+    continuar();
+  }
+};
+
 const ffocus = () => cronometro.focus();
 
 // =======================================================
 function init() {
   document.addEventListener('app:reiniciarTodo', reiniciarTodo);
   document.addEventListener('app:iniciarRepeticiones', iniciarWork);
+  cronometro.addEventListener('app:siEstasPausadoDespausate', siEstasPausadoDespausate);
 }
 
 
