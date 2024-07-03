@@ -48,13 +48,7 @@ function parpadeoEfect() {
   else {
     parpadeoOpen();
   }
-
-  // Prueba PROPAGACION DE EVENTO
-  // console.log('Mandando el Evento: miEventoPropagado');
-  // const miEvento = new CustomEvent('miEventoPropagado',{bubbles:false});
-  // eyeOpen.dispatchEvent(miEvento);
 }
-// eyeOpen.addEventListener('miEventoPropagado', () => { console.log('LLego a destino: miEventoPropagado =========') });
 eyeClosed.addEventListener('app:close_fase_practica', parpadeoClose);
 
 toggleVisibility.addEventListener('keydown', (event) => {
