@@ -368,6 +368,10 @@ main {
 .repeticion-container {
   position: relative;
   width: 100%;
+  /* min-width: 597px; */
+  max-width: 768px;
+  /* width: 50vw; */
+  /* width: clamp(597px, 50vw, 650px); */
   min-height: 300px;
   margin: 0 auto;
   margin-bottom: 40px;
