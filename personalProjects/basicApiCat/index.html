@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API CAT</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header class="main__header">
+    <p class="main__logo"><a href="../../index.html">EVER L</a></p>
+  </header>
+  <main class="main">
+    <section class="api-cat">
+      <section class="api-cat__portada">
+        <h1>API CAT</h1>
+        <div class="portada-img-section">
+          <!-- =================== -->
+          <div class="card card-grande">
+            <figure class="card__img-container" style="background-image: url('https://cdn2.thecatapi.com/images/7d4.jpg');">
+              <img class="card__img" src="https://cdn2.thecatapi.com/images/7d4.jpg" alt="">
+            </figure>
+            <div class="card__layers css-layer">
+              <!--  -->
+              <div class="card-layer card-hover-layer css-layer">
+                <div class="card-hover card-hover__top">
+                  <span class="card-icon icon-l favorite-icon favorite-icon--unchecked"></span>
+                  <span class="card-icon icon-l options-icon"></span>
+                </div>
+                <div class="card-hover card-hover__center center-only-child">
+                  <span class="card-icon icon-xxl expand-icon expand-icon-v1"></span>
+                </div>
+                <div class="card-hover card-hover__bottom">
+                  <span class="card-icon icon-l"></span>
+                </div>
+              </div>
+              <!--  -->
+              <div class="card-layer card-confirm-layer css-layer ele-inVisible"></div>
+              <!--  -->
+              <div class="card-layer card-options-layer css-layer ele-inVisible"></div>
+            </div>
+          </div>
+          <!-- ===================== -->
+        </div>
+        <div class="favoritos-section">
+          <h2>Mis Favoritos</h2>
+          <ul class="grilla-favoritos">
+            <li class="card card-chica">
+              <figure class="card__img-container" style="background-image: url('https://cdn2.thecatapi.com/images/7d4.jpg');">
+                <img class="card__img" src="https://cdn2.thecatapi.com/images/7d4.jpg" alt="">
+              </figure>
+              <div class="card__layers css-layer">
+                <!--  -->
+                <div class="card-layer card-hover-layer css-layer">
+                  <div class="card-hover card-hover__top">
+                    <span class="card-icon icon-s favorite-icon favorite-icon--unchecked"></span>
+                    <span class="card-icon icon-s options-icon"></span>
+                  </div>
+                  <div class="card-hover card-hover__center center-only-child">
+                    <span class="card-icon icon-xl expand-icon expand-icon-v1"></span>
+                  </div>
+                  <div class="card-hover card-hover__bottom">
+                    <span class="card-icon icon-s"></span>
+                  </div>
+                </div>
+                <!--  -->
+                <div class="card-layer card-confirm-layer css-layer ele-inVisible"></div>
+                <!--  -->
+                <div class="card-layer card-options-layer css-layer ele-inVisible"></div>
+              </div>
+            </li>
+            <li class="card card-chica">
+              <figure class="card__img-container" style="background-image: url('https://cdn2.thecatapi.com/images/7d4.jpg');">
+                <img class="card__img" src="https://cdn2.thecatapi.com/images/7d4.jpg" alt="">
+              </figure>
+              <div class="card__layers css-layer">
+                <!--  -->
+                <div class="card-layer card-hover-layer css-layer">
+                  <div class="card-hover card-hover__top">
+                    <span class="card-icon icon-s favorite-icon favorite-icon--unchecked"></span>
+                    <span class="card-icon icon-s options-icon"></span>
+                  </div>
+                  <div class="card-hover card-hover__center center-only-child">
+                    <span class="card-icon icon-xl expand-icon expand-icon-v1"></span>
+                  </div>
+                  <div class="card-hover card-hover__bottom">
+                    <span class="card-icon icon-s"></span>
+                  </div>
+                </div>
+                <!--  -->
+                <div class="card-layer card-confirm-layer css-layer ele-inVisible"></div>
+                <!--  -->
+                <div class="card-layer card-options-layer css-layer ele-inVisible"></div>
+              </div>
+            </li>
+            
+          </ul>
+        </div>
+      </section>
+      <section class="api-cat__grilla">
+        <div class="cat-load-new">
+          <!-- Aca va la botonera para controlar la cantidad de peticiones -->
+          <div>
+            <button class="btn btn-generate" id="btn-generate">Generar Gatos</button>
+          </div>
+          <div class="count-result">
+            <div id="btn-count-section">
+              <button class="btn count-result__items count-result__minus">-</button>
+              <div class="count-result__items count-result__number">1</div>
+              <button class="btn count-result__items count-result__plus">+</button>
+              <span class="limit-max ele-inVisible">MAX</span>
+            </div>
+          </div>
+        </div>
+        <div class="cat-grilla-container">
+          <div class="scroll-flag" id="scroll-flag">.</div>
+          <div class="cat-grilla-container__bg">
+            <figure>
+              <img class="card__img" src="https://i0.wp.com/portal.thatapicompany.com/wp-content/uploads/2024/01/theCatAPI-icon.png?resize=300%2C290&ssl=1" alt="">
+            </figure>
+          </div>
+
+          <div class="cat-grilla bg1 ele-inVisible" id="template-init-plate-card">
+            <div class="card card-auto">
+              <figure class="card__img-container">
+                <img class="card__img" src="https://i0.wp.com/portal.thatapicompany.com/wp-content/uploads/2024/01/theCatAPI-icon.png?resize=300%2C290&ssl=1" alt="">
+              </figure>
+              <div class="card__layers css-layer">
+                <!--  -->
+                <div class="card-layer card-hover-layer css-layer">
+                  <div class="card-hover card-hover__top">
+                    <span class="card-icon icon-l favorite-icon favorite-icon--unchecked"></span>
+                    <span class="card-icon icon-l options-icon"></span>
+                  </div>
+                  <div class="card-hover card-hover__center center-only-child">
+                    <span class="card-icon icon-xl expand-icon expand-icon-v1"></span>
+                  </div>
+                  <div class="card-hover card-hover__bottom">
+                    <span class="card-icon icon-l"></span>
+                  </div>
+                </div>
+                <!--  -->
+                <div class="card-layer card-confirm-layer css-layer ele-inVisible"></div>
+                <!--  -->
+                <div class="card-layer card-options-layer css-layer ele-inVisible"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="cat-grilla-fixed">
+        </div> -->
+
+      </section>
+    </section>
+  </main>
+  <footer></footer>
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
