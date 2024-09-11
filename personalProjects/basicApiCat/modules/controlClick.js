@@ -1,5 +1,6 @@
 import * as favControl from "./favoriteControl.js";
 import * as uiKit from "./uiTools.js";
+import * as contexMenu from "./layerContextMenu.js";
 
 const clickableElements = {
   iconFavorite: 0,
@@ -20,10 +21,10 @@ function fnControl(event) {
       favControl.API.manageFavorites(target);
       break;
     case clickableElements.iconOptions:
-      
+      contexMenu.API.manageOptions(target);
       break;
     case clickableElements.iconExpand:
-      
+      openNewWindow(target);
       break;
   
     default:
@@ -37,7 +38,20 @@ function typeElementDetect(target) {
   if(uiKit.API.isIconFavorite(target)) {
     return clickableElements.iconFavorite;
   }
+  if(uiKit.API.isIconOptions(target)) {
+    return clickableElements.iconOptions;
+  }
+  if(uiKit.API.isIconExpand(target)) {
+    return clickableElements.iconExpand;
+  }
   console.log('Other element ....');
+}
+
+
+function openNewWindow(target) {
+  const card = uiKit.API.detectCardOfOptionBtn(target);
+  const urlImg = uiKit.API.getImgOfCard(card);
+  window.open(urlImg, '_blank');
 }
 
 

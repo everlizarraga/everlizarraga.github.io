@@ -3,7 +3,7 @@ const bgPlate = {
   state: 0,
 };
 const cardCheck = {
-  class: ['icon-favorito--checked', 'icon-favorito--unchecked'],
+  class: ['favorite-icon--checked', 'favorite-icon--unchecked'],
   checked: 0,
   unChecked: 1,
 };
@@ -20,6 +20,8 @@ const favoriteClassState = {
 }; 
 
 const iconCat = 'https://i0.wp.com/portal.thatapicompany.com/wp-content/uploads/2024/01/theCatAPI-icon.png?resize=300%2C290&ssl=1';
+
+const defaultImg = 'https://cdn2.thecatapi.com/images/eeg.jpg';
 
 // Template Referencia
 function getTemplateOriginalPointer() {
@@ -125,9 +127,14 @@ function createPlate(plateReference) {
   return plate;
 }
 
+
+function getPointerFavoriteIconOfCard(card) {
+  return card.querySelector('.card-hover__top >*:first-child');
+}
+
 // switcheador de favoritos
 function setCardFavorite(card, fBoole) {
-  const cardIcon = card.querySelector('.card-icon-container > *:first-child');
+  const cardIcon = getPointerFavoriteIconOfCard(card);
   if(typeof(fBoole) == 'boolean') {
     if(fBoole) {
       cardIcon.classList.remove(cardCheck.class[cardCheck.unChecked]);
@@ -137,7 +144,7 @@ function setCardFavorite(card, fBoole) {
       cardIcon.classList.add(cardCheck.class[cardCheck.unChecked]);
     }
   } else {
-    console.error('FALTA especificar ture or false como segundo parametro.');
+    console.error('FALTA especificar true or false como segundo parametro.');
   }
 }
 
@@ -225,7 +232,11 @@ function detectCheckedStateOfCard(card) {
 }
 
 function recognizeCardFromFavoriteIcon(favoriteIcon) {
-  const card = favoriteIcon.closest('.card');
+  return recognizeCardFromIcon(favoriteIcon);
+}
+
+function recognizeCardFromIcon(icon) {
+  const card = icon.closest('.card');
   if(card) {
     return card;
   } else {
@@ -260,6 +271,114 @@ function getImgOfCard(card) {
 }
 
 // ===============================================
+function getPointerFavoritesSection() {
+  return document.querySelector('.grilla-favoritos');
+}
+
+function getPointerPrincipalCat() {
+  const principalCatContainer = document.querySelector('.portada-img-section');
+  return principalCatContainer.querySelector('.card');
+}
+
+function insertCardIntoFavoritesSection(card) {
+  const favoritesSection = getPointerFavoritesSection();
+  favoritesSection.prepend(card);
+}
+
+function setPrincipalCard(card, check) {
+  const urlCard = getImgOfCard(card);
+  const newCard = createCard(urlCard, value.cardType.grande);
+  if(check === undefined || check === true) toggleIconFavorite(newCard);
+  const cardOld = getPointerPrincipalCat();
+  cardOld.replaceWith(newCard);
+}
+
+function autoRefreshPrincipalCat() {
+  const favoritesChildren = getFavoritesChildren();
+  if(favoritesChildren.length > 0) {
+    setPrincipalCard(favoritesChildren[0]);
+  } else {
+    const newCard = createCard(defaultImg, value.cardType.grande);
+    setPrincipalCard(newCard, false);
+  }
+}
+function getFavoritesChildren() {
+  const favoritesSection = getPointerFavoritesSection();
+  return [...favoritesSection.children]; //[HTMLCollection] -> [e]
+}
+
+function cleanFavoritesSection() {
+  const favoritesSection = getPointerFavoritesSection();
+  favoritesSection.innerHTML = "";
+}
+
+function deleteCardOfFavoritesSection(urlImgRefernce) {
+  const children = getFavoritesChildren();
+  const cardList = children.filter((e) => (getImgOfCard(e) == urlImgRefernce)? true : false);
+  if(cardList.length > 0) {
+    cardList[0].remove();
+    autoRefreshPrincipalCat();
+  }
+}
+
+// ===============================================
+function showCardLayerRemoveFavorites(card, show) {
+  const layerRemoveFavorite = card.querySelector('.layer-delete-of-favorites');
+  if(show !== undefined) {
+    if(show) {
+      layerRemoveFavorite.classList.remove('ele-inVisible');
+    } else {
+      layerRemoveFavorite.classList.add('ele-inVisible');
+    }
+  } else {
+    console.error('Falto especificar el show');
+  }
+  return layerRemoveFavorite;
+}
+
+function showCardLayerOptions(card, show) {
+  const layerOptions = card.querySelector('.layer-options');
+  if(show !== undefined) {
+    if(show) {
+      layerOptions.classList.remove('ele-inVisible');
+    } else {
+      layerOptions.classList.add('ele-inVisible');
+    }
+  } else {
+    console.error('Falto especificar el show');
+  }
+  return layerOptions;
+}
+
+function detectCardOfOptionBtn(oneOption) {
+  const card = oneOption.closest('.card');
+  if(card) {
+    return card;
+  } else {
+    console.error('ERROR: detectCardOfOptionBtn');
+  }
+}
+
+
+// ===============================================
+function detectBtnTypeOfContextMenu(target) {
+  let rpta = null;
+  if(target.classList.contains('fn-copy-img')) {
+    rpta = responseCard.optionsMenu.copyImg;
+  }
+  if(target.classList.contains('fn-copy-url')) {
+    rpta = responseCard.optionsMenu.copyLink;
+  }
+  return rpta;
+}
+
+// ===============================================
+function getImgNode(card) {
+  return card.querySelector('.card__img');
+}
+
+
+// ===============================================
 // ===============================================
 const API = {
   createCard: createCard, //createCard(url, type)
@@ -272,10 +391,21 @@ const API = {
   detectCheckedStateOfCard: detectCheckedStateOfCard, //detectCheckedStateOfCard(card)
   toggleIconFavorite: toggleIconFavorite, //toggleIconFavorite(card)
   recognizeCardFromFavoriteIcon: recognizeCardFromFavoriteIcon, // **(_)
+  recognizeCardFromIcon: recognizeCardFromIcon, //...(icon)
   isIconFavorite: isIconFavorite, //isIconFavorite(target)
   isIconOptions: isIconOptions, //isIconOptions(target)
   isIconExpand: isIconExpand, //isIconExpand(target)
   getImgOfCard: getImgOfCard, //getImgOfCard(card)
+  // Favorites
+  insertCardIntoFavoritesSection: insertCardIntoFavoritesSection, //...(card)
+  setPrincipalCard: setPrincipalCard, //...(card)
+  cleanFavoritesSection: cleanFavoritesSection, //...()
+  deleteCardOfFavoritesSection: deleteCardOfFavoritesSection, //...(urlImgRefernce)
+  showCardLayerRemoveFavorites: showCardLayerRemoveFavorites, //...(card, show)
+  showCardLayerOptions: showCardLayerOptions, //...(card, show)
+  detectCardOfOptionBtn: detectCardOfOptionBtn, //...(oneOption)
+  detectBtnTypeOfContextMenu: detectBtnTypeOfContextMenu, //...(target)
+  getImgNode: getImgNode, //...(card)
 };
 
 const value = {
@@ -290,4 +420,17 @@ const value = {
   }
 };
 
-export {API, value};
+const responseCard = {
+  favoriteDelete: {
+    yes: 1,
+    no: 0,
+  },
+  optionsMenu: {
+    copyImg: 0,
+    copyLink: 1,
+    fixedImg: 2,
+    expandImg: 3,
+  },
+}
+
+export {API, value, responseCard};

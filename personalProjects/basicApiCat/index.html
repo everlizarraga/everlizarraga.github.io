@@ -23,8 +23,8 @@
         <div class="portada-img-section">
           <!-- =================== -->
           <div class="card card-grande">
-            <figure class="card__img-container" style="background-image: url('https://cdn2.thecatapi.com/images/7d4.jpg');">
-              <img class="card__img" src="https://cdn2.thecatapi.com/images/7d4.jpg" alt="">
+            <figure class="card__img-container" style="background-image: url('https://cdn2.thecatapi.com/images/eeg.jpg');">
+              <img class="card__img" src="https://cdn2.thecatapi.com/images/eeg.jpg" alt="">
             </figure>
             <div class="card__layers css-layer">
               <!--  -->
@@ -50,8 +50,8 @@
         </div>
         <div class="favoritos-section">
           <h2>Mis Favoritos</h2>
-          <ul class="grilla-favoritos">
-            <li class="card card-chica">
+          <div class="grilla-favoritos">
+            <div class="card card-chica">
               <figure class="card__img-container" style="background-image: url('https://cdn2.thecatapi.com/images/7d4.jpg');">
                 <img class="card__img" src="https://cdn2.thecatapi.com/images/7d4.jpg" alt="">
               </figure>
@@ -74,8 +74,8 @@
                 <!--  -->
                 <div class="card-layer card-options-layer css-layer ele-inVisible"></div>
               </div>
-            </li>
-            <li class="card card-chica">
+            </div>
+            <div class="card card-chica">
               <figure class="card__img-container" style="background-image: url('https://cdn2.thecatapi.com/images/7d4.jpg');">
                 <img class="card__img" src="https://cdn2.thecatapi.com/images/7d4.jpg" alt="">
               </figure>
@@ -98,9 +98,9 @@
                 <!--  -->
                 <div class="card-layer card-options-layer css-layer ele-inVisible"></div>
               </div>
-            </li>
+            </div>
             
-          </ul>
+          </div>
         </div>
       </section>
       <section class="api-cat__grilla">
@@ -146,9 +146,20 @@
                   </div>
                 </div>
                 <!--  -->
-                <div class="card-layer card-confirm-layer css-layer ele-inVisible"></div>
+                <div class="card-layer layer-template layer-over-card css-layer ele-inVisible"></div>
                 <!--  -->
-                <div class="card-layer card-options-layer css-layer ele-inVisible"></div>
+                <div class="card-layer layer-delete-of-favorites layer-over-card css-layer layer-context-menu ele-inVisible">
+                  <!-- <h3 class="center-only-child">Delete of favorites</h3> -->
+                  <button class="btn btn-context-menu__option btn-confirm css-block p5 py15">Ok</button>
+                  <button class="btn btn-context-menu__option btn-cancel css-block p5 py15">Cancel</button>
+                </div>
+                <!--  -->
+                <div class="card-layer layer-options layer-over-card css-layer layer-context-menu css-ct ele-inVisible">
+                  <!-- <button class="btn btn-context-menu__option css-block card-icon icon-xl icon-keep"></button> -->
+                  <!-- <button class="btn btn-context-menu__option css-block card-icon icon-xl fn-copy-img icon-copy"></button> -->
+                  <button class="btn btn-context-menu__option css-block card-icon icon-xl fn-copy-url icon-link"></button>
+                </div>
+                <!--  -->
               </div>
             </div>
           </div>

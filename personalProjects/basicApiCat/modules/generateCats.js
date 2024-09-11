@@ -2,6 +2,23 @@ import * as btnCount from "./btnCount.js";
 import * as uiKit from "./uiTools.js";
 import * as boxTools from "./boxTools.js";
 import * as catAPI from "./apiCat.js";
+import * as storage from "./storage.js";
+
+let GIList;
+
+function createGIList(startList = []) {
+  let privateList = startList;
+  let cardList = [];
+  return {
+    addList: function(list) {privateList = [...privateList, ...list.filter(e => !this.includes(e))]},
+    addElement: function(e) {if(!this.includes(e)) privateList.push(e)},
+    remove: function(e) {privateList = privateList.filter(item => item !== e)},
+    includes: function(e) {return privateList.includes(e)},
+    getList: function() {return [...privateList]},
+    addCardList: function(list) {cardList = [...cardList, ...list]},
+    getCardList: function() {return [...cardList]},
+  }
+}
 
 const contenedor = document.getElementById('template-init-plate-card').parentElement;
 
@@ -10,6 +27,20 @@ const scrollFlag = document.getElementById('scroll-flag');
 function init() {
   const btn = document.getElementById('btn-generate');
   btn.addEventListener('click', generateCatsV1);
+  GIList = createGIList();
+  document.addEventListener(boxTools.listenersName.responseFavDelete, (event) => {
+    const urlImg = event.detail.urlImg;
+    const option = event.detail.option;
+    if(option == uiKit.responseCard.favoriteDelete.yes) {
+      const cardList = GIList.getCardList();
+      cardList.forEach(card => {
+        if(urlImg == uiKit.API.getImgOfCard(card)) {
+          uiKit.API.setCardFavorite(card, false);
+          // uiKit.API.toggleIconFavorite(card);
+        }
+      });
+    }
+  });
 }
 
 function createCatPreload() {
@@ -25,14 +56,11 @@ async function generateCatsV1() {
 
   //2. Poner el preload de carga
   const preloadCat = createCatPreload();
-  // contenedor.prepend(preloadCat);
   scrollFlag.after(preloadCat);
-  // uiKit.API.simpleScroll(preloadCat);
   uiKit.API.simpleScroll(scrollFlag);
-  // uiKit.API.simpleScroll(contenedor);
 
   //3. Llamar a la funcion que llamara a los CATS 
-  await cargarCatsV1(count, preloadCat);
+  cargarCatsV1(count, preloadCat);
 }
 
 async function cargarCatsV1(count, preloadCat) {
@@ -40,20 +68,32 @@ async function cargarCatsV1(count, preloadCat) {
   const listCats = await catAPI.API.realizarPeticion(count); //[url, url, ...]
   console.log(listCats);
   
+  //1.1 Antes hay que agregar a la lista GIList
+  GIList.addList(listCats);
+
   //2. Poner en cards y palet todas las imagenes y esperar a que todas se carguen
   const listCards = await loadCardsParallel(listCats); //[card, card, ...]
   console.log(listCards);
+  //2.1 Guardar tambien la card
+  GIList.addCardList(listCards);
 
   //3. Cargar todo en un plate
   const plate = uiKit.API.createPlate(preloadCat);
-  listCards.forEach((e) => {
-    plate.append(e);
+  listCards.forEach((card) => {
+    //3.1 Setear como favoritos a las cards que esten en favoritos
+    if(storage.API.containsCard(card)) uiKit.API.setCardFavorite(card, true);
+    //3.2 Agregar a la plate
+    plate.append(card);
   });
 
   //4. Luego que todas se cargaron correctamente reemplazar el cat load por las nuevas imagenes.
   preloadCat.replaceWith(plate);
   // uiKit.API.simpleScroll(plate);
   uiKit.API.simpleScroll(scrollFlag);
+
+  console.groupCollapsed('Urls Img favorites');
+  console.log(JSON.stringify(storage.API.getFavoritesUrl()));
+  console.groupEnd();
 }
 
 async function loadCardsParallel(listCats) {
@@ -81,19 +121,6 @@ async function loadCardsParallel(listCats) {
 function progressCallback(cardPreloadPointer, loaded, total) {
   console.log("Progress: %d / %d", loaded, total);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
