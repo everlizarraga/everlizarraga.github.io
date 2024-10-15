@@ -5,6 +5,7 @@ import * as watch from "./watch.js";
 
 const controlAlarm = {}; // Se agrega segun el grupo
 const targetAlarmList = [];
+const pendingMarketReset = [];
 let soundHrs;
 let soundMins;
 let soundSecs;
@@ -178,10 +179,20 @@ function setingNextIntervalAlarm(nodeAlarm) {
   }
 }
 
+function programerMarketRestFromGroup(nodeAlarm) { //pendingMarketReset
+  const nodeRest = {
+    groupId: nodeAlarm.groupId,
+  };
+
+  const currentTime = watch.getSnapCurrenTime();
+  const currentReset = calculateReset(currentTime, nodeAlarm.groupReset);
+}
+
 function subscribeAlarm(nodeAlarm) {
   // console.log('Subscribe NodeAlarm: ', nodeAlarm);
-  if(!(`${nodeAlarm.groupId}` in controlAlarm)) {
+  if(!(`${nodeAlarm.groupId}` in controlAlarm)) { //pendingMarketReset
     controlAlarm[`${nodeAlarm.groupId}`] = [];
+    // programerMarketRestFromGroup(nodeAlarm);
   }
   controlAlarm[`${nodeAlarm.groupId}`].push(nodeAlarm);
   const timeSleep = configInitToAlarm(nodeAlarm);

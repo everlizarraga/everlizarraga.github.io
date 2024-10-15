@@ -64,11 +64,34 @@ function createAlarmNode(group, timer) {
   }
 }
 
+function sortTimerList(timerList) {
+  let rpta = [];
+  if(timerList.length > 0) {
+    const secList = timerList.filter(e => identifyTimer(e).includes('sec'));
+    const minList = timerList.filter(e => identifyTimer(e).includes('min'));
+    const hrList = timerList.filter(e => identifyTimer(e).includes('hr'));
+    
+    function timerSort(myList) {
+      myList.sort((a, b) => parseInt(`${a.time}`) - parseInt(`${b.time}`));
+    }
+
+    timerSort(secList);
+    timerSort(minList);
+    timerSort(hrList);
+
+    const rpta = [...secList, ...minList, ...hrList];
+    return rpta;
+  }
+
+  return rpta;
+}
+
 const API = {
   createTimer: createTimer,
   createGroup: createGroup,
   identifyTimer: identifyTimer,
   createAlarm: createAlarmNode,
+  sortTimerList: sortTimerList,
 };
 
 const VALUES = {

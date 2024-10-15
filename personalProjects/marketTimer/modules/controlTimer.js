@@ -82,7 +82,8 @@ function initializeMemory() {
 // =====================================================
 
 function createGroup(name, timerReset, colorClass, timerList) {
-  const newGroup = models.API.createGroup(name, timerReset, colorClass, timerList);
+  // const newGroup = models.API.createGroup(name, timerReset, colorClass, timerList);
+  const newGroup = models.API.createGroup(name, timerReset, colorClass, models.API.sortTimerList(timerList));
   const id = getIdGroup();
   const nodeGroup = {...newGroup, groupId: id};
   memory.groups.push(nodeGroup);
@@ -116,7 +117,8 @@ function updateGroup(groupId, groupInfo) {
     targetGroup.groupName = groupInfo.groupName;
     targetGroup.groupReset = groupInfo.groupReset;
     targetGroup.groupColor = groupInfo.groupColor;
-    targetGroup.timerList = groupInfo.timerList;
+    // targetGroup.timerList = groupInfo.timerList;
+    targetGroup.timerList = models.API.sortTimerList(groupInfo.timerList);
     //Enviar cada uno de los alarms para eliminar al modulo alarms.js
     controlAlarms.API.unsubscribeAllAlarmsFromGroup(groupId);
     //Avias al modulo alarms.js de las nuevas alarmas
