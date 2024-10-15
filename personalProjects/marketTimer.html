@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merket Timer</title>
+  <link rel="stylesheet" href="./marketTimer/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header" id="header-main">
+    <h1 class="header__title"><a href="../index.html">EVER L</a></h1>
+    <div class="header__time">
+      <p class="time-literal">00:00:00</p>
+      <button class="header__btn-time-start" id="header__btn-time-start">START</button>
+    </div>
+    <div class="header__version-select">
+      <select class="version-select" name="version-select" id="version-select">
+        <option value="v1" selected>V1</option>
+        <option value="v2">V2</option>
+        <!-- <option value="v3">V3</option> -->
+      </select>
+    </div>
+  </header>
+  <main>
+    <section id="selected-v1" class="disable">
+
+      <section class="monitor">
+        <section class="monitor__logs" id="v1-monitor">
+          <h3 class="monitor__title">MONITOR</h3>
+          <ul class="monitor__log-container">
+            <li class="monitor__log disable" id="v1-template-card-alarm">
+              <div class="log__color"></div>
+              <div class="log__info">
+                <div class="log__group"><span>GRUPO</span></div>
+                <ul class="log__times-container">
+                  <li class="log-time"><span>33 min</span></li>
+                </ul>
+                <div class="log__local-time"><span>Hora</span></div>
+              </div>
+            </li>
+            <!-- <li class="monitor__log">
+              <div class="log__color color-blue"></div>
+              <div class="log__info">
+                <div class="log__group"><span>GRUPO</span></div>
+                <ul class="log__times-container">
+                  <li class="log-time"><span>33 min</span></li>
+                </ul>
+                <div class="log__local-time"><span>Hora</span></div>
+              </div>
+            </li>
+            <li class="monitor__log timer-alarm">
+              <div class="log__color color-orange"></div>
+              <div class="log__info">
+                <div class="log__group"><span>GRUPO</span></div>
+                <ul class="log__times-container">
+                  <li class="log-time"><span>132 min</span></li>
+                  <li class="log-time"><span>66 min</span></li>
+                  <li class="log-time"><span>4 Hs</span></li>
+                </ul>
+                <div class="log__local-time"><span>Hora</span></div>
+              </div>
+            </li> -->
+          </ul>
+        </section>
+        <section class="monitor__groups">
+          <div class="groups__title-section">
+            <h2 class="groups__title">GROUPS</h2>
+            <button class="groups__title-btn groups__title-btn--add btn" id="groups__title-btn--add"><span>+</span></button>
+          </div>
+          <ul class="groups__group-list-container">
+            <li class="group-element__container disable" id="v1-template-card-group">
+              <h3 class="group-element__title">FOREX</h3>
+              <p class="group-element__info">4H/144m/132m/66m/</p>
+              <button class="group-element__btn-option btn btn-icon">
+                <span class="btn-icon__bg-container">
+                  <svg class="" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/></svg>
+                </span>
+              </button>
+            </li>
+            <!-- <li class="group-element__container color-blue">
+              <h3 class="group-element__title">FOREX</h3>
+              <p class="group-element__info">4H/144m/132m/66m/</p>
+              <button class="group-element__btn-option btn btn-icon">
+                <span class="btn-icon__bg-container">
+                  <svg class="" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/></svg>
+                </span>
+              </button>
+            </li> -->
+          </ul>
+        </section>
+      </section>
+
+      <div class="modal-container" id="v1-modal-container">
+        <div class="contorl-view"></div>
+        <section class="crod crod--grid-color-hidden modal"> <!--crod--grid-color-active-->
+          <!-- <div></div> -->
+          <div class="mode" data-mode-add="ADD GROUP" data-mode-edit="EDIT GROUP">
+            <h3>ADD GROUP</h3>
+            <button class="btn btn-icon mode__btn--delete" aria-label="button-delete-group">
+              <span class="btn-icon__bg-container">
+                <svg class="btn-icon__bg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm80-160h80v-360h-80v360Zm160 0h80v-360h-80v360Z"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="title__container input-container">
+            <label class="title__label input-label" for="v1-title__input">Title</label>
+            <input class="title__input input-section" type="text" id="v1-title__input">
+          </div>
+          <div class="reset__container input-container">
+            <label class="reset__label input-label" for="v1-reset__input">Reset</label>
+            <input class="reset__input input-section" type="time" id="v1-reset__input">
+          </div>
+          <div class="color__container input-container">
+            <label class="color__label input-label">Color</label>
+            <div class="color__btn-container input-section">
+              <button class="color__btn color-blue"><span class="disable">0</span></button>
+            </div>
+          </div>
+          <ul class="color-user-select disable">
+            <li class="circle-color circle-color--active color-blue"><span class="disable">Azul</span></li>
+            <li class="circle-color color-orange"><span class="disable">Naranja</span></li>
+            <li class="circle-color color-red"><span class="disable">Rojo</span></li>
+            <li class="circle-color color-yellow"><span class="disable">Amarillo</span></li>
+            <li class="circle-color color-green"><span class="disable">Verde</span></li>
+            <li class="circle-color color-gray-light"><span class="disable">Gris claro</span></li>
+            <li class="circle-color color-gray-dark"><span class="disable">Gris oscuro</span></li>
+            <li class="circle-color color-pink"><span class="disable">Pink</span></li>
+          </ul>
+          <div class="set-timer__container">
+            <div class="set-timer__init input-container">
+              <label class="timer-init__label input-label" for="new-time-number">Time</label>
+              <input class="timer-init__input input-section" type="number" name="" id="new-time-number">
+              <button class="btn timer-init__btn select-time-type" data-timer-type="sec/min/hr">min</button>
+              <button class="btn timer-init__btn timer-init__btn--add"><span>+</span></button>
+            </div>
+            <ul class="set-timer__items">
+              <li class="timer-item-template">
+                <p class="timer__time">132 min</p>
+                <div class="timer__button-container">
+                  <label class="btn btn-icon btn-icon--binary timer-btn timer-btn--alarm">
+                    <input class="visually-hidden" type="checkbox">
+                    <span class="btn-icon__bg-container">
+                      <svg class="btn-bg btn-bg--disabled" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-200v-80h80v-280q0-33 8.5-65t25.5-61l60 60q-7 16-10.5 32.5T320-560v280h248L56-792l56-56 736 736-56 56-146-144H160Zm560-154-80-80v-126q0-66-47-113t-113-47q-26 0-50 8t-44 24l-58-58q20-16 43-28t49-18v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v206Zm-276-50Zm36 324q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80Zm33-481Z"/></svg>
+                      <svg class="btn-bg btn-bg--enabled" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M80-560q0-100 44.5-183.5T244-882l47 64q-60 44-95.5 111T160-560H80Zm720 0q0-80-35.5-147T669-818l47-64q75 55 119.5 138.5T880-560h-80ZM160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z"/></svg>
+                    </span>
+                  </label>
+                  <button class="btn btn-icon btn-icon--action timer-btn timer-btn--delete" aria-label="button-delete-time">
+                    <span class="btn-icon__bg-container">
+                      <svg class="btn-icon__bg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                    </span>
+                  </button>
+                </div>
+              </li>
+              <li class="timer-item-template">
+                <p class="timer__time">144 min</p>
+                <div class="timer__button-container">
+                  <label class="btn btn-icon btn-icon--binary timer-btn timer-btn--alarm">
+                    <input class="visually-hidden" type="checkbox">
+                    <span class="btn-icon__bg-container">
+                      <svg class="btn-bg btn-bg--disabled" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-200v-80h80v-280q0-33 8.5-65t25.5-61l60 60q-7 16-10.5 32.5T320-560v280h248L56-792l56-56 736 736-56 56-146-144H160Zm560-154-80-80v-126q0-66-47-113t-113-47q-26 0-50 8t-44 24l-58-58q20-16 43-28t49-18v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v206Zm-276-50Zm36 324q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80Zm33-481Z"/></svg>
+                      <svg class="btn-bg btn-bg--enabled" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M80-560q0-100 44.5-183.5T244-882l47 64q-60 44-95.5 111T160-560H80Zm720 0q0-80-35.5-147T669-818l47-64q75 55 119.5 138.5T880-560h-80ZM160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z"/></svg>
+                    </span>
+                  </label>
+                  <button class="btn btn-icon btn-icon--action timer-btn timer-btn--delete" aria-label="button-delete-time">
+                    <span class="btn-icon__bg-container">
+                      <svg class="btn-icon__bg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                    </span>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="crod__btn-container">
+            <button class="btn crod__btn crod__btn--aceptar">Acept</button>
+            <button class="btn crod__btn crod__btn--cancelar">Cancel</button>
+          </div>
+        </section>
+      </div>
+
+    </section>
+    <section id="selected-v2" class="disable"></section>
+    <section id="selected-v3" class="disable"></section>
+  </main>
+  <footer></footer>
+  <script type="module" src="./marketTimer/main.js"></script>
+</body>
+</html>
