@@ -1,0 +1,81 @@
+:root {
+  --color-black: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: black;
+}
+
+/* ================================ */
+
+.cards-view {
+  margin: 0 auto;
+  width: 450px;
+  /* padding: 20px; */
+  background-color: papayawhip;
+}
+
+.cards-container {
+  display: flex;
+  gap: 16px;
+  background-color: white;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.card {
+  flex-shrink: 0;
+  width: 100px;
+  height: 120px;
+  background-color: blue;
+  border-radius: 8px;
+}
+
+/* ================================== */
+.custom-scrollbar-container {
+  position: relative;
+}
+
+.custom-scrollbar-content::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-scrollbar-content {
+  padding-bottom: 10px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-scrollbar {
+  position: absolute;
+  height: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(247, 128, 128, 0.822);
+  border-radius: 8px;
+}
+
+.custom-scrollbar-thumb {
+  position: absolute;
+  left: 0;
+  /* right: 0; */
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 40px;
+  height: 10px;
+  border-radius: 8px;
+}
