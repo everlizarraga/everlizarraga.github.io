@@ -1,6 +1,6 @@
 import * as models from "./models.js";
 import * as utils from "./utils.js";
-import * as controlSound from "./controlSound.js";
+import * as controlSound from "../controlSound.js";
 import * as watch from "./watch.js";
 
 const controlAlarm = {}; // Se agrega segun el grupo

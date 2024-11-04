@@ -16,13 +16,13 @@ function init() {
   //   btn.addEventListener('click', fn);
   // });
 
-  // const marketSoundList = Object.entries(MARKET_SOUNDS);
-  // marketSoundList.reverse().forEach(([fnName, fn]) => {
-  //   const btn = document.createElement('button');
-  //   btn.textContent = fnName;
-  //   container.prepend(btn);
-  //   btn.addEventListener('click', fn);
-  // });
+  const marketSoundList = Object.entries(MARKET_SOUNDS);
+  marketSoundList.reverse().forEach(([fnName, fn]) => {
+    const btn = document.createElement('button');
+    btn.textContent = fnName;
+    container.prepend(btn);
+    btn.addEventListener('click', fn);
+  });
 
   // const selectdSoundLongList = Object.entries(SELECTED_SOUNDS.longSounds);
   // const selectdSoundLongListContainer = document.createElement('div');

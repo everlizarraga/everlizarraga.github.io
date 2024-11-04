@@ -283,6 +283,14 @@ main {
   
 }
 
+#selected-v1 #v2-modal-container .crod--grid-color-hidden {
+  grid-template-areas: 
+  "mode mode"
+  "title title"
+  "timer timer"
+  "btn btn";
+}
+
 #selected-v1 .modal-container {
   position: absolute;
   top: 0;
@@ -300,6 +308,7 @@ main {
   max-width: 410px;
 }
 
+
 #selected-v1 .mode {grid-area: mode;}
 #selected-v1 .title__container {grid-area: title;}
 #selected-v1 .reset__container {grid-area: reset;}
@@ -308,12 +317,20 @@ main {
 #selected-v1 .set-timer__container {grid-area: timer;}
 #selected-v1 .crod__btn-container {grid-area: btn;}
 
+#selected-v1 #v2-modal-container .mode {grid-area: mode;}
+#selected-v1 #v2-modal-container .title__container {grid-area: title;}
+/* #selected-v1 #v2-modal-container .reset__container {grid-area: reset;} */
+#selected-v1 #v2-modal-container .color__container {grid-area: color;}
+/* #selected-v1 #v2-modal-container .color-user-select {grid-area: color-select;} */
+#selected-v1 #v2-modal-container .set-timer__container {grid-area: timer;}
+#selected-v1 #v2-modal-container .crod__btn-container {grid-area: btn;}
+
 #selected-v1 .mode {
   display: flex;
   justify-content: center;
 }
 
-#selected-v1 .title__container {
+#selected-v1 #v1-modal-container .title__container {
   width: 100%;
   max-width: 100%;
   display: flex;
@@ -350,6 +367,10 @@ main {
 #selected-v1 .reset__input {
   display: grid;
   place-content: center;
+}
+
+#selected-v1 #v2-modal-container .title__input {
+  width: 100px;
 }
 
 #selected-v1 .input-container {
@@ -624,4 +645,40 @@ main {
 }
 #selected-v1 .log__local-time span {
   font-size: 0.875rem;
+}
+
+/* ========================================= */
+/* V2 */
+/* ========================================= */
+
+#selected-v1 #v2-modal-container .ref__container {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  margin-top: 1px;
+}
+
+#selected-v1 #v2-modal-container .ref__container label {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-left-radius: 8px;
+}
+
+#selected-v1 #v2-modal-container .ref__container input {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-right-radius: 8px;
+  text-align: center;
+}
+
+#selected-v1 #v2-modal-container .title__input {
+  text-align: center;
+}
+
+#selected-v1 #v2-modal-container .timer-init__input {
+  text-align: center;
+}
+
+#selected-v1 #v2-modal-container .timer-init__btn {
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 8px;
 }

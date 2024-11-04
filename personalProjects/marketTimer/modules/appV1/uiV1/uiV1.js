@@ -1,10 +1,10 @@
-import * as controlTimer from "./controlTimer.js";
-import * as mointorSection from "./uiV1/monitor.js";
-import * as groupsSection from "./uiV1/groups.js";
-import * as cardGroup from "./uiV1/cardGroup.js";
-import * as cardAlarm from "./uiV1/cardAlarm.js";
-import * as formGroup from "./uiV1/formGroup.js";
-import * as watch from "./watch.js";
+import * as controlTimer from "../controlTimer.js";
+import * as mointorSection from "./monitor.js";
+import * as groupsSection from "./groups.js";
+import * as cardGroup from "./cardGroup.js";
+import * as cardAlarm from "./cardAlarm.js";
+import * as formGroup from "./formGroup.js";
+import * as watch from "../watch.js";
 
 const colorsClass = [
   'color-blue',

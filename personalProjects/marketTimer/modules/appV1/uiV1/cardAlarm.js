@@ -1,4 +1,4 @@
-import * as controlTimer from "./../controlTimer.js";
+import * as controlTimer from "../controlTimer.js";
 
 let tmeplateCardAlarm = document.getElementById('v1-template-card-alarm');
 let tmeplateTimeAlarm = tmeplateCardAlarm.querySelector('.log-time').cloneNode(true);
