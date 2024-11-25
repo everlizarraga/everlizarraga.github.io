@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./toDoList/style.css">
+  <title>ToDo List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="body-container">
+  <header class="body__header">
+    <div class="header__title-container">
+      <a class="btn btn-icon btn-icon-home" href="../index.html">
+        <span class="btn-icon__bg-icon">
+          <svg class="icon-home" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+        </span>
+        <span>EVER L</span>
+      </a>
+      <span class="bar-separator">/</span>
+      <h1 class="header__title">ToDo List</h1>
+    </div>
+  </header>
+  <main class="body__main">
+    <div class="search-container efect-shadow-scroll"><!--[efect-shadow-scroll]-->
+      <div class="search"><!--[search-focus-efect] Solo cuando esta selecionado el input search-->
+        <label class="icon icon-search-container" for="input-search">
+          <span class="btn-icon__bg-icon">
+            <svg class="icon-search" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+          </span>
+        </label>
+        <input class="input-search" id="input-search" type="text" placeholder="Search ..." autocomplete="off" spellcheck="false">
+        <button class="btn btn-icon search__btn-icon btn-icon-x">
+          <span class="btn-icon__bg-icon">
+            <svg class="icon-x" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+          </span>
+        </button>
+        <button class=" btn btn-icon search__btn-icon btn-icon-filter btn-icon-filter--normal"><!--[btn-icon-filter--normal][btn-icon-filter--active]-->
+          <span class="btn-icon__bg-icon">
+            <svg class="icon-no-active" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Zm40-308 198-252H282l198 252Zm0 0Z"/></svg>
+            <svg class="disable icon-active" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Z"/></svg>
+          </span>
+        </button>
+      </div>
+      <div class="filter-container disable">
+        <button class="btn filter-item filter-item--active" data-filter-mode="all"><span>All</span></button>
+        <button class="btn filter-item" data-filter-mode="todo"><span>ToDo</span></button>
+        <button class="btn filter-item" data-filter-mode="done"><span>Done</span></button>
+      </div>
+    </div>
+    <ul class="cards-list">
+      <!--[btn-icon-check__checked][btn-icon-check__unchecked]-->
+      <li class="card btn-icon-check__unchecked" id="template-card">
+        <div class="card__header">
+          <button class="btn btn-icon btn-icon-check">
+            <span class="btn-icon__bg-icon">
+              <!--[icon-no-active | icon-active]-->
+              <svg class="icon-no-active " xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+              <svg class="icon-active " xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
+            </span>
+          </button>
+          <div class="card__time-container">
+            <h2 class="card__time">19:44 hs</h2>
+            <h3 class="card__date">08/11/2024</h3>
+          </div>
+          <button class="btn btn-icon btn-icon-close">
+            <span class="btn-icon__bg-icon">
+              <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="card__text">
+          <!--<p> text-plane -->
+          <p class="text-plane">Hacer ToDo List Project en primera instancia solo el diseño. Luego hacer el codigo de maquetancion. </p>
+        </div>
+        <button class="btn btn-copy btn-copy--normal "> <!--class[btn-copy--normal][btn-copy--copied]-->
+          <span class="btn__icon-container">
+            <svg class="btn__icon btn__icon--no-active " xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/></svg>
+            <svg class="btn__icon btn__icon--active disable" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Z"/></svg>
+          </span>
+          <span class="btn__text">Copy</span>
+        </button>
+      </li>
+    </ul>
+  </main>
+
+
+  <nav class="floating-actions" aria-label="Acciones Rapidas">
+
+    <div class="delimiter">
+
+      <button class="btn add-button disable" 
+        aria-label="Agregar ToDo" 
+        aria-controls="quick-input-panel"
+        aria-relevant="additions"
+        aria-labelledby="btn-add-title">
+        <span class="btn-icon__bg-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+        </span>
+        <span class="visually-hidden" id="btn-add-title">button Add ToDo</span>
+      </button>
+  
+      <div class="quick-input-panel disable" id="quick-input-panel">
+        <div class="bar-decorate-top">
+          <span></span>
+        </div>
+        <div class="quick-input-panel__header">
+          <h3>ADD ToDo</h3>
+          <button class="btn quick-input-panel__btn-cancel">
+            <span class="btn-icon__bg-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </span>
+          </button>
+        </div>
+        <form class="quick-input-panel__form">
+          <textarea class="quick-input-panel__info-todo" 
+            name="info-todo" 
+            id="" rows="3" required></textarea>
+          <button class="btn quick-input-panel__send" type="submit">
+            <span class="btn-icon__bg-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-160v-240l320-80-320-80v-240l760 320-760 320Z"/></svg>
+            </span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <aside class="notifications ">
+    <div class="toasts-container"> <!--Aca van las toasts-->
+      <div class="toast" id="toast-template">
+        <span class="toast__icon-container">
+          <!-- <svg class="toast__icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg> -->
+          <svg class="toast__icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M382-200 113-469l97-97 172 173 369-369 97 96-466 466Z"/></svg>
+        </span>
+        <span class="toast__text">Add ToDo - </span>
+        <a class="toast__action">View</a>
+      </div>
+    </div>
+  </aside>
+
+  <script type="module" src="./toDoList/main.js"></script>
+  <script src="./toDoList/practica.js"></script>
+</body>
+</html>
