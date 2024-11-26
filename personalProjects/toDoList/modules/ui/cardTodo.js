@@ -7,6 +7,7 @@ let observer;
 function init() {
   cardToDoTemplate.removeAttribute('id');
   cardToDoTemplate.remove();
+  cardToDoTemplate.classList.remove('disable');
   initIntersectionObserver();
   // console.log(cardToDoTemplate);
 }

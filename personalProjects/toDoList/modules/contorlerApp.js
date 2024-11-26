@@ -21,14 +21,14 @@ let memory = {
       title: '19:44 hs',
       subTitle: '08/11/2024',
       text: 'Hacer ToDo List Project en primera instancia solo el diseño',
-      stateCheck: false,
+      stateCheck: true,
     },
     {
       id: 2,
       title: '08:34 hs',
       subTitle: '22/11/2024',
       text: 'Hacer ToDo List Project en segunda instancia hacer el código',
-      stateCheck: true,
+      stateCheck: false,
     },
   ],
 };

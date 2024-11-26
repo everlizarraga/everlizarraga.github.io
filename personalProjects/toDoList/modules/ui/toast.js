@@ -5,6 +5,7 @@ const toastTmeplate = document.getElementById('toast-template');
 function init() {
   toastTmeplate.removeAttribute('id');
   toastTmeplate.remove();
+  toastTmeplate.classList.remove('disable');
 }
 
 function controlToast(toast) {
