@@ -26,70 +26,64 @@
       <li><a href="./productos.html" class="select">Productos</a></li>
       <li><a href="./resenias.html">Reseña</a></li>
       <li><a href="./contacto.html">Contacto</a></li>
-      <li><a href="#" class="carrito"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+      <li><a href="./carrito.html" class="carrito"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
     </ul>
   </nav>
 
   <main>
     <section class="products">
-      <h2>Productos</h2>
-      <ul class="products-list">
-        <li class="product-card">
-          <div class="product-card__img-container">
-            <img class="product-card__img" src="https://fastly.picsum.photos/id/41/1280/805.jpg?hmac=W9CWeYdlZisqEfhjuODl83T3lCXAqjUZrOe9iMFPYmI" alt="Producto 1">
+      <div class="products__header">
+        <h2 class="products__title">Productos</h2>
+        <div class="products__nav-pag">
+          <button class="btn" id="prev-btn">
+            <span><</span>
+          </button>
+          <span id="page-info">1</span>
+          <span class="page-name">Pag.</span>
+          <button class="btn" id="next-btn">
+            <span>></span>
+          </button>
+        </div>
+      </div>
+      <ul class="products-list" id="products-list">
+
+        <!-- <li class="product-card">
+          <div>
+
+            <div class="product-card__img-container">
+              <img class="product-card__img" src="https://fastly.picsum.photos/id/41/1280/805.jpg?hmac=W9CWeYdlZisqEfhjuODl83T3lCXAqjUZrOe9iMFPYmI" alt="Producto 1">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Productosa fs fdf safas fsadf  1</h3>
+              <p class="product-card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt esse dolorem odit, suscipit officiis quo voluptatibus cupiditate repellendus, quidem error a? Delectus nulla tempora, accusantium architecto nobis amet. Dolor, quasi.</p>
+              <div class="price-cant">
+                <div>
+                  <h4 class="product-card__precio">Precio:</h4>
+                  <p>$ <span class="product-card__precio-number">190.60</span></p>
+                </div>
+                <div>
+                  <h4>Cantidad:</h4>
+                  <div class="product-card__cant-container">
+                    <button class="btn product-card__cant-minus">
+                      <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-440v-80h560v80H200Z"/></svg>
+                      </span>
+                    </button>
+                    <input type="number" class="product-card__cant-number" value="1" min="1" step="1" placeholder="1">
+                    <button class="btn product-card__cant-plus">
+                      <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <button class="product-card__btn-add">Añadir al carrito</button>
+            </div>
+
           </div>
-          <h3 class="product-card__title">Producto 1</h3>
-          <p class="product-card__info">Descripcion breve del producto.</p>
-          <button class="product-card__btn-add">Añadir al carrito</button>
-        </li>
-        <li class="product-card">
-          <div class="product-card__img-container">
-            <img class="product-card__img" src="https://fastly.picsum.photos/id/42/3456/2304.jpg?hmac=dhQvd1Qp19zg26MEwYMnfz34eLnGv8meGk_lFNAJR3g" alt="Producto 2">
-          </div>
-          <h3 class="product-card__title">Producto 2</h3>
-          <p class="product-card__info">Descripcion breve del producto.</p>
-          <button class="product-card__btn-add">Añadir al carrito</button>
-        </li>
-        <li class="product-card">
-          <div class="product-card__img-container">
-            <img class="product-card__img" src="https://fastly.picsum.photos/id/48/5000/3333.jpg?hmac=y3_1VDNbhii0vM_FN6wxMlvK27vFefflbUSH06z98so" alt="Producto 3">
-          </div>
-          <h3 class="product-card__title">Producto 3</h3>
-          <p class="product-card__info">Descripcion breve del producto.</p>
-          <button class="product-card__btn-add">Añadir al carrito</button>
-        </li>
-        <li class="product-card">
-          <div class="product-card__img-container">
-            <img class="product-card__img" src="https://fastly.picsum.photos/id/49/1280/792.jpg?hmac=NnUJy0O9-pXHLmY2loqVs2pJmgw9xzuixgYOk4ALCXU" alt="Producto 4">
-          </div>
-          <h3 class="product-card__title">Producto 4</h3>
-          <p class="product-card__info">Descripcion breve del producto.</p>
-          <button class="product-card__btn-add">Añadir al carrito</button>
-        </li>
-        <li class="product-card">
-          <div class="product-card__img-container">
-            <img class="product-card__img" src="https://fastly.picsum.photos/id/54/3264/2176.jpg?hmac=blh020fMeJ5Ru0p-fmXUaOAeYnxpOPHnhJojpzPLN3g" alt="Producto 5">
-          </div>
-          <h3 class="product-card__title">Producto 5</h3>
-          <p class="product-card__info">Descripcion breve del producto.</p>
-          <button class="product-card__btn-add">Añadir al carrito</button>
-        </li>
-        <li class="product-card">
-          <div class="product-card__img-container">
-            <img class="product-card__img" src="https://fastly.picsum.photos/id/75/1999/2998.jpg?hmac=0agRZd8c5CRiFvADOWJqfTv6lqYBty3Kw-9LEtLp_98" alt="Producto 6">
-          </div>
-          <h3 class="product-card__title">Producto 6</h3>
-          <p class="product-card__info">Descripcion breve del producto.</p>
-          <button class="product-card__btn-add">Añadir al carrito</button>
-        </li>
-        <li class="product-card">
-          <div class="product-card__img-container">
-            <img class="product-card__img" src="https://fastly.picsum.photos/id/96/4752/3168.jpg?hmac=KNXudB1q84CHl2opIFEY4ph12da5JD5GzKzH5SeuRVM" alt="Producto 7">
-          </div>
-          <h3 class="product-card__title">Producto 7</h3>
-          <p class="product-card__info">Descripcion breve del producto.</p>
-          <button class="product-card__btn-add">Añadir al carrito</button>
-        </li>
+        </li> -->
+
       </ul>
     </section>
   </main>
@@ -101,6 +95,7 @@
       <a class="link-home" href="../../index.html">Ever Lizarraga</a>
     </div>
   </footer>
-  
+  <script src="./js/utils.js"></script>
+  <script src="./js/funciones_del_index.js"></script>
 </body>
 </html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Ecomerce TT 2024</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"> -->
+</head>
+<body>
+
+  <header>
+    <h1>Mi Tienda Online </h1>
+    <div>
+      <p>Pre-entrega</p>
+      <span>TT 2024</span>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="./index.html"><i class="fas fa-home"></i> Inicio</a></li>
+      <li><a href="./productos.html">Productos</a></li>
+      <li><a href="./resenias.html">Reseña</a></li>
+      <li><a href="./contacto.html">Contacto</a></li>
+      <li><a href="./carrito.html" class="carrito select"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="carrito-section">
+
+      <div class="carrito-header">
+        <div>
+          <h2>Carrito de Compras</h2>
+          <div class="car-switcher">
+            <button class="btn car-switcher-btn car-switcher-btn--cards car-switcher-btn--select" title="View Cards"><!--[car-switcher-btn--select]-->
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-520q-33 0-56.5-23.5T120-600v-160q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v160q0 33-23.5 56.5T760-520H200Zm0 400q-33 0-56.5-23.5T120-200v-160q0-33 23.5-56.5T200-440h560q33 0 56.5 23.5T840-360v160q0 33-23.5 56.5T760-120H200Z"/></svg>
+              </span>
+            </button>
+            <button class="btn car-switcher-btn car-switcher-btn--table " title="View Table">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-320H120v120q0 33 23.5 56.5T200-120h240v-200Zm80 0v200h240q33 0 56.5-23.5T840-200v-120H520Zm-80-80v-200H120v200h320Zm80 0h320v-200H520v200ZM120-680h720v-80q0-33-23.5-56.5T760-840H200q-33 0-56.5 23.5T120-760v80Z"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <ul class="car-cards ">
+        <!-- <li class="car-card">
+          <div class="car-card__img-container">
+            <img class="car-card__img" src="https://picsum.photos/300/200?random=1" alt="Producto del carrito 1">
+          </div>
+          <div class="car-card__info-container">
+            <h3 class="car-card__title">Titulo del Producto 01</h3>
+            <div class="car-card__price-container">
+              <h4 class="car-card__subtitle car-card__price-title">Precio</h4>
+              <p class="car-card__price">$ <span>1200</span></p>
+            </div>
+            <div class="car-card__count-container">
+              <h4 class="car-card__subtitle car-card__count-title">Cantidad</h4>
+              <div class="car-card__count">
+                <button class="btn car-card__btn car-card__btn--minus">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-440v-80h560v80H200Z"/></svg>
+                  </span>
+                </button>
+                <input class="car-card__count-number" type="number" value="1" min="1" placeholder="12">
+                <button class="btn car-card__btn car-card__btn--plus">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div class="car-card__subtotal-container">
+              <h4 class="car-card__subtitle car-card__subtotal-title">Subtotal</h4>
+              <p class="car-card__subtotal">$ <span>14400</span></p>
+            </div>
+          </div>
+          <button class="btn car-card__btn car-card__btn--delete">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm80-160h80v-360h-80v360Zm160 0h80v-360h-80v360Z"/></svg>
+            </span>
+          </button>
+        </li> -->
+      </ul>
+
+      <div class="car-table__container disable">
+        <table class="car-table ">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th class="td-price td-price--title">Precio</th>
+              <th class="td-count td-count--title">Cantidad</th>
+              <th>Subtotal</th>
+              <th class="th-options" title="Acciones">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm112-260q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Z"/></svg>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="car-table__items">
+            <!-- <tr>
+              <td class="td-product">
+                <p>Essence Mascara Lash Princess</p>
+                <p class="car-table__mobile-content">
+                  <input class="td-count__value" type="number" value="1" min="1" placeholder="12"> x $<span class="td-price__value">9.99</span>
+                </p>
+              </td>
+              <td class="td-price">$ <span class="td-price__value">9.99</span></td>
+              <td class="td-count"><input class="td-count__value" type="number" value="1" min="1" placeholder="12"></td>
+              <td>$ <span class="sub-total">9.99</span></td>
+              <td class="td-btn">
+                <button class="btn td-btn__delete">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm80-160h80v-360h-80v360Zm160 0h80v-360h-80v360Z"/></svg>
+                  </span>
+                </button>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="w-choice">
+        <h4 class="total-section">Total: $ <span class="car-total">3516.97</span></h4>
+        <div class="car-action__container">
+          <button class="btn car-action__btn car-action__btn--secundary" id="btn-seguir-comprando">Volver al Inicio</button>
+          <button class="btn car-action__btn car-action__btn--primary" id="btn-finaliza-compra">Finalizar Compra</button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Talento - Tech 2024</p>
+    <div class="personal-info"> 
+      <h3>Alumno</h3>
+      <a class="link-home" href="../../index.html">Ever Lizarraga</a>
+    </div>
+  </footer>
+  <script src="./js/utils.js"></script>
+  <script src="./js/funciones_del_carrito.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
