@@ -1,0 +1,64 @@
+:root {
+  --color-primary: #000;
+  --color-secundary: #fff;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-primary);
+  color: var(--color-secundary);
+}
+
+.custom-scrollbar-container { /*[Contenedor principal]*/
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+
+}
+
+.custom-scrollbar-content { /*<ul>*/
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  background-color: blue;
+  padding: 20px;
+
+  overflow-x: scroll;
+}
+
+
+.card {
+  width: 100px;
+  height: 150px;
+  background-color: red;
+  flex-shrink: 0;
+}
+
+.custom-scrollbar {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.custom-scrollbar-thumb {
+  width: 100px;
+  height: 100%;
+  background-color: blueviolet;
+}
+
