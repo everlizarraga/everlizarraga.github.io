@@ -49,7 +49,7 @@
 
   <main>
 
-    <section class="home-section disable">
+    <section class="home-section ">
 
       <section class="hero">
         <div class="hero__container">
@@ -149,6 +149,43 @@
               <div class="custom-scrollbar-thumb"></div>
             </div>
           </div>
+        </section>
+
+        <section class="carousel carousel-reusable home-section__categories">
+          <div class="carousel__header">
+            <h3 class="carousel__title">Categories</h3>
+          </div>
+  
+          <div class="carousel__galery">
+            <div class="viewfinder shadow-left shadow-right">
+              <ul class="carousel__container-cards custom-scrollbar-content">
+                <!--[bg-color-red][bg-color-gray]-->
+                <button class="btn details-info__category bg-color-red">Action</button>
+                <button class="btn details-info__category bg-color-gray">Adventure</button>
+                <button class="btn details-info__category bg-color-gray">Animation</button>
+                <button class="btn details-info__category bg-color-gray">Comedy</button>
+                <button class="btn details-info__category bg-color-gray">Crime</button>
+                <button class="btn details-info__category bg-color-gray">Documentary</button>
+                <button class="btn details-info__category bg-color-gray">Drama</button>
+                <button class="btn details-info__category bg-color-gray">Family</button>
+                <button class="btn details-info__category bg-color-gray">Fantasy</button>
+                <button class="btn details-info__category bg-color-gray">History</button>
+                <button class="btn details-info__category bg-color-gray">Horror</button>
+                <button class="btn details-info__category bg-color-gray">Music</button>
+                <button class="btn details-info__category bg-color-gray">Mistery</button>
+                <button class="btn details-info__category bg-color-gray">Romance</button>
+                <button class="btn details-info__category bg-color-gray">Science Fiction</button>
+                <button class="btn details-info__category bg-color-gray">TV Movie</button>
+                <button class="btn details-info__category bg-color-gray">Thriller</button>
+                <button class="btn details-info__category bg-color-gray">War</button>
+                <button class="btn details-info__category bg-color-gray">Western</button>
+              </ul>
+            </div>
+            <div class="custom-scrollbar">
+              <div class="custom-scrollbar-thumb"></div>
+            </div>
+          </div>
+
         </section>
   
         <section class="carousel carousel--popular">
@@ -388,42 +425,102 @@
     
     <section class="generic-section disable">
       <div class="main-contain-section">
-        <!--  -->
+        <section class="carousel carousel-reusable">
+          <div class="carousel__header">
+            <h3 class="carousel__title">Popular</h3>
+            <!-- <button class="btn btn-text bg-color-red carousel__btn-see-all">
+              <span class="btn__title">SEE ALL</span>
+            </button> -->
+            <button class="btn btn--icon btn--go-back bg-color-red">
+              <span class="btn__icon-container">
+                <svg class="btn__icon" width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6.24705L6.24705 0L8.07734 1.8217L4.93233 4.95811H16V7.53598H4.93233L8.07734 10.681L6.24705 12.5027L0 6.24705Z" fill="white"/></svg>                  
+              </span>
+              <span class="btn__title">GO BACK</span>
+            </button>
+          </div>
+
+          <ul class="categories-section__galery">
+            <li class="card">
+              <div class="card__img-container">
+                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+              </div>
+              <h4 class="card__title">Thor: Love and Thunder</h4>
+            </li>
+            <li class="card">
+              <div class="card__img-container">
+                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+              </div>
+              <h4 class="card__title">Thor: Love and Thunder</h4>
+            </li>
+            <li class="card">
+              <div class="card__img-container">
+                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+              </div>
+              <h4 class="card__title">Thor: Love and Thunder</h4>
+            </li>
+            <li class="card">
+              <div class="card__img-container">
+                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+              </div>
+              <h4 class="card__title">Thor: Love and Thunder</h4>
+            </li>
+            <li class="card">
+              <div class="card__img-container">
+                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+              </div>
+              <h4 class="card__title">Thor: Love and Thunder</h4>
+            </li>
+            <li class="card">
+              <div class="card__img-container">
+                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+              </div>
+              <h4 class="card__title">Thor: Love and Thunder</h4>
+            </li>
+          </ul>
+
+        </section>
       </div>
     </section>
     
-    <section class="categories-section ">
+    <section class="categories-section disable">
       <div class="main-contain-section">
-        <section class="carousel carousel--popular">
+        <section class="carousel carousel-reusable">
           <div class="carousel__header">
             <h3 class="carousel__title">Categories</h3>
-            <button class="btn btn-text bg-color-red carousel__btn-see-all">
+            <!-- <button class="btn btn-text bg-color-red carousel__btn-see-all">
               <span class="btn__title">SEE ALL</span>
+            </button> -->
+            <button class="btn btn--icon btn--go-back bg-color-red">
+              <span class="btn__icon-container">
+                <svg class="btn__icon" width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6.24705L6.24705 0L8.07734 1.8217L4.93233 4.95811H16V7.53598H4.93233L8.07734 10.681L6.24705 12.5027L0 6.24705Z" fill="white"/></svg>                  
+              </span>
+              <span class="btn__title">GO BACK</span>
             </button>
           </div>
   
           <div class="carousel__galery">
             <div class="viewfinder shadow-left shadow-right">
               <ul class="carousel__container-cards custom-scrollbar-content">
-                <li class="details-info__category bg-color-gray">Action</li>
-                <li class="details-info__category bg-color-gray">Adventure</li>
-                <li class="details-info__category bg-color-gray">Animation</li>
-                <li class="details-info__category bg-color-gray">Comedy</li>
-                <li class="details-info__category bg-color-gray">Crime</li>
-                <li class="details-info__category bg-color-gray">Documentary</li>
-                <li class="details-info__category bg-color-gray">Drama</li>
-                <li class="details-info__category bg-color-gray">Family</li>
-                <li class="details-info__category bg-color-gray">Fantasy</li>
-                <li class="details-info__category bg-color-gray">History</li>
-                <li class="details-info__category bg-color-gray">Horror</li>
-                <li class="details-info__category bg-color-gray">Music</li>
-                <li class="details-info__category bg-color-gray">Mistery</li>
-                <li class="details-info__category bg-color-gray">Romance</li>
-                <li class="details-info__category bg-color-gray">Science Fiction</li>
-                <li class="details-info__category bg-color-gray">TV Movie</li>
-                <li class="details-info__category bg-color-gray">Thriller</li>
-                <li class="details-info__category bg-color-gray">War</li>
-                <li class="details-info__category bg-color-gray">Western</li>
+                <!--[bg-color-red][bg-color-gray]-->
+                <button class="btn details-info__category bg-color-red">Action</button>
+                <button class="btn details-info__category bg-color-gray">Adventure</button>
+                <button class="btn details-info__category bg-color-gray">Animation</button>
+                <button class="btn details-info__category bg-color-gray">Comedy</button>
+                <button class="btn details-info__category bg-color-gray">Crime</button>
+                <button class="btn details-info__category bg-color-gray">Documentary</button>
+                <button class="btn details-info__category bg-color-gray">Drama</button>
+                <button class="btn details-info__category bg-color-gray">Family</button>
+                <button class="btn details-info__category bg-color-gray">Fantasy</button>
+                <button class="btn details-info__category bg-color-gray">History</button>
+                <button class="btn details-info__category bg-color-gray">Horror</button>
+                <button class="btn details-info__category bg-color-gray">Music</button>
+                <button class="btn details-info__category bg-color-gray">Mistery</button>
+                <button class="btn details-info__category bg-color-gray">Romance</button>
+                <button class="btn details-info__category bg-color-gray">Science Fiction</button>
+                <button class="btn details-info__category bg-color-gray">TV Movie</button>
+                <button class="btn details-info__category bg-color-gray">Thriller</button>
+                <button class="btn details-info__category bg-color-gray">War</button>
+                <button class="btn details-info__category bg-color-gray">Western</button>
               </ul>
             </div>
             <div class="custom-scrollbar">

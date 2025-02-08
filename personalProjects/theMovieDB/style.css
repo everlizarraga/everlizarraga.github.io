@@ -161,6 +161,12 @@ body {
   background-color: #333333;
 }
 
+
+.btn--go-back .btn__title {
+  display: none;
+}
+
+
 /* ================================ */
 /* ================================ */
 /* [HEADER]================================ */
@@ -419,6 +425,7 @@ body {
 .carousel__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 32px;
 }
 .carousel__title {
@@ -496,6 +503,7 @@ body {
   pointer-events: none;
   opacity: 0;
   transition: opacity 150ms ease-in-out;
+  z-index: 1;
 }
 .viewfinder::after {
   content: "";
@@ -508,12 +516,20 @@ body {
   pointer-events: none;
   opacity: 0;
   transition: opacity 150ms ease-in-out;
+  z-index: 1;
 }
 .shadow-left::before {
   opacity: 1;
 }
 .shadow-right::after {
   opacity: 1;
+}
+
+.carousel.home-section__categories {
+  margin-top: 48px;
+}
+.home-section__categories .carousel__container-cards {
+  gap: 8px;
 }
 
 /* ================================ */
@@ -698,14 +714,14 @@ body {
 /* ================================ */
 /* ================================ */
 /* ================================ */
-.categories-section .carousel {
+.carousel-reusable {
   margin-top: 32px;
 }
 .categories-section .carousel__header {
   margin-bottom: 24px;
 }
 
-.categories-section__galery {
+/* .categories-section__galery {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -715,8 +731,21 @@ body {
 }
 .categories-section__galery > * {
   flex-shrink: 0;
+} */
+.categories-section__galery {
+  width: 100%;
+  display: grid;
+  column-gap: var(--margin-lateral-frame);
+  row-gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-width), 1fr));
+  margin-top: 40px;
 }
-
+.categories-section__galery .card {
+  width: 100%;
+}
+.categories-section__galery .card__img-container {
+  width: 100%;
+}
 
 
 /* ================================ */
@@ -786,4 +815,45 @@ body {
 }
 
 
+
+/* ================================ */
+/* ================================ */
+/* ================================ */
+/* ================================ */
+/* ================================ */
+/* ================================ */
+
+@media (min-width: 568px) {
+  .hero__img-container {
+    height: 350px;
+  }
+}
+
+@media (min-width: 632px) {
+  .hero__img-container {
+    height: 400px;
+  }
+  .hero__img-container::before {
+    height: 150px;
+  }
+  .hero__overlay {
+    top: -64px;
+  }
+  .home-section {
+    position: relative;
+  }
+  .home-section .main-contain-section {
+    margin-top: -32px;
+    position: relative;
+  }
+}
+
+@media (min-width: 720px) {
+  .hero__img-container {
+    height: 500px;
+  }
+  .hero__img {
+    /* object-fit: contain; */
+  }
+}
 
