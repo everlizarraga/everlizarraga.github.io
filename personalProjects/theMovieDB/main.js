@@ -4,6 +4,7 @@ document.addEventListener('click', (event) => {console.log(event.target)});
 
 document.addEventListener('DOMContentLoaded', ()=> {
   menu.init();
+
 });
 
 const API_KEY = '69cbc687c32419aa77d44cddeee6cf38';

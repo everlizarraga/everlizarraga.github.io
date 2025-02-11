@@ -17,9 +17,17 @@
 <body>
 
   <header class="header">
-    <div class="header__container">
+    <div class="header__container delimited-area-work">
       <h1 class="header__title">MY MOVIES DB</h1>
       <div class="header__contain">
+        <form class="search search-header">
+          <input class="search__input" type="search" placeholder="Search...">
+          <button class="btn search__btn" type="submit">
+            <span class="btn__bg-container">
+              <svg class="btn__bg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+            </span>
+          </button>
+        </form>
         <button class="btn btn--state-1 btn-size-32 header__btn-menu"><!--[btn-change]-->
           <span class="btn__bg-container">
             <svg class="btn__bg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
@@ -27,7 +35,7 @@
           </span>
         </button>
         <nav class="header__nav "><!--[menu-effect-in]-->
-          <form class="search">
+          <form class="search search-menu">
             <input class="search__input" type="search" placeholder="Search...">
             <button class="btn search__btn" type="submit">
               <span class="btn__bg-container">
@@ -36,11 +44,12 @@
             </button>
           </form>
           <ul class="header__nav-container">
-            <li class="header__nav-option"><a href="#">Home</a></li>
-            <li class="header__nav-option"><a href="#">Trending Movies</a></li>
-            <li class="header__nav-option"><a href="#">Categories</a></li>
-            <li class="header__nav-option"><a href="#">Popular</a></li>
-            <li class="header__nav-option"><a href="#">Upcoming</a></li>
+            <!--[header__nav-option--selected]-->
+            <li class="header__nav-option"><a class="header__nav-option--selected" href="#">Home</a></li>
+            <li class="header__nav-option"><a class="" href="#">Trending Movies</a></li>
+            <li class="header__nav-option"><a class="" href="#">Categories</a></li>
+            <li class="header__nav-option"><a class="" href="#">Popular</a></li>
+            <li class="header__nav-option"><a class="" href="#">Upcoming</a></li>
           </ul>
         </nav>
       </div>
@@ -49,13 +58,25 @@
 
   <main>
 
-    <section class="home-section ">
+    <section class="home-section "> <!--[disable]-->
 
-      <section class="hero">
+      <section class="hero delimited-area-work">
         <div class="hero__container">
-          <div class="hero__img-container">
-            <img class="hero__img" src="https://image.tmdb.org/t/p/w500/iKUwhA4DUxMcNKu5lLSbDFwwilk.jpg" alt="Doctor Strange in the Multiverse of Madness">
-          </div>
+          <picture class="hero__img-container">
+            <source 
+              media="(min-width: 720px)" 
+              srcset="https://image.tmdb.org/t/p/original/iKUwhA4DUxMcNKu5lLSbDFwwilk.jpg" 
+              type="image/jpg">
+            <source 
+              media="(min-width: 500px)" 
+              srcset="https://image.tmdb.org/t/p/w500/iKUwhA4DUxMcNKu5lLSbDFwwilk.jpg" 
+              type="image/jpg">
+            <!-- <img class="hero__img" src="https://image.tmdb.org/t/p/w500/iKUwhA4DUxMcNKu5lLSbDFwwilk.jpg" alt="Doctor Strange in the Multiverse of Madness"> -->
+            <!-- <img class="hero__img" src="https://image.tmdb.org/t/p/original/iKUwhA4DUxMcNKu5lLSbDFwwilk.jpg" alt="Doctor Strange in the Multiverse of Madness"> -->
+
+            <img class="hero__img" src="https://image.tmdb.org/t/p/w500/ddJcSKbcp4rKZTmuyWaMhuwcfMz.jpg" alt="Doctor Strange in the Multiverse of Madness">
+            <!-- <img class="hero__img" src="https://image.tmdb.org/t/p/original/ddJcSKbcp4rKZTmuyWaMhuwcfMz.jpg" alt="Doctor Strange in the Multiverse of Madness"> -->
+          </picture>
           <div class="hero__overlay">
             <div class="subheadline">
               <div class="rate-section">
@@ -95,215 +116,227 @@
         </div>
       </section>
 
-      <div class="main-contain-section">
-        <section class="carousel carousel--trending">
-          <div class="carousel__header">
-            <h3 class="carousel__title">Trending</h3>
-            <button class="btn btn-text bg-color-red carousel__btn-see-all">
-              <span class="btn__title">SEE ALL</span>
-            </button>
-          </div>
+      <div class="main-contain-section ">
+        <div class="delimited-area-work">
+          <section class="carousel carousel--trending">
+            <div class="carousel__header">
+              <h3 class="carousel__title">Trending</h3>
+              <button class="btn btn-text bg-color-red carousel__btn-see-all">
+                <span class="btn__title">SEE ALL</span>
+              </button>
+            </div>
+    
+            <div class="carousel__galery">
+              <div class="viewfinder shadow-left shadow-right"> <!--[shadow-left][shadow-right]-->
+                <ul class="carousel__container-cards custom-scrollbar-content">
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                </ul>
+              </div>
+              <div class="custom-scrollbar">
+                <div class="custom-scrollbar-thumb"></div>
+              </div>
+            </div>
+          </section>
   
-          <div class="carousel__galery">
-            <div class="viewfinder shadow-left shadow-right"> <!--[shadow-left][shadow-right]-->
-              <ul class="carousel__container-cards custom-scrollbar-content">
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-              </ul>
+          <section class="carousel carousel-reusable home-section__categories">
+            <div class="carousel__header">
+              <h3 class="carousel__title">Categories</h3>
             </div>
-            <div class="custom-scrollbar">
-              <div class="custom-scrollbar-thumb"></div>
+    
+            <div class="carousel__galery">
+              <div class="viewfinder shadow-left shadow-right">
+                <ul class="carousel__container-cards custom-scrollbar-content">
+                  <!--[bg-color-red][bg-color-gray]-->
+                  <button class="btn details-info__category bg-color-red">Action</button>
+                  <button class="btn details-info__category bg-color-gray">Adventure</button>
+                  <button class="btn details-info__category bg-color-gray">Animation</button>
+                  <button class="btn details-info__category bg-color-gray">Comedy</button>
+                  <button class="btn details-info__category bg-color-gray">Crime</button>
+                  <button class="btn details-info__category bg-color-gray">Documentary</button>
+                  <button class="btn details-info__category bg-color-gray">Drama</button>
+                  <button class="btn details-info__category bg-color-gray">Family</button>
+                  <button class="btn details-info__category bg-color-gray">Fantasy</button>
+                  <button class="btn details-info__category bg-color-gray">History</button>
+                  <button class="btn details-info__category bg-color-gray">Horror</button>
+                  <button class="btn details-info__category bg-color-gray">Music</button>
+                  <button class="btn details-info__category bg-color-gray">Mistery</button>
+                  <button class="btn details-info__category bg-color-gray">Romance</button>
+                  <button class="btn details-info__category bg-color-gray">Science Fiction</button>
+                  <button class="btn details-info__category bg-color-gray">TV Movie</button>
+                  <button class="btn details-info__category bg-color-gray">Thriller</button>
+                  <button class="btn details-info__category bg-color-gray">War</button>
+                  <button class="btn details-info__category bg-color-gray">Western</button>
+                </ul>
+              </div>
+              <div class="custom-scrollbar">
+                <div class="custom-scrollbar-thumb"></div>
+              </div>
             </div>
-          </div>
-        </section>
-
-        <section class="carousel carousel-reusable home-section__categories">
-          <div class="carousel__header">
-            <h3 class="carousel__title">Categories</h3>
-          </div>
   
-          <div class="carousel__galery">
-            <div class="viewfinder shadow-left shadow-right">
-              <ul class="carousel__container-cards custom-scrollbar-content">
-                <!--[bg-color-red][bg-color-gray]-->
-                <button class="btn details-info__category bg-color-red">Action</button>
-                <button class="btn details-info__category bg-color-gray">Adventure</button>
-                <button class="btn details-info__category bg-color-gray">Animation</button>
-                <button class="btn details-info__category bg-color-gray">Comedy</button>
-                <button class="btn details-info__category bg-color-gray">Crime</button>
-                <button class="btn details-info__category bg-color-gray">Documentary</button>
-                <button class="btn details-info__category bg-color-gray">Drama</button>
-                <button class="btn details-info__category bg-color-gray">Family</button>
-                <button class="btn details-info__category bg-color-gray">Fantasy</button>
-                <button class="btn details-info__category bg-color-gray">History</button>
-                <button class="btn details-info__category bg-color-gray">Horror</button>
-                <button class="btn details-info__category bg-color-gray">Music</button>
-                <button class="btn details-info__category bg-color-gray">Mistery</button>
-                <button class="btn details-info__category bg-color-gray">Romance</button>
-                <button class="btn details-info__category bg-color-gray">Science Fiction</button>
-                <button class="btn details-info__category bg-color-gray">TV Movie</button>
-                <button class="btn details-info__category bg-color-gray">Thriller</button>
-                <button class="btn details-info__category bg-color-gray">War</button>
-                <button class="btn details-info__category bg-color-gray">Western</button>
-              </ul>
+          </section>
+    
+          <section class="carousel carousel--popular">
+            <div class="carousel__header">
+              <h3 class="carousel__title">Popular</h3>
+              <button class="btn btn-text bg-color-red carousel__btn-see-all">
+                <span class="btn__title">SEE ALL</span>
+              </button>
             </div>
-            <div class="custom-scrollbar">
-              <div class="custom-scrollbar-thumb"></div>
+    
+            <div class="carousel__galery">
+              <div class="viewfinder shadow-left shadow-right"> <!--[shadow-left][shadow-right]-->
+                <ul class="carousel__container-cards custom-scrollbar-content">
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                </ul>
+              </div>
+              <div class="custom-scrollbar">
+                <div class="custom-scrollbar-thumb"></div>
+              </div>
             </div>
-          </div>
-
-        </section>
-  
-        <section class="carousel carousel--popular">
-          <div class="carousel__header">
-            <h3 class="carousel__title">Popular</h3>
-            <button class="btn btn-text bg-color-red carousel__btn-see-all">
-              <span class="btn__title">SEE ALL</span>
-            </button>
-          </div>
-  
-          <div class="carousel__galery">
-            <div class="viewfinder shadow-left shadow-right"> <!--[shadow-left][shadow-right]-->
-              <ul class="carousel__container-cards custom-scrollbar-content">
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-              </ul>
+          </section>
+    
+          <section class="carousel carousel--upcoming">
+            <div class="carousel__header">
+              <h3 class="carousel__title">Upcoming</h3>
+              <button class="btn btn-text bg-color-red carousel__btn-see-all">
+                <span class="btn__title">SEE ALL</span>
+              </button>
             </div>
-            <div class="custom-scrollbar">
-              <div class="custom-scrollbar-thumb"></div>
+    
+            <div class="carousel__galery">
+              <div class="viewfinder shadow-left shadow-right"> <!--[shadow-left][shadow-right]-->
+                <ul class="carousel__container-cards custom-scrollbar-content">
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                </ul>
+              </div>
+              <div class="custom-scrollbar">
+                <div class="custom-scrollbar-thumb"></div>
+              </div>
             </div>
-          </div>
-        </section>
-  
-        <section class="carousel carousel--upcoming">
-          <div class="carousel__header">
-            <h3 class="carousel__title">Upcoming</h3>
-            <button class="btn btn-text bg-color-red carousel__btn-see-all">
-              <span class="btn__title">SEE ALL</span>
-            </button>
-          </div>
-  
-          <div class="carousel__galery">
-            <div class="viewfinder shadow-left shadow-right"> <!--[shadow-left][shadow-right]-->
-              <ul class="carousel__container-cards custom-scrollbar-content">
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-              </ul>
-            </div>
-            <div class="custom-scrollbar">
-              <div class="custom-scrollbar-thumb"></div>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
 
     </section>
 
 
-    <section class="details-section disable">
-      <div class="details-hero">
+    <section class="details-section "> <!--[disable]-->
+      <div class="details-hero ">
+        <div class="details-hero__btn-back-container">
+          <div class="delimited-area-work">
+            <button class="btn btn--icon btn--go-back bg-color-red">
+              <span class="btn__icon-container">
+                <svg class="btn__icon" width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6.24705L6.24705 0L8.07734 1.8217L4.93233 4.95811H16V7.53598H4.93233L8.07734 10.681L6.24705 12.5027L0 6.24705Z" fill="white"/></svg>                  
+              </span>
+              <span class="btn__title">GO BACK</span>
+            </button>
+          </div>
+        </div>
         <div class="details-bg__section">
           <div class="details-bg__mobile-container ">
             <img class="details-bg__mobile" src="https://image.tmdb.org/t/p/w500/9Zfv4Ap1e8eKOYnZPtYaWhLkk0d.jpg" alt="El monstruo marino - backgroun-mobile">
@@ -332,12 +365,12 @@
               </div>
               <div class="dot-decore"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-200q-117 0-198.5-81.5T200-480q0-117 81.5-198.5T480-760q117 0 198.5 81.5T760-480q0 117-81.5 198.5T480-200Z"/></svg></div>
               <div class="overlay__type-movie-container">
-                <span class="overlay__type-movie">TRENDING</span>
+                <span class="overlay__type-movie">POPULAR</span>
               </div>
             </div>
             <div class="details-info__header-area">
               <h3 class="details-info__title">The Sea Beast</h3>
-              <p class="details-info__description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero placeat totam tenetur, consectetur aut explicabo fugiat nulla maiores blanditiis nihil aspernatur doloribus modi quidem.</p>
+              <p class="details-info__description">When a young girl stows away on the ship of a legendary sea monster hunter, they launch an epic journey into uncharted waters — and make history to boot.</p>
               <p class="details-info__released">Released: <span>06/24/2022</span></p>
             </div>
             <div class="details-info__cta">
@@ -366,208 +399,214 @@
       </div>
 
       <div class="main-contain-section">
-        <div class="details-section__similar-movies">
-          <div class="carousel__header">
-            <h3 class="carousel__title">Similar Movies</h3>
-            <button class="btn btn-text bg-color-red carousel__btn-see-all">
-              <span class="btn__title">SEE ALL</span>
-            </button>
-          </div>
-  
-          <div class="carousel__galery">
-            <div class="viewfinder shadow-left shadow-right"> <!--[shadow-left][shadow-right]-->
-              <ul class="carousel__container-cards custom-scrollbar-content">
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-                <li class="card">
-                  <div class="card__img-container">
-                    <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-                  </div>
-                  <h4 class="card__title">Thor: Love and Thunder</h4>
-                </li>
-              </ul>
+        <div class="delimited-area-work">
+          <div class="details-section__similar-movies">
+            <div class="carousel__header">
+              <h3 class="carousel__title">Similar Movies</h3>
+              <button class="btn btn-text bg-color-red carousel__btn-see-all">
+                <span class="btn__title">SEE ALL</span>
+              </button>
             </div>
-            <div class="custom-scrollbar">
-              <div class="custom-scrollbar-thumb"></div>
+    
+            <div class="carousel__galery">
+              <div class="viewfinder shadow-left shadow-right"> <!--[shadow-left][shadow-right]-->
+                <ul class="carousel__container-cards custom-scrollbar-content">
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                  <li class="card">
+                    <div class="card__img-container">
+                      <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                    </div>
+                    <h4 class="card__title">Thor: Love and Thunder</h4>
+                  </li>
+                </ul>
+              </div>
+              <div class="custom-scrollbar">
+                <div class="custom-scrollbar-thumb"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
     
-    <section class="generic-section disable">
+    <section class="generic-section "> <!--[disable]-->
       <div class="main-contain-section">
-        <section class="carousel carousel-reusable">
-          <div class="carousel__header">
-            <h3 class="carousel__title">Popular</h3>
-            <!-- <button class="btn btn-text bg-color-red carousel__btn-see-all">
-              <span class="btn__title">SEE ALL</span>
-            </button> -->
-            <button class="btn btn--icon btn--go-back bg-color-red">
-              <span class="btn__icon-container">
-                <svg class="btn__icon" width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6.24705L6.24705 0L8.07734 1.8217L4.93233 4.95811H16V7.53598H4.93233L8.07734 10.681L6.24705 12.5027L0 6.24705Z" fill="white"/></svg>                  
-              </span>
-              <span class="btn__title">GO BACK</span>
-            </button>
-          </div>
-
-          <ul class="categories-section__galery">
-            <li class="card">
-              <div class="card__img-container">
-                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-              </div>
-              <h4 class="card__title">Thor: Love and Thunder</h4>
-            </li>
-            <li class="card">
-              <div class="card__img-container">
-                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-              </div>
-              <h4 class="card__title">Thor: Love and Thunder</h4>
-            </li>
-            <li class="card">
-              <div class="card__img-container">
-                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-              </div>
-              <h4 class="card__title">Thor: Love and Thunder</h4>
-            </li>
-            <li class="card">
-              <div class="card__img-container">
-                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-              </div>
-              <h4 class="card__title">Thor: Love and Thunder</h4>
-            </li>
-            <li class="card">
-              <div class="card__img-container">
-                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-              </div>
-              <h4 class="card__title">Thor: Love and Thunder</h4>
-            </li>
-            <li class="card">
-              <div class="card__img-container">
-                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-              </div>
-              <h4 class="card__title">Thor: Love and Thunder</h4>
-            </li>
-          </ul>
-
-        </section>
+        <div class="delimited-area-work">
+          <section class="carousel carousel-reusable">
+            <div class="carousel__header">
+              <h3 class="carousel__title">Popular</h3>
+              <!-- <button class="btn btn-text bg-color-red carousel__btn-see-all">
+                <span class="btn__title">SEE ALL</span>
+              </button> -->
+              <button class="btn btn--icon btn--go-back bg-color-red">
+                <span class="btn__icon-container">
+                  <svg class="btn__icon" width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6.24705L6.24705 0L8.07734 1.8217L4.93233 4.95811H16V7.53598H4.93233L8.07734 10.681L6.24705 12.5027L0 6.24705Z" fill="white"/></svg>                  
+                </span>
+                <span class="btn__title">GO BACK</span>
+              </button>
+            </div>
+  
+            <ul class="categories-section__galery">
+              <li class="card">
+                <div class="card__img-container">
+                  <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                </div>
+                <h4 class="card__title">Thor: Love and Thunder</h4>
+              </li>
+              <li class="card">
+                <div class="card__img-container">
+                  <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                </div>
+                <h4 class="card__title">Thor: Love and Thunder</h4>
+              </li>
+              <li class="card">
+                <div class="card__img-container">
+                  <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                </div>
+                <h4 class="card__title">Thor: Love and Thunder</h4>
+              </li>
+              <li class="card">
+                <div class="card__img-container">
+                  <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                </div>
+                <h4 class="card__title">Thor: Love and Thunder</h4>
+              </li>
+              <li class="card">
+                <div class="card__img-container">
+                  <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                </div>
+                <h4 class="card__title">Thor: Love and Thunder</h4>
+              </li>
+              <li class="card">
+                <div class="card__img-container">
+                  <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                </div>
+                <h4 class="card__title">Thor: Love and Thunder</h4>
+              </li>
+            </ul>
+  
+          </section>
+        </div>
       </div>
     </section>
     
-    <section class="categories-section disable">
+    <section class="categories-section "> <!--[disable]-->
       <div class="main-contain-section">
-        <section class="carousel carousel-reusable">
-          <div class="carousel__header">
-            <h3 class="carousel__title">Categories</h3>
-            <!-- <button class="btn btn-text bg-color-red carousel__btn-see-all">
-              <span class="btn__title">SEE ALL</span>
-            </button> -->
-            <button class="btn btn--icon btn--go-back bg-color-red">
-              <span class="btn__icon-container">
-                <svg class="btn__icon" width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6.24705L6.24705 0L8.07734 1.8217L4.93233 4.95811H16V7.53598H4.93233L8.07734 10.681L6.24705 12.5027L0 6.24705Z" fill="white"/></svg>                  
-              </span>
-              <span class="btn__title">GO BACK</span>
-            </button>
-          </div>
+        <div class="delimited-area-work">
+          <section class="carousel carousel-reusable">
+            <div class="carousel__header">
+              <h3 class="carousel__title">Categories: Action</h3>
+              <!-- <button class="btn btn-text bg-color-red carousel__btn-see-all">
+                <span class="btn__title">SEE ALL</span>
+              </button> -->
+              <button class="btn btn--icon btn--go-back bg-color-red">
+                <span class="btn__icon-container">
+                  <svg class="btn__icon" width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6.24705L6.24705 0L8.07734 1.8217L4.93233 4.95811H16V7.53598H4.93233L8.07734 10.681L6.24705 12.5027L0 6.24705Z" fill="white"/></svg>                  
+                </span>
+                <span class="btn__title">GO BACK</span>
+              </button>
+            </div>
+    
+            <div class="carousel__galery">
+              <div class="viewfinder shadow-left shadow-right">
+                <ul class="carousel__container-cards custom-scrollbar-content">
+                  <!--[bg-color-red][bg-color-gray]-->
+                  <button class="btn details-info__category bg-color-red">Action</button>
+                  <button class="btn details-info__category bg-color-gray">Adventure</button>
+                  <button class="btn details-info__category bg-color-gray">Animation</button>
+                  <button class="btn details-info__category bg-color-gray">Comedy</button>
+                  <button class="btn details-info__category bg-color-gray">Crime</button>
+                  <button class="btn details-info__category bg-color-gray">Documentary</button>
+                  <button class="btn details-info__category bg-color-gray">Drama</button>
+                  <button class="btn details-info__category bg-color-gray">Family</button>
+                  <button class="btn details-info__category bg-color-gray">Fantasy</button>
+                  <button class="btn details-info__category bg-color-gray">History</button>
+                  <button class="btn details-info__category bg-color-gray">Horror</button>
+                  <button class="btn details-info__category bg-color-gray">Music</button>
+                  <button class="btn details-info__category bg-color-gray">Mistery</button>
+                  <button class="btn details-info__category bg-color-gray">Romance</button>
+                  <button class="btn details-info__category bg-color-gray">Science Fiction</button>
+                  <button class="btn details-info__category bg-color-gray">TV Movie</button>
+                  <button class="btn details-info__category bg-color-gray">Thriller</button>
+                  <button class="btn details-info__category bg-color-gray">War</button>
+                  <button class="btn details-info__category bg-color-gray">Western</button>
+                </ul>
+              </div>
+              <div class="custom-scrollbar">
+                <div class="custom-scrollbar-thumb"></div>
+              </div>
+            </div>
   
-          <div class="carousel__galery">
-            <div class="viewfinder shadow-left shadow-right">
-              <ul class="carousel__container-cards custom-scrollbar-content">
-                <!--[bg-color-red][bg-color-gray]-->
-                <button class="btn details-info__category bg-color-red">Action</button>
-                <button class="btn details-info__category bg-color-gray">Adventure</button>
-                <button class="btn details-info__category bg-color-gray">Animation</button>
-                <button class="btn details-info__category bg-color-gray">Comedy</button>
-                <button class="btn details-info__category bg-color-gray">Crime</button>
-                <button class="btn details-info__category bg-color-gray">Documentary</button>
-                <button class="btn details-info__category bg-color-gray">Drama</button>
-                <button class="btn details-info__category bg-color-gray">Family</button>
-                <button class="btn details-info__category bg-color-gray">Fantasy</button>
-                <button class="btn details-info__category bg-color-gray">History</button>
-                <button class="btn details-info__category bg-color-gray">Horror</button>
-                <button class="btn details-info__category bg-color-gray">Music</button>
-                <button class="btn details-info__category bg-color-gray">Mistery</button>
-                <button class="btn details-info__category bg-color-gray">Romance</button>
-                <button class="btn details-info__category bg-color-gray">Science Fiction</button>
-                <button class="btn details-info__category bg-color-gray">TV Movie</button>
-                <button class="btn details-info__category bg-color-gray">Thriller</button>
-                <button class="btn details-info__category bg-color-gray">War</button>
-                <button class="btn details-info__category bg-color-gray">Western</button>
-              </ul>
-            </div>
-            <div class="custom-scrollbar">
-              <div class="custom-scrollbar-thumb"></div>
-            </div>
-          </div>
-
-          <ul class="categories-section__galery">
-            <li class="card">
-              <div class="card__img-container">
-                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-              </div>
-              <h4 class="card__title">Thor: Love and Thunder</h4>
-            </li>
-            <li class="card">
-              <div class="card__img-container">
-                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-              </div>
-              <h4 class="card__title">Thor: Love and Thunder</h4>
-            </li>
-            <li class="card">
-              <div class="card__img-container">
-                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-              </div>
-              <h4 class="card__title">Thor: Love and Thunder</h4>
-            </li>
-            <li class="card">
-              <div class="card__img-container">
-                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-              </div>
-              <h4 class="card__title">Thor: Love and Thunder</h4>
-            </li>
-            <li class="card">
-              <div class="card__img-container">
-                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-              </div>
-              <h4 class="card__title">Thor: Love and Thunder</h4>
-            </li>
-            <li class="card">
-              <div class="card__img-container">
-                <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
-              </div>
-              <h4 class="card__title">Thor: Love and Thunder</h4>
-            </li>
-          </ul>
-
-        </section>
+            <ul class="categories-section__galery">
+              <li class="card">
+                <div class="card__img-container">
+                  <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                </div>
+                <h4 class="card__title">Thor: Love and Thunder</h4>
+              </li>
+              <li class="card">
+                <div class="card__img-container">
+                  <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                </div>
+                <h4 class="card__title">Thor: Love and Thunder</h4>
+              </li>
+              <li class="card">
+                <div class="card__img-container">
+                  <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                </div>
+                <h4 class="card__title">Thor: Love and Thunder</h4>
+              </li>
+              <li class="card">
+                <div class="card__img-container">
+                  <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                </div>
+                <h4 class="card__title">Thor: Love and Thunder</h4>
+              </li>
+              <li class="card">
+                <div class="card__img-container">
+                  <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                </div>
+                <h4 class="card__title">Thor: Love and Thunder</h4>
+              </li>
+              <li class="card">
+                <div class="card__img-container">
+                  <img class="card__img" src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Thor: Love and Thunder">
+                </div>
+                <h4 class="card__title">Thor: Love and Thunder</h4>
+              </li>
+            </ul>
+  
+          </section>
+        </div>
       </div>
       
     </section>
