@@ -893,30 +893,12 @@ body {
 }
 
 /* ================================ */
-/* @media (min-width: 568px) {
-  .hero__img-container {
-    height: 350px;
+@media (min-width: 536px) {
+  .header__nav {
+    width: 80%;
+    left: -80%;
   }
-} */
-
-/* @media (min-width: 632px) {
-  .hero__img-container {
-    height: 400px;
-  }
-  .hero__img-container::before {
-    height: 150px;
-  }
-  .hero__overlay {
-    top: -64px;
-  }
-  .home-section {
-    position: relative;
-  }
-  .home-section .main-contain-section {
-    margin-top: -32px;
-    position: relative;
-  }
-} */
+}
 
 @media (min-width: 720px) {
   :root {
@@ -931,6 +913,8 @@ body {
 
   .header__nav {
     padding-top: 24px;
+    width: 60%;
+    left: -60%;
   }
 
   .search-menu {
