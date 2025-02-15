@@ -828,6 +828,13 @@ body {
   height: 36px;
   padding: 0;
 }
+
+.btn-home-category {
+  transition: background-color 200ms ease-in-out;
+}
+.btn-home-category:hover {
+  background-color: var(--color-red);
+}
 /* ================================ */
 /* ================================ */
 /* ================================ */

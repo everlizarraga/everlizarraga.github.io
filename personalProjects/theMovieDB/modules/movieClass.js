@@ -1,26 +1,30 @@
-export class Movie {
+export class MovieXd {
   #posterPath;
   #posterBg;
   constructor({
     id,
     title, 
     type,
-    urlImgPath,
-    urlBgPath,
+    urlImgPathOriginal,
+    urlImgPathW500,
+    urlBgPathOriginal,
+    urlBgPathW500,
     rate,
     details,
     release,
-    categories = [],
+    categoriesIds = []
   }) {
     this.id = id;
     this.title = title;
     this.type = type;
-    this.imgPath = urlImgPath;
-    this.imgBg = urlBgPath;
+    this.imgPathOriginal = urlImgPathOriginal;
+    this.imgPathW500 = urlImgPathW500;
+    this.imgBgOriginal = urlBgPathOriginal;
+    this.imgBgW500 = urlBgPathW500;
     this.rate = rate;
     this.details = details;
     this.release = release;
-    this.categories = categories;
+    this.categoriesIds = categoriesIds;
   }
 
   
