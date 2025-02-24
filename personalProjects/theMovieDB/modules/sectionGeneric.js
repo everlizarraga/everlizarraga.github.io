@@ -16,6 +16,7 @@ const packRequest = {
   pageNumber: 1,
   pageTotal: 1,
 };
+let fnApiRequestsAsigned = async () => {};
 
 // ////////////////////////////////////////////////////////////
 // ////////////////////////////////////////////////////////////
@@ -46,11 +47,8 @@ function procedToExecute() {
   }
 }
 
-async function executeTrendsSection() {
-  sectionTitle.textContent = "Trending";
-
-  //galeryContainer
-  const data1 = await apiTMDB.API.getTrenndingMoviesPreview(1);
+async function executeCurrentSection() {
+  const data1 = await fnApiRequestsAsigned(1);
   injectCardsIntoGalery(data1.results);
   packRequest.pageNumber = data1.page;
   packRequest.pageTotal = data1.total_pages;
@@ -61,7 +59,7 @@ async function executeTrendsSection() {
 
     packRequest.fnRequest = async function() {
       mutex = false
-      const data = await apiTMDB.API.getTrenndingMoviesPreview(packRequest.pageNumber);
+      const data = await fnApiRequestsAsigned(packRequest.pageNumber);
       injectCardsIntoGalery(data.results);
       if(packRequest.pageNumber < packRequest.pageTotal) {
         packRequest.pageNumber += 1;
@@ -73,13 +71,32 @@ async function executeTrendsSection() {
   } else {
     isPossibleToMakeMoreRequests = false;
   }
-
-
 }
 
-function executePopularSection() {}
 
-function executeUpcomingSection() {}
+function executeTrendsSection() {
+  sectionTitle.textContent = "Trending";
+  fnApiRequestsAsigned = async function(page) {
+    return apiTMDB.API.getTrenndingMoviesPreview(page);
+  }
+  executeCurrentSection();
+}
+
+function executePopularSection() {
+  sectionTitle.textContent = "Popular";
+  fnApiRequestsAsigned = async function(page) {
+    return apiTMDB.API.getPopularMoviesPreview(page);
+  }
+  executeCurrentSection();
+}
+
+function executeUpcomingSection() {
+  sectionTitle.textContent = "Upcoming";
+  fnApiRequestsAsigned = async function(page) {
+    return apiTMDB.API.getUpcommingMoviesPreview(page);
+  }
+  executeCurrentSection();
+}
 
 function executeSearchSection() {}
 
