@@ -50,6 +50,12 @@ function activeSidebar(stateBoole) {
 }
 
 
+// ////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////
 
+const API = {
+  resizeMenu() {resizeMenu()},
+  activeSidebar(stateBoole) {activeSidebar(stateBoole)},
+};
 
-export {init};
+export { init, API };

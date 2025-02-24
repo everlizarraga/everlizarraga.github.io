@@ -49,6 +49,14 @@ a {
 body {
   position: relative;
   background-color: var(--color-black01);
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }
 
 .main-contain-section {
@@ -156,11 +164,11 @@ body {
   font-size: 0.875rem;
 }
 
-.bg-color-red {
-  background-color: var(--color-red);
-}
 .bg-color-gray {
   background-color: #333333;
+}
+.bg-color-red {
+  background-color: var(--color-red);
 }
 
 
