@@ -3,6 +3,7 @@ import * as homeSection from "./modules/sectionHome.js";
 import * as navigation from "./modules/navigation.js";
 import * as detailsSection from "./modules/sectionDetails.js";
 import * as categorySection from "./modules/sectionCategories.js";
+import * as genericSection from "./modules/sectionGeneric.js";
 // import * as apiTMDB from "./modules/apiTMDB.js";
 // import { MovieXd } from "./modules/movieClass.js"
 
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
   navigation.init();
   detailsSection.init();
   categorySection.init();
+  genericSection.init();
   // console.log('axios', window.axios);
   // apiTMDB.API.getSearchMovies('doc', 2);
   // apiTMDB.API.getPopularMoviesPreview(1);

@@ -21,11 +21,30 @@ let fnApiRequestsAsigned = async () => {};
 // ////////////////////////////////////////////////////////////
 // ////////////////////////////////////////////////////////////
 
+function init() {
+  clickDelegationGalery();
+  infiniteScroll();
+}
+
+function clickDelegationGalery() {
+  galeryContainer.addEventListener('click', (event) => {
+    const target = event.target.closest('.card');
+    if(target) {
+      const movieTitle = target.querySelector('.card__title').textContent.toLowerCase();
+      const movieId = target.getAttribute('data-api-id');
+      location.hash = `#movie=${movieId}-${helpers.API.replaceCharacters(movieTitle, " ", "_")}`;
+    }
+  });
+}
+
+// ////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////
+
 function cleanPreviewInfo() {
   templateCard.classList.remove('disable');
   sectionTitle.textContent = '';
   galeryContainer.innerHTML = '';
-  infiniteScroll();
+  // infiniteScroll();
 }
 
 function procedToExecute() {
@@ -129,8 +148,6 @@ function infiniteScroll() {
     packRequest.fnRequest();
     console.log('SCROLLING !!!');
 
-    //Hacer las peticiones
-    // fetchMovies(currentPage);
   });
 }
 
@@ -161,4 +178,4 @@ const API = {
   showSection(value) {showSection(value)},
 };
 
-export { API };
+export { init, API };
