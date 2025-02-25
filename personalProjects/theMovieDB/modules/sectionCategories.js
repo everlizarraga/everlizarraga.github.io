@@ -20,6 +20,14 @@ const classColorGray = 'bg-color-gray';
 
 
 // ////////////////////////////////////////////////////////////
+let hashCategoryId;
+let hashCategoryName;
+let lastCard;
+let myObserver = new IntersectionObserver(callbackScrolling, {rootMargin: '200px'});
+let arrayObservers = [];
+let currentPage = 1;
+
+// ////////////////////////////////////////////////////////////
 // ////////////////////////////////////////////////////////////
 
 function init() {
@@ -28,6 +36,28 @@ function init() {
   galeryContainer.innerHTML = "";
   clickDelegationCategory();
   clickDelegationGalery();
+}
+
+async function callbackScrolling(entries, observer) {
+  for(const entry of entries) {
+    if(entry.isIntersecting) {
+      const curerntObserved = entry.target;
+      observer.unobserve(curerntObserved);
+      const indexTraget = arrayObservers.findIndex(e => e == curerntObserved);
+      if(indexTraget >= 0) {
+        arrayObservers.splice(indexTraget, 1);
+      } else {
+        console.error("Elem Target Observed no encontrada en el array Observed");
+      }
+      currentPage += 1;
+      const data = await apiTMDB.API.getMoviesForGenres(hashCategoryId, currentPage);
+      insertCardsToGalery(data.results);
+      lastCard = [...galeryContainer.children].slice(-1)[0];
+      observer.observe(lastCard);
+      arrayObservers.push(lastCard);
+    }
+  }
+
 }
 
 function cleanPreviewInfo() {
@@ -51,8 +81,8 @@ async function procedToExecute() {
     console.error("Hash de categoria no valida");
     return;
   }
-  const hashCategoryId = currentCategoryHash.split('-')[0];
-  const hashCategoryName = currentCategoryHash.split('-')[1];
+  hashCategoryId = currentCategoryHash.split('-')[0];
+  hashCategoryName = currentCategoryHash.split('-')[1];
   
   //Luego tendria que fijarme si el hash concide con alguna category
   const targetCategory = categoryList.find(e => e.id == hashCategoryId);
@@ -64,9 +94,19 @@ async function procedToExecute() {
   //Actualizar el titulo
   titleSection.textContent = `Category: ${targetCategory.name}`;
 
+  //Limpiar previas cargas
+  arrayObservers.forEach(e => {
+    myObserver.unobserve(e);
+  });
+  currentPage = 1;
+
   //Hacer las peticiones de las peliculas correspondientes a las categorias
-  const data = await apiTMDB.API.getMoviesForGenres(hashCategoryId, 1);
+  const data = await apiTMDB.API.getMoviesForGenres(hashCategoryId, currentPage);
   insertCardsToGalery(data.results);
+  //Necesito gurdar la ultima carta dinamicamente para agregarla al InteresecptionObserver()
+  lastCard = [...galeryContainer.children].slice(-1)[0];
+  myObserver.observe(lastCard);
+  arrayObservers.push(lastCard);
 
   //Guardando la categoria en el header
   currentCategory.setAttribute('data-current', `${targetCategory.id}-${helpers.API.replaceCharacters(targetCategory.name, " ", "_")}`);
@@ -138,8 +178,8 @@ function clickDelegationGalery() {
 // ////////////////////////////////////////////////////////////
 function showSection(trueFalse = true) {
   if(trueFalse) {
-    sectionCategories.classList.remove('disable');
     cleanPreviewInfo();
+    sectionCategories.classList.remove('disable');
     procedToExecute();
   } else {
     sectionCategories.classList.add('disable');
