@@ -76,6 +76,7 @@ async function executeCurrentSection() {
     isPossibleToMakeMoreRequests = true;
     packRequest.pageNumber += 1;
 
+    //ESto es para el scroll infinito
     packRequest.fnRequest = async function() {
       mutex = false
       const data = await fnApiRequestsAsigned(packRequest.pageNumber);
@@ -117,9 +118,27 @@ function executeUpcomingSection() {
   executeCurrentSection();
 }
 
-function executeSearchSection() {}
+function executeSearchSection() {
+  const currentHash = location.hash?? ''; //'#search=name_movie'
+  const hashQuery = currentHash.split("#search=")[1]; //['','name_movie']
+  sectionTitle.textContent = `Search: ${helpers.API.replaceCharacters(hashQuery, "_", " ")}`;
+  const movie = helpers.API.replaceCharacters(hashQuery, "_", "%20");
+  fnApiRequestsAsigned = async function(page) {
+    return apiTMDB.API.getSearchMovies(movie, page);
+  }
+  executeCurrentSection();
+}
 
-function executeSimilarSection() {}
+function executeSimilarSection() {
+  const currentHash = location.hash.substring(9).split('-'); //'#similar=1234-name_movie'
+  const hashId = currentHash[0];
+  const hashName = currentHash[1];
+  sectionTitle.textContent = `Similar: ${helpers.API.replaceCharacters(hashName, "_", " ")}`;
+  fnApiRequestsAsigned = async function(page) {
+    return apiTMDB.API.getSimilarMoview(hashId, page);
+  }
+  executeCurrentSection();
+}
 
 // ////////////////////////////////////////////////////////////
 

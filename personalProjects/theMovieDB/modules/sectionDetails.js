@@ -30,11 +30,13 @@ cardTemplateMovie.classList.remove('disable');
 
 // ///////////////////////////////////////////////////////
 let fnBtnActionPlayTrailer = () => {console.log("PLAY TRAILER !!!")};
-
+let fnViewMoreSimilarMoviesAsigned = () => {};
 
 function init() {
   categoriesContanier.innerHTML = '';
   btnPLayTrailer.addEventListener('click', fnBtnActionPlayTrailer);
+  // btnSimilarMovies.addEventListener('click', fnViewMoreSimilarMoviesAsigned);
+  btnSimilarMovies.addEventListener('click', () => {fnViewMoreSimilarMoviesAsigned()});
   //[FALTA] Agregar la funcionalidad del btn BACK
 }
 
@@ -104,8 +106,9 @@ function injectSimilarMovies(movieList = []) {
 
 async function procedToExecute() {
   //Obtener info del hash
-  const currentHash = location.hash; // "#movie=1234-una_plei"
-  const currentIdMovie = currentHash.substring(7).split('-')[0];
+  const currentHash = location.hash.substring(7).split('-'); // "#movie=1234-una_plei"
+  const currentIdMovie = currentHash[0];
+  const currentNameMovie = currentHash[1];
 
   //Hacer peticion a la API
   const movie = await apiTMDB.API.getDetailsMovieForId(currentIdMovie);
@@ -116,6 +119,12 @@ async function procedToExecute() {
   const similarMovieList = await apiTMDB.API.getSimilarMoview(movie.id);
   // console.log('similarMovieList:', similarMovieList);
   injectSimilarMovies(similarMovieList.results);
+
+  //AsignarFuncionalidad al btn "SEE ALL"
+  fnViewMoreSimilarMoviesAsigned = () => {
+    location.hash = `#similar=${currentIdMovie}-${currentNameMovie}`;
+    console.log("GO similar movies");
+  };
 }
 
 
@@ -124,8 +133,8 @@ async function procedToExecute() {
 // ////////////////////////////////////////////////////////////
 function showSection(trueFalse = true) {
   if(trueFalse) {
-    detailsMovieSection.classList.remove('disable');
     cleanPreviewInfo();
+    detailsMovieSection.classList.remove('disable');
     procedToExecute();
   } else {
     detailsMovieSection.classList.add('disable');
