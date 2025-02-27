@@ -8,6 +8,8 @@ import * as helpers from "../utils/helpers.js";
 
 const menuOptionsNav = [...document.querySelectorAll('.header__nav-option a')];
 
+const btnBackList = document.querySelectorAll('.btn--go-back');
+
 let linkCategroy;
 
 function init() {
@@ -20,6 +22,12 @@ function init() {
       const newHash = `#category=${this.getAttribute('data-current')}`;
       location.hash = newHash;
     });
+
+  [...btnBackList].forEach(btn => {
+    btn.addEventListener('click', () => {
+      history.back();
+    });
+  });
 }
 
 

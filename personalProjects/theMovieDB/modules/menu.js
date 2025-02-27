@@ -3,6 +3,8 @@ const header = document.querySelector('.header');
 const btnMenu = header.querySelector('.header__btn-menu');
 const menuBar = header.querySelector('.header__nav');
 
+const menuOptionscontainer = header.querySelector('.header__nav-container');
+
 function init() {
   console.log('Hola MENU !!!');
 
@@ -14,6 +16,12 @@ function init() {
   window.addEventListener('resize', () => {
     resizeMenu();
     autoHideSidebar();
+  });
+
+  [...menuOptionscontainer.querySelectorAll('a')].forEach(e => {
+    e.addEventListener('click', () => {
+      activeSidebar(false);
+    });
   });
 
   resizeMenu();
