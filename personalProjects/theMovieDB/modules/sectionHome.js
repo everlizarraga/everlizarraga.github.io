@@ -26,7 +26,11 @@ cardTemplate.classList.remove('disable');
 // CURRENT CATEGORY
 const currentCategory = document.querySelector('.header__nav-option > a[href="#category"]');
 
-function init() {
+// INTERSECTIONoBSERVER()
+let observerCardImg;
+
+function init(sharedObject) {
+  observerCardImg = sharedObject.observerCardImg;
   initTrendingSection();
   initPopularSection();
   initUpcomingSection();
@@ -51,7 +55,8 @@ function createCardElemnt({imgUrl, title}) {
   const imgElement = newCard.querySelector('.card__img');
   const titleElemnt = newCard.querySelector('.card__title');
 
-  imgElement.setAttribute('src', imgUrl);
+  // imgElement.setAttribute('src', imgUrl);
+  imgElement.setAttribute('data-src', imgUrl);
   imgElement.setAttribute('alt', title);
   titleElemnt.textContent = title;
 
@@ -132,6 +137,7 @@ async function initTrendingSection() {
     cardContainer.appendChild(newCard);
     asignCardToOnclick(e, newCard);
     // console.log(newCard);
+    observerCardImg.observe(newCard);
   });
 
   btnTrending.addEventListener('click', () => {
@@ -167,6 +173,7 @@ async function initPopularSection() {
     cardContainer.appendChild(newCard);
     asignCardToOnclick(e, newCard);
     // console.log(newCard);
+    observerCardImg.observe(newCard);
   });
 
   btnPopular.addEventListener('click', () => {
@@ -187,6 +194,8 @@ async function initUpcomingSection() {
     newCard.setAttribute('data-label', label);
     cardContainer.appendChild(newCard);
     asignCardToOnclick(e, newCard);
+
+    observerCardImg.observe(newCard);
   });
 
   btnUpcoming.addEventListener('click', () => {

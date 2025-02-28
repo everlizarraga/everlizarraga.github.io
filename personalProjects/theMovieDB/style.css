@@ -476,6 +476,7 @@ main {
 .card__img-container {
   width: var(--card-width);
   height: auto;
+  min-height: 192px;
 }
 .card__img {
   display: block;
@@ -1007,6 +1008,10 @@ main {
     --details-section-bg-mobile-height: calc(80vh - var(--header-height)*2);
 
     --margin-lateral-frame: 40px;
+  }
+
+  .card__img-container {
+    min-height: 300px;
   }
   /* ================================ */
   .header__container {

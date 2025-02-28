@@ -28,11 +28,15 @@ const btnSimilarMovies = detailsMovieSection.querySelector('.details-section__si
 const cardTemplateMovie = detailsMovieSection.querySelector('.details-section__similar-movies .card').cloneNode(true);
 cardTemplateMovie.classList.remove('disable');
 
+// INTERSECTIONoBSERVER()
+let observerCardImg;
+
 // ///////////////////////////////////////////////////////
 let fnBtnActionPlayTrailer = () => {console.log("PLAY TRAILER !!!")};
 let fnViewMoreSimilarMoviesAsigned = () => {};
 
-function init() {
+function init(sharedObject) {
+  observerCardImg = sharedObject.observerCardImg;
   categoriesContanier.innerHTML = '';
   btnPLayTrailer.addEventListener('click', fnBtnActionPlayTrailer);
   // btnSimilarMovies.addEventListener('click', fnViewMoreSimilarMoviesAsigned);
@@ -91,11 +95,13 @@ function injectSimilarMovies(movieList = []) {
     const img = newCard.querySelector('.card__img');
 
     title.textContent = e.title;
-    img.setAttribute('src', e.imgPathW300);
+    // img.setAttribute('src', e.imgPathW300);
+    img.setAttribute('data-src', e.imgPathW300);
     img.setAttribute('alt', e.title);
     newCard.setAttribute('data-api-id', `${e.id}`);
 
     similarMovieCotnainer.appendChild(newCard);
+    observerCardImg.observe(newCard);
     
     //Asignando una Accion para las card
     newCard.addEventListener('click', () => {

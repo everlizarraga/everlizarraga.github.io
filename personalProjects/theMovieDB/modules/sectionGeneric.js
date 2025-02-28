@@ -18,10 +18,14 @@ const packRequest = {
 };
 let fnApiRequestsAsigned = async () => {};
 
+// INTERSECTIONoBSERVER()
+let observerCardImg;
+
 // ////////////////////////////////////////////////////////////
 // ////////////////////////////////////////////////////////////
 
-function init() {
+function init(sharedObject) {
+  observerCardImg = sharedObject.observerCardImg;
   clickDelegationGalery();
   infiniteScroll();
 }
@@ -148,10 +152,12 @@ function injectCardsIntoGalery(movieList) {
     const title = newCard.querySelector('.card__title');
     const img = newCard.querySelector('.card__img');
     title.textContent = e.title;
-    img.setAttribute('src', e.imgPathW300);
+    // img.setAttribute('src', e.imgPathW300);
+    img.setAttribute('data-src', e.imgPathW300);
     img.setAttribute('alt', e.title);
     newCard.setAttribute('data-api-id', e.id);
     galeryContainer.appendChild(newCard);
+    observerCardImg.observe(newCard);
   });
 }
 

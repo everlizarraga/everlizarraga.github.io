@@ -7,7 +7,11 @@ const searchHeader = formSearchHeader.querySelector('.search__input');
 const formSearchMenu = document.querySelector('.search-menu');
 const searchMenu = formSearchMenu.querySelector('.search__input');
 
-function init() {
+// INTERSECTIONoBSERVER()
+let observerCardImg;
+
+function init(sharedObject) {
+  observerCardImg = sharedObject.observerCardImg;
   formSearchHeader.addEventListener('submit', function(event) {
     event.preventDefault();
     console.log('formSearchHeader');
