@@ -495,6 +495,7 @@ main {
 .custom-scrollbar {
   width: 100%;
   height: var(--scrollbar-height);
+  position: relative;
   background-color: var(--scrollbar-color);
   margin-top: var(--scrollbar-margin-top);
 }
@@ -502,6 +503,7 @@ main {
 .custom-scrollbar-thumb {
   width: 250px;
   height: var(--scrollbar-height);
+  position: relative;
   background-color: var(--color-red);
 }
 
@@ -513,7 +515,7 @@ main {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: -1px;
   width: var(--shadow-lateral-cards-width);
   background: linear-gradient(to right, var(--color-black01), transparent);
   pointer-events: none;
@@ -526,7 +528,7 @@ main {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
+  right: -2px;
   width: var(--shadow-lateral-cards-width);
   background: linear-gradient(to left, var(--color-black01), transparent);
   pointer-events: none;

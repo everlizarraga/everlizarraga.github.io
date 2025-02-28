@@ -31,6 +31,14 @@ function init() {
   initPopularSection();
   initUpcomingSection();
   initCateoriesList();
+
+  // const listGalery = [...document.querySelectorAll('.viewfinder')];
+  const listGalery = [...document.querySelectorAll('.carousel__galery')];
+  listGalery.forEach(galeryContainer => {
+    const galery = galeryContainer.querySelector('.viewfinder');
+    helpers.API.assignGaleryShadowLateralEfefct(galery);
+    helpers.API.assignCustomScrollToGalery(galeryContainer);
+  });
 }
 
 async function updateRunTime(movieId, callback) {
