@@ -27,7 +27,8 @@ body {
     width: 100%;
     min-width: 320px;
     font-size: 1.6rem;
-    background-color: papayawhip;
+    /* background-color: papayawhip; */
+    background-color: var(--color-background-1);
     color: var(--font-color-1);
 }
 
