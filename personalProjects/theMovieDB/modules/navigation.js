@@ -68,6 +68,8 @@ function genericPage(type) {
       e.classList.add('header__nav-option--selected');
     }
   });
+
+  helpers.API.enableBtnGoUp(true);
 }
 
 function movieDetailsPage() {
@@ -90,6 +92,8 @@ function categoriesPage() {
       e.classList.add('header__nav-option--selected');
     }
   });
+
+  helpers.API.enableBtnGoUp(true);
 
 }
 
@@ -114,6 +118,8 @@ function hideAllPages() {
   details.API.showSection(false);
   generic.API.showSection(false);
   categories.API.showSection(false);
+
+  helpers.API.enableBtnGoUp(false);
 }
 
 function hideEffectBorderOptionMenu() {

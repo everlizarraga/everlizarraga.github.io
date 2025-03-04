@@ -5,12 +5,25 @@ const menuBar = header.querySelector('.header__nav');
 
 const menuOptionscontainer = header.querySelector('.header__nav-container');
 
+let menuOpen = false;
+let controlPushState = false;
+
 function init() {
   console.log('Hola MENU !!!');
 
   btnMenu.addEventListener('click', () => {
-    btnMenu.classList.toggle('btn-change');
-    menuBar.classList.toggle('menu-effect-in');
+    if(menuOpen) {
+      activeSidebar(false);
+      if(isMobile() && controlPushState) {
+        history.back();
+        controlPushState = false;
+      };
+    } else {
+      activeSidebar(true);
+      controlPushState = true;
+    }
+    // btnMenu.classList.toggle('btn-change');
+    // menuBar.classList.toggle('menu-effect-in');
   });
 
   window.addEventListener('resize', () => {
@@ -22,6 +35,13 @@ function init() {
     e.addEventListener('click', () => {
       activeSidebar(false);
     });
+  });
+
+  window.addEventListener('popstate', function(event) {
+    if(menuOpen) {
+      activeSidebar(false);
+      // history.pushState(null, '', '');
+    }
   });
 
   resizeMenu();
@@ -51,10 +71,24 @@ function activeSidebar(stateBoole) {
   if(stateBoole) {
     menuBar.classList.add('menu-effect-in');
     btnMenu.classList.add('btn-change');
+    menuOpen = true;
+    // Solo añadimos el estado a la historia en dispositivos móviles
+    if (isMobile()) {
+      history.pushState({ menuOpen: true }, '', '');
+    }
   } else {
     menuBar.classList.remove('menu-effect-in');
     btnMenu.classList.remove('btn-change');
+    menuOpen = false;
+    // if(isMobile() && controlPushState) {
+    //   history.back();
+    //   controlPushState = false;
+    // };
   }
+}
+
+function isMobile() {
+  return window.matchMedia("(max-width: 959px)").matches;
 }
 
 

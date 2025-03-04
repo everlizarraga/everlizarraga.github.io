@@ -20,7 +20,8 @@ const observerCardImg = new IntersectionObserver((entries, observer) => {
         // img.setAttribute('src', 'https://images.pexels.com/photos/2773498/pexels-photo-2773498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
         // img.setAttribute('src', 'https://st2.depositphotos.com/2068621/5948/v/450/depositphotos_59480387-stock-illustration-movie-camera-simple-icon-on.jpg');
         // img.setAttribute('src', 'https://ih1.redbubble.net/image.533910704.5853/flat,750x,075,f-pad,750x1000,f8f8f8.u3.jpg');
-        img.setAttribute('src', 'https://ih1.redbubble.net/image.4905811447.8675/flat,750x,075,f-pad,750x1000,f8f8f8.jpg');
+        // img.setAttribute('src', 'https://ih1.redbubble.net/image.4905811447.8675/flat,750x,075,f-pad,750x1000,f8f8f8.jpg');
+        img.setAttribute('src', 'https://s3.gifyu.com/images/bbTkk.png');
       }
     }
   });

@@ -1,5 +1,6 @@
 const header = document.querySelector('.header');
 const labelSave = "theMovieDB:APP";
+const btnGoUp = document.getElementById('btn--go-up');
 
 function convertFormatTimeMovie(minutos) {
   if (typeof minutos !== "number" || minutos < 0) return "0h 00m";
@@ -210,6 +211,121 @@ function assignCustomScrollToGalery(galeryContainer) {
 
 
 // /////////////////////////////////////////////////////////////////
+function isMobile() {
+  return window.matchMedia("(max-width: 959px)").matches;
+}
+
+function generateId() {
+  return Math.random().toString(36).slice(2).padStart(6, '0');
+}
+
+function preloadImage(urlImg) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    
+    img.onload = () => {
+      resolve(img)
+    };
+    img.error = () => {
+      reject(new Error(`No se pudo cargar la imagen de: ${url}`));
+    };
+    img.src = urlImg; // Inicia la carga
+  });
+}
+
+/**
+ * Cargar imagenes secuencialmente usando promesas
+ * @param {HTMLImageElement} elementImg 
+ * @param {Array<string>} arrayUrls 
+ * @param {Array<Function>} arrayConditionsFn 
+ */
+async function loadImgsOnElement(elementImg, arrayUrls = [], arrayConditionsFn = []) {
+  if(arrayUrls.length == 0) {
+    console.error('No hay URLs de referencia para cargar preimagenes');
+    return;
+  }
+
+  try {
+    // //Comenzar la 1ra carga
+    // elementImg.src = arrayUrls[0];
+
+    // //Esperar a que la primera imagen se cargue
+    // if(!elementImg.complete) {
+    //   await new Promise((resolve, reject) => {
+    //     elementImg.onload = resolve;
+    //     elementImg.onerror = () => reject(new Error(`Error al cargar: ${arrayUrls[0]}`));
+    //   });
+    // }
+
+    //Cargar secuencialmente el resto de imagenes
+    for (let index = 0; index < arrayUrls.length; index++) {
+      try {
+        //Intentar precargar la siguiente imagen
+        await preloadImage(arrayUrls[index]);
+        // Si se cargó correctamente, actualizar la imagen visible
+        if(arrayConditionsFn.length > 0) {
+          const meetsTheConditions = arrayConditionsFn.every(fn => fn(elementImg));
+          if(meetsTheConditions) {
+            elementImg.src = arrayUrls[index];
+          }
+        } else {
+          elementImg.src = arrayUrls[index];
+        }
+        
+      } catch (error) {
+        console.error(`Error al cargar imagen #${i}:`, error.message);
+        //Por defecto continuamos con la sgte, sin mostrar la imagen fallida
+        continue;
+      }
+    }
+    
+  } catch (error) {
+    console.error("Error al cargar la 1ra imagen:", error.message);
+  }
+
+}
+
+// /////////////////////////////////////////////////////////////////
+let isEnableBtnGoUp = false;
+btnGoUp.addEventListener('click', () => {
+  autoScrollToHeader();
+});
+document.addEventListener('scroll', () => {
+  // console.log(`allowedDistance: ${allowedDistance()}`);
+  if(allowedDistance() && isEnableBtnGoUp) {
+    showBtnGoUp(true);
+  } else {
+    showBtnGoUp(false);
+  }
+});
+
+function showBtnGoUp(trueFalse = false) {
+  if(trueFalse) {
+    btnGoUp.classList.remove('disable');
+    // console.log('Mostrando');
+  } else {
+    btnGoUp.classList.add('disable');
+    // console.log('Ocultando');
+  }
+}
+
+function enableBtnGoUp(trueFalse) {
+  if(trueFalse) {
+    isEnableBtnGoUp = true;
+    // showBtnGoUp(trueFalse);
+    // console.warn('HABILITADO BTN-go-up !!!');
+  } else {
+    isEnableBtnGoUp = false;
+    showBtnGoUp(false);
+    // console.warn('DESHABILITADO Btn-go-up :(');
+  }
+}
+
+function allowedDistance() {
+  return document.documentElement.scrollTop > 100;
+}
+
+// /////////////////////////////////////////////////////////////////
 
 
 const API = {
@@ -220,6 +336,10 @@ const API = {
   extractLabelOfHash() {return extractLabelOfHash()},
   assignGaleryShadowLateralEfefct(galery) {assignGaleryShadowLateralEfefct(galery)},
   assignCustomScrollToGalery(galery) {assignCustomScrollToGalery(galery)},
+  loadImgsOnElement(elementImg, arrayUrls, arrayConditionsFn) {loadImgsOnElement(elementImg, arrayUrls, arrayConditionsFn)},
+  generateId() {return generateId()},
+  isMobile() {return isMobile()},
+  enableBtnGoUp(trueFalse) {enableBtnGoUp(trueFalse)},
 };
 
 

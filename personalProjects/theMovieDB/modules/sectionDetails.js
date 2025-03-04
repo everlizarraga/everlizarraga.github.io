@@ -39,29 +39,57 @@ function init(sharedObject) {
   observerCardImg = sharedObject.observerCardImg;
   categoriesContanier.innerHTML = '';
   btnPLayTrailer.addEventListener('click', fnBtnActionPlayTrailer);
+  categoriesContanier.addEventListener('click', delegateOnClickCategories);
   // btnSimilarMovies.addEventListener('click', fnViewMoreSimilarMoviesAsigned);
   btnSimilarMovies.addEventListener('click', () => {fnViewMoreSimilarMoviesAsigned()});
-  //[FALTA] Agregar la funcionalidad del btn BACK
 }
 
 
 /**
  * Inserta informacion de una Movie en DETAILS-Section
- * @param {MovieXd} movie 
+ * @param {MovieXd} movie
  */
 function injectInformation(movie, callback) {
-  bgMobile.setAttribute('src', movie.imgBgW500?? "");
+  //Asignar un ID
+  const idAsigned = helpers.API.generateId();
+  bgMobile.setAttribute('data-idasigned', idAsigned);
+  bgDesktop.setAttribute('data-idasigned', idAsigned);
+  pathImg.setAttribute('data-idasigned', idAsigned);
+
+  //Funciones de comprobacion:
+  const arrayFnComprobation = [(elemImg) => elemImg.getAttribute('data-idAsigned') === idAsigned];
+
+  // bgMobile.setAttribute('src', movie.imgBgW500?? "");
   bgMobile.setAttribute('alt', movie.title?? "");
-  bgDesktop.setAttribute('src', movie.imgBgOriginal?? "");
+  // bgDesktop.setAttribute('src', movie.imgBgOriginal?? "");
   bgDesktop.setAttribute('alt', movie.title?? "");
-  pathImg.setAttribute('src', movie.imgPathW500?? "");
+  // pathImg.setAttribute('src', movie.imgPathW500?? "");
   pathImg.setAttribute('alt', movie.title?? "");
+
+  // Para BG_Mobile
+  helpers.API.loadImgsOnElement(
+    bgMobile, 
+    [movie.imgBgW300, movie.imgBgW500, movie.imgBgOriginal], 
+    arrayFnComprobation
+  );
+
+  // Para BG_Desktop
+  helpers.API.loadImgsOnElement(
+    bgDesktop,
+    [movie.imgBgW300, movie.imgBgW500, movie.imgBgOriginal], 
+    arrayFnComprobation
+  );
+  helpers.API.loadImgsOnElement(
+    pathImg,
+    [movie.imgPathW300, movie.imgPathW500], 
+    arrayFnComprobation
+  );
 
   // movieRate.textContent = movie.rate?? "";
   movieRate.textContent = `${movie.rate}`.substring(0, 3);
   movieTime.textContent = movie.runtime?? "";
   movieTag.textContent = helpers.API.extractLabelOfHash();
-  
+
   movieTitle.textContent = movie.title?? "";
   movieDetails.textContent = movie.details?? "";
   movieReleased.textContent = movie.release?? "";
@@ -76,16 +104,47 @@ function injectInformation(movie, callback) {
   movie.categoriesFull.forEach(e => {
     const newCard = categoryTemplate.cloneNode(true);
     newCard.textContent = e.name;
+    newCard.setAttribute('data-category-id', e.id);
     categoriesContanier.appendChild(newCard);
   });
 
 }
 
+function delegateOnClickCategories(event) {
+  const targetCategory = event.target.closest('.details-info__category');
+  if(targetCategory) {
+    // Prevenir selección de texto mientras se arrastra
+    document.body.style.userSelect = 'none';
+    location.hash = `#category=${targetCategory.getAttribute('data-category-id')}-${helpers.API.replaceCharacters(targetCategory.textContent, " ", "_")}`;
+    document.body.style.userSelect = '';
+  }
+}
+
 function cleanPreviewInfo() {
-  const auxMovie = new MovieXd({});
+  const auxMovie = new MovieXd({
+    details: '',
+    id: 0,
+    label: '',
+    rate: '',
+    release: '',
+    runtime: '',
+    title: '',
+    type: '',
+    urlBgPathOriginal: '',
+    urlBgPathW300: '',
+    urlBgPathW500: '',
+    urlImgPathOriginal: '',
+    urlImgPathW300: '',
+    urlImgPathW500: '',
+    categoriesFull: [],
+    categoriesIds: []
+  });
   injectInformation(auxMovie);
   similarMovieCotnainer.innerHTML = '';
   categoriesContanier.innerHTML = '';
+  bgMobile.setAttribute('src', '');
+  bgDesktop.setAttribute('src', '');
+  pathImg.setAttribute('src', '');
 }
 
 function injectSimilarMovies(movieList = []) {
@@ -102,7 +161,7 @@ function injectSimilarMovies(movieList = []) {
 
     similarMovieCotnainer.appendChild(newCard);
     observerCardImg.observe(newCard);
-    
+
     //Asignando una Accion para las card
     newCard.addEventListener('click', () => {
       location.hash = `#movie=${e.id}-${helpers.API.replaceCharacters(e.title, " ", "_")}`;
